@@ -1,4 +1,3 @@
-
 /* Navbar styles */
 nav {
     display: flex;
@@ -39,4 +38,84 @@ header h1 {
 header p {
     font-size: 1.2rem;
     color: #666;
+}
+
+/* About Section styles */
+#about {
+    padding: 2rem;
+    background-color: #e9ecef;
+    text-align: center;
+}
+
+#about h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#about p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Services Section styles */
+#services {
+    padding: 2rem;
+    background-color: #fff;
+    text-align: center;
+}
+
+#services h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+#services p {
+    font-size: 1.2rem;
+    color: #333;
+}
+
+/* Footer styles */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #333;
+    color: white;
+}
+
+/* To-Do List Section styles */
+#todo-section {
+    padding: 2rem;
+    background-color: #f9f9f9;
+    text-align: center;
+}
+
+#todoForm {
+    margin-bottom: 1rem;
+}
+
+#todoInput {
+    padding: 0.5rem;
+    font-size: 1rem;
+}
+
+#todoList {
+    list-style: none;
+    padding: 0;
+}
+
+#todoList li {
+    padding: 0.5rem;
+    background-color: #fff;
+    margin-bottom: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#todoList li button {
+    background-color: #ff4d4d;
+    color: white;
+    border: none;
+    padding: 0.3rem 0.6rem;
+    cursor: pointer;
 }

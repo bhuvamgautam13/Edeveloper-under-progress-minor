@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Developer Site</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
@@ -22,8 +22,53 @@
     
     <!-- Head Section -->
     <header>
-        <h1>Welcome to Our Website</h1>
-        <p>Your description here.</p>
+        <h1>Welcome to Our Developer Site</h1>
+        <p>We provide the best development services.</p>
     </header>
+
+    <!-- About Section -->
+    <section id="about">
+        <h2>About Us</h2>
+        <p>We are a team of experienced developers dedicated to building high-quality web applications.</p>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services">
+        <h2>Our Services</h2>
+        <p>We offer a wide range of services including web development, mobile app development, and more.</p>
+    </section>
+
+    <!-- Interactive Section -->
+    <section id="interactive">
+        <h2>Interactive Section</h2>
+        <button id="alertButton">Click Me</button>
+    </section>
+
+    <!-- Form Section -->
+    <section id="form-section">
+        <h2>Greeting Form</h2>
+        <form id="greetingForm">
+            <label for="name">Enter your name:</label>
+            <input type="text" id="name" name="name" required>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="greetingMessage"></p>
+    </section>
+
+    <!-- To-Do List Section -->
+    <section id="todo-section">
+        <h2>To-Do List</h2>
+        <form id="todoForm">
+            <input type="text" id="todoInput" placeholder="Enter a new task" required>
+            <button type="submit">Add Task</button>
+        </form>
+        <ul id="todoList"></ul>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2023 Developer Site. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
 </body>
 </html>
