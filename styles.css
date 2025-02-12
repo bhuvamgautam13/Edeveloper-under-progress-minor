@@ -1,0 +1,42 @@
+
+/* Navbar styles */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem;
+}
+
+nav .logo img {
+    height: 40px;
+}
+
+nav .nav-options {
+    list-style: none;
+    display: flex;
+    gap: 1rem;
+}
+
+nav .nav-options li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Head Section styles */
+header {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f4f4f4;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+header p {
+    font-size: 1.2rem;
+    color: #666;
+}
