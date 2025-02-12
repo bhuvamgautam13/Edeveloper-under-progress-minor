@@ -74,6 +74,38 @@ header p {
     color: #333;
 }
 
+/* Tic Tac Toe Section styles */
+#tictactoe {
+    text-align: center;
+    padding: 2rem;
+    background-color: #fff;
+}
+
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+
+#game-board div {
+    width: 100px;
+    height: 100px;
+    background-color: #e9ecef;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+#resetButton {
+    padding: 0.5rem 1rem;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
 /* Footer styles */
 footer {
     text-align: center;
@@ -118,4 +150,21 @@ footer {
     border: none;
     padding: 0.3rem 0.6rem;
     cursor: pointer;
+}
+
+/* Responsive styles */
+@media (max-width: 768px) {
+    nav .nav-options {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    #game-board {
+        grid-template-columns: repeat(3, 80px);
+    }
+
+    #game-board div {
+        width: 80px;
+        height: 80px;
+    }
 }
