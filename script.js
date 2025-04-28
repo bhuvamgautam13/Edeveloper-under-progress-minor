@@ -31,81 +31,85 @@ function addTask(task) {
     todoList.appendChild(listItem);
 }
 
+// Remove Tic Tac Toe game logic
 document.addEventListener('DOMContentLoaded', () => {
     const gameBoard = document.getElementById('game-board');
     const resetButton = document.getElementById('resetButton');
-    let board = ['', '', '', '', '', '', '', '', ''];
-    let currentPlayer = 'X';
-    let gameActive = true;
 
-    const winningConditions = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ];
+    if (gameBoard) {
+        gameBoard.remove(); // Remove the game board element if it exists
+    }
+    if (resetButton) {
+        resetButton.remove(); // Remove the reset button if it exists
+    }
+});
 
-    function handleCellClick(event) {
-        const cellIndex = Array.from(gameBoard.children).indexOf(event.target);
-        if (board[cellIndex] !== '' || !gameActive) {
-            return;
+document.addEventListener('DOMContentLoaded', () => {
+    // Remove the Tic Tac Toe C Code Section
+    const tictactoeSection = document.getElementById('tictactoe-code');
+    if (tictactoeSection) {
+        tictactoeSection.remove();
+    }
+
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.getElementById('backToTop');
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'flex';
+        } else {
+            backToTopButton.style.display = 'none';
         }
-        board[cellIndex] = currentPlayer;
-        event.target.textContent = currentPlayer;
-        checkResult();
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-    }
+    });
 
-    function checkResult() {
-        let roundWon = false;
-        for (let condition of winningConditions) {
-            const [a, b, c] = condition;
-            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-                roundWon = true;
-                break;
-            }
-        }
-        
-        const gameMessage = document.getElementById('game-message');
-    
-        if (roundWon) {
-            gameActive = false;
-            gameMessage.textContent = `Player ${currentPlayer} wins! 🎉`;
-            return;
-        }
-        
-        if (!board.includes('')) {
-            gameActive = false;
-            gameMessage.textContent = 'It\'s a draw!';
-        }
-    }
-    
-    function resetGame() {
-        board = ['', '', '', '', '', '', '', '', ''];
-        gameActive = true;
-        currentPlayer = 'X';
-        document.getElementById('game-message').textContent = ''; // Clear message
-        Array.from(gameBoard.children).forEach(cell => cell.textContent = '');
-    }
-    
+    backToTopButton.addEventListener('click', () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    });
+});
 
-    function resetGame() {
-        board = ['', '', '', '', '', '', '', '', ''];
-        gameActive = true;
-        currentPlayer = 'X';
-        Array.from(gameBoard.children).forEach(cell => cell.textContent = '');
-    }
+// Back to Top Button
+const backToTopButton = document.createElement('button');
+backToTopButton.id = 'backToTop';
+backToTopButton.textContent = '↑';
+document.body.appendChild(backToTopButton);
 
-    gameBoard.addEventListener('click', handleCellClick);
-    resetButton.addEventListener('click', resetGame);
-
-    // Initialize game board
-    for (let i = 0; i < 9; i++) {
-        const cell = document.createElement('div');
-        gameBoard.appendChild(cell);
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
     }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Dynamic greeting message
+document.addEventListener('DOMContentLoaded', () => {
+    const greeting = document.createElement('p');
+    const hours = new Date().getHours();
+    if (hours < 12) {
+        greeting.textContent = 'Good Morning! Start learning full-stack development today.';
+    } else if (hours < 18) {
+        greeting.textContent = 'Good Afternoon! Keep building your skills.';
+    } else {
+        greeting.textContent = 'Good Evening! Explore our free resources.';
+    }
+    document.querySelector('header').appendChild(greeting);
 });
