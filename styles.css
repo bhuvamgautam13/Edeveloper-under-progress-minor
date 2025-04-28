@@ -151,6 +151,13 @@ footer {
     padding: 0.3rem 0.6rem;
     cursor: pointer;
 }
+#game-message {
+    font-size: 1.5rem;
+    color: #ff4500; /* Stylish red for winner messages */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
 
 /* Responsive styles */
 @media (max-width: 768px) {
@@ -167,4 +174,19 @@ footer {
         width: 80px;
         height: 80px;
     }
+}
+/* Navbar styles with hover effect first change for first commit*/
+nav .nav-options li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease, background-color 0.3s ease;
+}
+
+nav .nav-options li a:hover {
+    color: #c0c0c0 ; /* Hot pink hover color */
+    background-color: rgba(0, 0, 0, 0.3); /* Subtle black background */
+    padding: 5px 10px;
+    border-radius: 5px;
+    text-decoration: underline;
 }
