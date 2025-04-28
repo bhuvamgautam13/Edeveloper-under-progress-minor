@@ -10,7 +10,7 @@
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <img src="unnamed.png" alt="Logo">
+            <img src="unnamed.png" alt="Logo" aria-label="Site Logo">
         </div>
         <ul class="nav-options">
             <li><a href="#home">Home</a></li>
@@ -21,6 +21,9 @@
         </ul>
     </nav>
     
+    <!-- Dark Mode Toggle -->
+    <button id="darkModeToggle" aria-label="Toggle Dark Mode">Toggle Dark Mode</button>
+
     <!-- Head Section -->
     <header>
         <h1>Welcome to Our Developer Site</h1>
@@ -42,7 +45,7 @@
     <!-- Interactive Section -->
     <section id="interactive">
         <h2>Interactive Section</h2>
-        <button id="alertButton">Click Me</button>
+        <button id="alertButton" aria-label="Click to trigger an alert">Click Me</button>
     </section>
 
     <!-- Form Section -->
@@ -50,7 +53,7 @@
         <h2>Greeting Form</h2>
         <form id="greetingForm">
             <label for="name">Enter your name:</label>
-            <input type="text" id="name" name="name" required>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
             <button type="submit">Submit</button>
         </form>
         <p id="greetingMessage"></p>
@@ -70,12 +73,20 @@
     <section id="tictactoe">
         <h2>Tic Tac Toe Game</h2>
         <div id="game-board"></div>
-        <button id="resetButton">Reset Game</button>
+        <button id="resetButton" aria-label="Reset the Tic Tac Toe game">Reset Game</button>
     </section>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" aria-label="Back to Top">↑ Back to Top</button>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2023 Developer Site. All rights reserved.</p>
+        <div class="social-media">
+            <a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter</a> |
+            <a href="https://facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
+            <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
+        </div>
     </footer>
     <script src="script.js"></script>
 </body>
