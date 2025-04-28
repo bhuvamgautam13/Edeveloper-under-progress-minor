@@ -31,89 +31,25 @@ function addTask(task) {
     todoList.appendChild(listItem);
 }
 
+// Remove Tic Tac Toe game logic
 document.addEventListener('DOMContentLoaded', () => {
     const gameBoard = document.getElementById('game-board');
     const resetButton = document.getElementById('resetButton');
-    let board = ['', '', '', '', '', '', '', '', ''];
-    let currentPlayer = 'X';
-    let gameActive = true;
 
-    const winningConditions = [
-        [0, 1, 2],
-        [3, 4, 5],
-        [6, 7, 8],
-        [0, 3, 6],
-        [1, 4, 7],
-        [2, 5, 8],
-        [0, 4, 8],
-        [2, 4, 6]
-    ];
-
-    function handleCellClick(event) {
-        const cellIndex = Array.from(gameBoard.children).indexOf(event.target);
-        if (board[cellIndex] !== '' || !gameActive) {
-            return;
-        }
-        board[cellIndex] = currentPlayer;
-        event.target.textContent = currentPlayer;
-        checkResult();
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    if (gameBoard) {
+        gameBoard.remove(); // Remove the game board element if it exists
     }
-
-    function checkResult() {
-        let roundWon = false;
-        for (let condition of winningConditions) {
-            const [a, b, c] = condition;
-            if (board[a] && board[a] === board[b] && board[a] === board[c]) {
-                roundWon = true;
-                break;
-            }
-        }
-        
-        const gameMessage = document.getElementById('game-message');
-    
-        if (roundWon) {
-            gameActive = false;
-            gameMessage.textContent = `Player ${currentPlayer} wins! 🎉`;
-            return;
-        }
-        
-        if (!board.includes('')) {
-            gameActive = false;
-            gameMessage.textContent = 'It\'s a draw!';
-        }
+    if (resetButton) {
+        resetButton.remove(); // Remove the reset button if it exists
     }
-    
-    function resetGame() {
-        board = ['', '', '', '', '', '', '', '', ''];
-        gameActive = true;
-        currentPlayer = 'X';
-        document.getElementById('game-message').textContent = ''; // Clear message
-        Array.from(gameBoard.children).forEach(cell => cell.textContent = '');
+});
+
+document.addEventListener('DOMContentLoaded', () => {
+    // Remove the Tic Tac Toe C Code Section
+    const tictactoeSection = document.getElementById('tictactoe-code');
+    if (tictactoeSection) {
+        tictactoeSection.remove();
     }
-    
-
-    function resetGame() {
-        board = ['', '', '', '', '', '', '', '', ''];
-        gameActive = true;
-        currentPlayer = 'X';
-        Array.from(gameBoard.children).forEach(cell => cell.textContent = '');
-    }
-
-    gameBoard.addEventListener('click', handleCellClick);
-    resetButton.addEventListener('click', resetGame);
-
-    // Initialize game board
-    for (let i = 0; i < 9; i++) {
-        const cell = document.createElement('div');
-        gameBoard.appendChild(cell);
-    }
-
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-        document.body.classList.toggle('dark-mode');
-    });
 
     // Smooth Scrolling for Navigation Links
     document.querySelectorAll('nav a').forEach(anchor => {
@@ -141,4 +77,39 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+});
+
+// Back to Top Button
+const backToTopButton = document.createElement('button');
+backToTopButton.id = 'backToTop';
+backToTopButton.textContent = '↑';
+document.body.appendChild(backToTopButton);
+
+window.addEventListener('scroll', () => {
+    if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+    } else {
+        backToTopButton.style.display = 'none';
+    }
+});
+
+backToTopButton.addEventListener('click', () => {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+    });
+});
+
+// Dynamic greeting message
+document.addEventListener('DOMContentLoaded', () => {
+    const greeting = document.createElement('p');
+    const hours = new Date().getHours();
+    if (hours < 12) {
+        greeting.textContent = 'Good Morning! Start learning full-stack development today.';
+    } else if (hours < 18) {
+        greeting.textContent = 'Good Afternoon! Keep building your skills.';
+    } else {
+        greeting.textContent = 'Good Evening! Explore our free resources.';
+    }
+    document.querySelector('header').appendChild(greeting);
 });
