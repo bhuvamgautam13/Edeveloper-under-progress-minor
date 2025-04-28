@@ -1,23 +1,72 @@
 /* General styles */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
-    transition: background-color 0.3s, color 0.3s;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f9f9f9; /* Light background for a clean look */
 }
 
+h1, h2, h3, h4 {
+    color: #222;
+}
+
+a {
+    text-decoration: none;
+    color: #007bff; /* Blue links */
+    transition: color 0.3s;
+}
+
+a:hover {
+    color: #0056b3; /* Darker blue hover effect */
+}
+
+p {
+    font-size: 1.2rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* About Us Section */
+#about p {
+    font-size: 1.8rem; /* Increased font size for About Us */
+    color: #444; /* Slightly darker text for better readability */
+}
+
+/* Our Vision Section */
+#vision p {
+    font-size: 1.8rem; /* Increased font size for Our Vision */
+    color: #444;
+}
+
+/* Upcoming Events Section */
+#events p {
+    font-size: 2rem; /* Increased font size for Upcoming Events */
+    color: #444; /* Slightly darker text for better readability */
+    line-height: 1.8; /* Improved line spacing for better readability */
+}
+
+/* Meet Our Team Section */
+#team p {
+    font-size: 1.8rem; /* Increased font size for Meet Our Team */
+    color: #444;
+}
+
+/* Button styles */
 button {
     cursor: pointer;
     border: none;
-    padding: 0.5rem 1rem;
+    padding: 0.7rem 1.5rem;
     font-size: 1rem;
     border-radius: 5px;
-    transition: background-color 0.3s, color 0.3s;
+    background-color: #007bff; /* Blue buttons */
+    color: white;
+    transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #555;
-    color: white;
+    background-color: #0056b3; /* Darker blue hover effect */
 }
 
 /* Navbar styles */
@@ -25,129 +74,161 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #333;
-    padding: 1rem;
+    background-color: #1a1a2e; /* Dark navy blue for navbar */
+    padding: 1rem 2rem;
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
 nav .logo img {
-    height: 40px;
+    height: 50px;
 }
 
 nav .nav-options {
     list-style: none;
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 nav .nav-options li a {
-    color: white;
-    text-decoration: none;
+    color: white; /* White text for navbar links */
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav .nav-options li a:hover {
-    color: #ff9800;
+    color: #007bff; /* Blue hover effect */
+    background-color: rgba(255, 255, 255, 0.1); /* Subtle white background */
+    padding: 5px 10px;
+    border-radius: 5px;
 }
 
-/* Dark Mode Toggle */
-#darkModeToggle {
-    background-color: #ff9800;
+/* Hero Section */
+.hero-section {
+    text-align: center;
+    padding: 4rem 2rem;
+    background: linear-gradient(to right, #007bff, #0056b3); /* Blue gradient */
     color: white;
-    border-radius: 20px;
-    padding: 0.5rem 1rem;
 }
 
-/* Head Section styles */
-header {
-    text-align: center;
-    padding: 2rem;
-    background-color: #f4f4f4;
-}
-
-header h1 {
-    font-size: 2.5rem;
+.hero-section h1 {
+    font-size: 3rem;
     margin-bottom: 1rem;
 }
 
-header p {
+.hero-section p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    color: #FFD700; /* Yellow color for the paragraph */
+}
+
+.hero-section .cta-button {
+    background-color: #ff9800; /* Orange button */
+    color: white;
+    padding: 1rem 2rem;
     font-size: 1.2rem;
-    color: #666;
-}
-
-/* About Section styles */
-#about {
-    padding: 2rem;
-    background-color: #e9ecef;
-    text-align: center;
-}
-
-#about h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-#about p {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-/* Services Section styles */
-#services {
-    padding: 2rem;
-    background-color: #fff;
-    text-align: center;
-}
-
-#services h2 {
-    font-size: 2rem;
-    margin-bottom: 1rem;
-}
-
-#services p {
-    font-size: 1.2rem;
-    color: #333;
-}
-
-/* Tic Tac Toe Section styles */
-#tictactoe {
-    text-align: center;
-    padding: 2rem;
-    background-color: #fff;
-}
-
-#game-board {
-    display: grid;
-    grid-template-columns: repeat(3, 100px);
-    grid-gap: 5px;
-    justify-content: center;
-    margin-bottom: 1rem;
-}
-
-#game-board div {
-    width: 100px;
-    height: 100px;
-    background-color: #e9ecef;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2rem;
-    cursor: pointer;
+    border-radius: 5px;
     transition: background-color 0.3s;
 }
 
-#game-board div:hover {
-    background-color: #ff9800;
-    color: white;
+.hero-section .cta-button:hover {
+    background-color: #e67e22; /* Darker orange hover effect */
 }
 
-#resetButton {
-    padding: 0.5rem 1rem;
-    font-size: 1rem;
-    cursor: pointer;
+/* Section styles */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: #222;
+}
+
+section p {
+    font-size: 1.1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+/* Features Section */
+.features {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.feature {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
+}
+
+.feature h3 {
+    color: #007bff; /* Blue headings */
+    margin-bottom: 1rem;
+}
+
+/* Technologies Section */
+.technologies {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.technology {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
+}
+
+/* Learning Paths Section */
+.paths {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.path {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
+}
+
+/* Success Stories Section */
+.stories {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.story {
+    background-color: white;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    flex: 1;
+    max-width: 300px;
+    text-align: left;
 }
 
 /* Back to Top Button */
@@ -155,7 +236,7 @@ header p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #333;
+    background-color: #1a1a2e; /* Dark navy blue button */
     color: white;
     border-radius: 50%;
     width: 50px;
@@ -169,15 +250,26 @@ header p {
 }
 
 #backToTop:hover {
-    background-color: #ff9800;
+    background-color: #007bff; /* Blue hover */
+    color: white;
 }
 
 /* Footer styles */
 footer {
+    background-color: #1a1a2e; /* Dark navy blue for footer */
+    color: white; /* White text */
     text-align: center;
-    padding: 1rem;
-    background-color: #333;
-    color: white;
+    padding: 2rem 1rem;
+}
+
+footer .social-media a {
+    color: #007bff; /* Blue links */
+    margin: 0 0.5rem;
+    transition: color 0.3s;
+}
+
+footer .social-media a:hover {
+    color: #0056b3; /* Darker blue hover effect */
 }
 
 /* To-Do List Section styles */
@@ -187,6 +279,11 @@ footer {
     text-align: center;
 }
 
+#names{
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    
+}
 #todoForm {
     margin-bottom: 1rem;
 }
@@ -217,6 +314,7 @@ footer {
     padding: 0.3rem 0.6rem;
     cursor: pointer;
 }
+
 #game-message {
     font-size: 1.5rem;
     color: #ff4500; /* Stylish red for winner messages */
@@ -224,12 +322,16 @@ footer {
     margin-bottom: 10px;
 }
 
-
 /* Responsive styles */
 @media (max-width: 768px) {
+    .features, .technologies, .paths, .stories {
+        flex-direction: column;
+        align-items: center;
+    }
+
     nav .nav-options {
         flex-direction: column;
-        gap: 0.5rem;
+        gap: 1rem;
     }
 
     #game-board {
@@ -240,39 +342,30 @@ footer {
         width: 80px;
         height: 80px;
     }
+
+    header h1 {
+        font-size: 1.8rem;
+    }
+
+    header p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 1rem;
+    }
 }
 
+@media (max-width: 480px) {
+    nav .nav-options {
+        font-size: 0.9rem;
+    }
 
-/* Dark Mode */
-body.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
-}
+    header h1 {
+        font-size: 1.5rem;
+    }
 
-body.dark-mode nav {
-    background-color: #1e1e1e;
-}
-
-body.dark-mode #game-board div {
-    background-color: #333;
-}
-
-body.dark-mode footer {
-    background-color: #1e1e1e;
-
-/* Navbar styles with hover effect first change for first commit*/
-nav .nav-options li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-    transition: color 0.3s ease, background-color 0.3s ease;
-}
-
-nav .nav-options li a:hover {
-    color: #c0c0c0 ; /* Hot pink hover color */
-    background-color: rgba(0, 0, 0, 0.3); /* Subtle black background */
-    padding: 5px 10px;
-    border-radius: 5px;
-    text-decoration: underline;
-
+    header p {
+        font-size: 0.9rem;
+    }
 }
