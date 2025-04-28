@@ -62,23 +62,36 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function checkResult() {
         let roundWon = false;
-        for (let i = 0; i < winningConditions.length; i++) {
-            const [a, b, c] = winningConditions[i];
+        for (let condition of winningConditions) {
+            const [a, b, c] = condition;
             if (board[a] && board[a] === board[b] && board[a] === board[c]) {
                 roundWon = true;
                 break;
             }
         }
+        
+        const gameMessage = document.getElementById('game-message');
+    
         if (roundWon) {
             gameActive = false;
-            alert(`Player ${currentPlayer} has won!`);
+            gameMessage.textContent = `Player ${currentPlayer} wins! 🎉`;
             return;
         }
+        
         if (!board.includes('')) {
             gameActive = false;
-            alert('Game is a draw!');
+            gameMessage.textContent = 'It\'s a draw!';
         }
     }
+    
+    function resetGame() {
+        board = ['', '', '', '', '', '', '', '', ''];
+        gameActive = true;
+        currentPlayer = 'X';
+        document.getElementById('game-message').textContent = ''; // Clear message
+        Array.from(gameBoard.children).forEach(cell => cell.textContent = '');
+    }
+    
 
     function resetGame() {
         board = ['', '', '', '', '', '', '', '', ''];
