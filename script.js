@@ -51,35 +51,18 @@ document.addEventListener('DOMContentLoaded', () => {
         tictactoeSection.remove();
     }
 
-    // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('nav a').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // Back to Top Button
-    const backToTopButton = document.getElementById('backToTop');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 300) {
-            backToTopButton.style.display = 'flex';
-        } else {
-            backToTopButton.style.display = 'none';
+// Smooth Scrolling for Navigation Links
+document.querySelectorAll('#main-navbar a').forEach(anchor => {
+    anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({ behavior: 'smooth' });
         }
-    });
-
-    backToTopButton.addEventListener('click', () => {
-        window.scrollTo({
-            top: 0,
-            behavior: 'smooth'
-        });
     });
 });
 
-// Back to Top Button
+// Back to Top Button Functionality
 const backToTopButton = document.createElement('button');
 backToTopButton.id = 'backToTop';
 backToTopButton.textContent = '↑';
@@ -100,7 +83,7 @@ backToTopButton.addEventListener('click', () => {
     });
 });
 
-// Dynamic greeting message
+// Dynamic Greeting Message Based on Time
 document.addEventListener('DOMContentLoaded', () => {
     const greeting = document.createElement('p');
     const hours = new Date().getHours();
@@ -113,3 +96,58 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     document.querySelector('header').appendChild(greeting);
 });
+
+// Interactive To-Do List
+document.getElementById('todoForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const task = document.getElementById('todoInput').value.trim();
+    if (task !== '') {
+        addTask(task);
+        document.getElementById('todoInput').value = '';
+    }
+});
+
+function addTask(task) {
+    const todoList = document.getElementById('todoList');
+    const listItem = document.createElement('li');
+    listItem.textContent = task;
+
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'Delete';
+    deleteButton.addEventListener('click', () => {
+        todoList.removeChild(listItem);
+    });
+
+    listItem.appendChild(deleteButton);
+    todoList.appendChild(listItem);
+}
+
+// Form Greeting Interaction
+document.getElementById('greetingForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    if (name) {
+        const greetingMessage = `Hello, ${name}! Welcome to our site.`;
+        document.getElementById('greetingMessage').textContent = greetingMessage;
+    }
+});
+
+// Navbar Clickable Logo Redirect
+document.querySelector('.logo').addEventListener('click', () => {
+    window.location.href = 'index.html'; // Redirects to the main homepage
+});
+
+
+// Dynamic greeting message
+document.addEventListener('DOMContentLoaded', () => {
+    const greeting = document.createElement('p');
+    const hours = new Date().getHours();
+    if (hours < 12) {
+        greeting.textContent = 'Good Morning! Start learning full-stack development today.';
+    } else if (hours < 18) {
+        greeting.textContent = 'Good Afternoon! Keep building your skills.';
+    } else {
+        greeting.textContent = 'Good Evening! Explore our free resources.';
+    }
+    document.querySelector('header').appendChild(greeting);
+})})
