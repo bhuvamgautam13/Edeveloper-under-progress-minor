@@ -3,68 +3,169 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Site</title>
+    <title>Edeveloper - Learn Full-Stack Development for Free</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Navbar -->
     <nav>
         <div class="logo">
-            <img src="unnamed.png" alt="Logo" aria-label="Site Logo">
+            <img src="logo.png" alt="Edeveloper Logo" aria-label="Site Logo">
         </div>
         <ul class="nav-options">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#services">Services</a></li>
-            <li><a href="#tictactoe">Tic Tac Toe</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
         </ul>
     </nav>
     
-    <!-- Dark Mode Toggle -->
-    <button id="darkModeToggle" aria-label="Toggle Dark Mode">Toggle Dark Mode</button>
-
-    <!-- Head Section -->
-    <header id="home">
-        <h1>Welcome to Our Developer Site</h1>
-        <p>We provide the best development services.</p>
+    <!-- Hero Section -->
+    <header id="home" class="hero-section">
+        <h1>Welcome to Edeveloper</h1>
+        <p>Your ultimate destination for learning full-stack development for free.</p>
+        <a href="courses.html" class="cta-button">Start Learning Now</a>
     </header>
 
     <!-- About Section -->
-    <section id="about">
+    <section id="about" class="about-section">
         <h2>About Us</h2>
-        <p>We are a team of experienced developers dedicated to building high-quality web applications.</p>
+        <p>Edeveloper is a platform dedicated to providing free, high-quality resources for aspiring developers. Whether you're a beginner or an experienced programmer, we have something for everyone. Our mission is to make full-stack development accessible to all.</p>
     </section>
 
-    <!-- Services Section -->
-    <section id="services">
-        <h2>Our Services</h2>
-        <p>We offer a wide range of services including web development, mobile app development, and more.</p>
+    <!-- Vision Section -->
+    <section id="vision" class="vision-section">
+        <h2>Our Vision</h2>
+        <p>At Edeveloper, we believe that education should be free and accessible to everyone. Our vision is to empower individuals with the skills they need to build amazing web applications and succeed in the tech industry.</p>
+        <p>We aim to create a global community of developers who share knowledge, collaborate on projects, and grow together.</p>
     </section>
 
-    <!-- Tic Tac Toe Section -->
-    <section id="tictactoe">
-        <h2>Tic Tac Toe Game</h2>
-        <div id="game-board"></div>
-        <button id="resetButton">Reset Game</button>
-        <div id="game-message"></div> <!-- Add this inside your Tic Tac Toe section -->
-
-        <button id="resetButton" aria-label="Reset the Tic Tac Toe game">Reset Game</button>
-
+    <!-- Features Section -->
+    <section id="features" class="features-section">
+        <h2>Why Choose Edeveloper?</h2>
+        <div class="features">
+            <div class="feature">
+                <h3>Comprehensive Courses</h3>
+                <p>Learn everything from HTML, CSS, and JavaScript to advanced topics like React, Node.js, and MongoDB.</p>
+            </div>
+            <div class="feature">
+                <h3>Free Resources</h3>
+                <p>Access a wide range of free resources, including tutorials, cheat sheets, and project ideas.</p>
+            </div>
+            <div class="feature">
+                <h3>Community Support</h3>
+                <p>Join a community of like-minded developers to share knowledge, ask questions, and grow together.</p>
+            </div>
+        </div>
     </section>
 
-    <!-- Back to Top Button -->
-    <button id="backToTop" aria-label="Back to Top">↑</button>
+    <!-- Technologies Section -->
+    <section id="technologies" class="technologies-section">
+        <h2>Technologies We Cover</h2>
+        <div class="technologies">
+            <div class="technology">
+                <h3>Frontend Development</h3>
+                <p>HTML, CSS, JavaScript, React, Angular, Vue.js</p>
+            </div>
+            <div class="technology">
+                <h3>Backend Development</h3>
+                <p>Node.js, Express.js, Django, Flask, Ruby on Rails</p>
+            </div>
+            <div class="technology">
+                <h3>Database Management</h3>
+                <p>MySQL, MongoDB, PostgreSQL, Firebase</p>
+            </div>
+            <div class="technology">
+                <h3>DevOps & Deployment</h3>
+                <p>Docker, Kubernetes, AWS, Heroku, Netlify</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Learning Paths Section -->
+    <section id="learning-paths" class="learning-paths-section">
+        <h2>Choose Your Learning Path</h2>
+        <div class="paths">
+            <div class="path">
+                <h3>Frontend Developer</h3>
+                <p>Master HTML, CSS, JavaScript, and modern frameworks like React and Angular.</p>
+            </div>
+            <div class="path">
+                <h3>Backend Developer</h3>
+                <p>Learn server-side programming with Node.js, Express, and databases like MongoDB.</p>
+            </div>
+            <div class="path">
+                <h3>Full-Stack Developer</h3>
+                <p>Combine frontend and backend skills to become a complete web developer.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Stories Section -->
+    <section id="success-stories" class="success-stories-section">
+        <h2>Success Stories</h2>
+        <div class="stories">
+            <div class="story">
+                <p>"Thanks to Edeveloper, I transitioned from a complete beginner to a professional full-stack developer in just six months!"</p>
+                <h4>- Riya</h4>
+            </div>
+            <div class="story">
+                <p>"The free resources and community support helped me build my first web application and land a job at a tech company."</p>
+                <h4>- Aditya Sharma</h4>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upcoming Events Section -->
+    <section id="events" class="events-section">
+        <h2>Upcoming Events</h2>
+        <ul>
+            <li><strong>Web Development Bootcamp:</strong> May 15, 2025</li>
+            <li><strong>React.js Workshop:</strong> June 10, 2025</li>
+            <li><strong>Full-Stack Hackathon:</strong> July 20, 2025</li>
+        </ul>
+    </section>
+
+    <!-- Team Section -->
+    <section id="team" class="team-section">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="member">
+                <h3 id="names">Bhuvam Gautam</h3>
+                <p>Founder & Lead Instructor</p>
+            </div>
+            <div class="member">
+                <h3 id="names">Daksh Chhikara</h3>
+                <p>Content Creator & Developer</p>
+            </div>
+            <div class="member">
+                <h3 id="names">Daksh</h3>
+                <p>Community Manager</p>
+            </div>
+            <div class="member">
+                <h3 id="names">Dhruv Maheshwari</h3>
+                <p>UI/UX Designer</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information Section -->
+    <section id="contact-info" class="contact-info-section">
+        <h2>Contact Information</h2>
+        <p>Email: support@edeveloper.com</p>
+        <p>Phone: +9194168-28129</p>
+        <p>Address: Chitkara University,Rajpura,India</p>
+    </section>
 
     <!-- Footer Section -->
     <footer>
-        <p>&copy; 2023 Developer Site. All rights reserved.</p>
+        <p>&copy; 2025 Edeveloper. All rights reserved.</p>
         <div class="social-media">
             <a href="https://twitter.com" target="_blank" aria-label="Twitter">Twitter</a> |
             <a href="https://facebook.com" target="_blank" aria-label="Facebook">Facebook</a> |
             <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
         </div>
     </footer>
-    <script src="script.js"></script>
 </body>
 </html>
