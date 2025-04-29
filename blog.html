@@ -209,8 +209,11 @@
         document.querySelector('.search-bar button').addEventListener('click', () => {
             const query = document.querySelector('.search-bar input').value.trim();
             if (query) {
+
+                console.log(`Search initiated for: ${query}`);
                 alert(`Searching for: ${query}`);
             } else {
+                console.warn('Search term is empty.');
                 alert('Please enter a search term.');
             }
         });
@@ -219,10 +222,13 @@
         document.querySelector('.newsletter form').addEventListener('submit', (event) => {
             event.preventDefault();
             const email = document.querySelector('.newsletter input').value.trim();
-            if (email) {
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (email && emailRegex.test(email)) {
+                console.log(`Newsletter subscription successful for: ${email}`);
                 alert(`Thank you for subscribing with: ${email}`);
                 document.querySelector('.newsletter input').value = '';
             } else {
+                console.error('Invalid email address entered.');
                 alert('Please enter a valid email address.');
             }
         });
@@ -231,6 +237,7 @@
         document.querySelectorAll('.pagination a').forEach(link => {
             link.addEventListener('click', (event) => {
                 event.preventDefault();
+                console.log(`Pagination link clicked: ${link.textContent}`);
                 alert(`Navigating to: ${link.textContent}`);
             });
         });
