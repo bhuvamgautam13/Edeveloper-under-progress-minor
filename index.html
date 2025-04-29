@@ -273,12 +273,15 @@
     <script>
         /* Smooth scrolling for navigation links */
         document.querySelectorAll('.nav-options a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
+            const targetId = anchor.getAttribute('href');
+            if (targetId.startsWith('#') && document.querySelector(targetId)) {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
                 });
-            });
+            }
         });
 
         /* Back to Top Button */
