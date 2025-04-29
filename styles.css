@@ -571,4 +571,28 @@ footer .social-media a:hover {
     background-image: linear-gradient(to right, #00b351, #007bff);
     box-shadow: 0 4px 10px rgba(0, 179, 81, 0.3);
 }
+/* Gradient Text Effect */
+#contact h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #007bff, #00bcd4); /* Gradient from blue to light blue */
+   color: transparent; /* Makes text color transparent to show the gradient */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft text shadow for depth */
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+    padding: 0.5rem 0;
+}
 
+/* Glowing Text Effect */
+#contact h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff; /* White text */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(45deg, #007bff, #00bcd4); /* Blue gradient */
+    text-shadow: 0 0 5px #007bff, 0 0 10px #00bcd4, 0 0 15px #007bff; /* Glowing text shadow */
+}
