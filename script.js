@@ -33,6 +33,13 @@ function addTask(task) {
 
 // Remove Tic Tac Toe game logic
 document.addEventListener('DOMContentLoaded', () => {
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    }
     const gameBoard = document.getElementById('game-board');
     const resetButton = document.getElementById('resetButton');
 
@@ -77,6 +84,83 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
+
+    // Tic Tac Toe Game Logic
+    const gameBoard = document.getElementById('game-board');
+    const resetButton = document.getElementById('resetButton');
+    let board = ['', '', '', '', '', '', '', '', ''];
+    let currentPlayer = 'X';
+    let gameActive = true;
+
+    const winningConditions = [
+        [0, 1, 2],
+        [3, 4, 5],
+        [6, 7, 8],
+        [0, 3, 6],
+        [1, 4, 7],
+        [2, 5, 8],
+        [0, 4, 8],
+        [2, 4, 6]
+    ];
+
+    // Function to create the game board
+    function createGameBoard() {
+        gameBoard.innerHTML = ''; // Clear the board
+        for (let i = 0; i < 9; i++) {
+            const cell = document.createElement('div');
+            cell.classList.add('cell');
+            cell.dataset.index = i;
+            cell.addEventListener('click', handleCellClick);
+            gameBoard.appendChild(cell);
+        }
+    }
+
+    // Function to handle cell clicks
+    function handleCellClick(event) {
+        const cell = event.target;
+        const cellIndex = cell.dataset.index;
+
+        if (board[cellIndex] !== '' || !gameActive) {
+            return;
+        }
+
+        board[cellIndex] = currentPlayer;
+        cell.textContent = currentPlayer;
+
+        if (checkWin()) {
+            gameActive = false;
+            alert(`Player ${currentPlayer} wins!`);
+            return;
+        }
+
+        if (board.every(cell => cell !== '')) {
+            gameActive = false;
+            alert('It\'s a draw!');
+            return;
+        }
+
+        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+    }
+
+    // Function to check for a win
+    function checkWin() {
+        return winningConditions.some(condition => {
+            const [a, b, c] = condition;
+            return board[a] && board[a] === board[b] && board[a] === board[c];
+        });
+    }
+
+    // Function to reset the game
+    function resetGame() {
+        board = ['', '', '', '', '', '', '', '', ''];
+        currentPlayer = 'X';
+        gameActive = true;
+        createGameBoard();
+    }
+
+    // Initialize the game
+    createGameBoard();
+    resetButton.addEventListener('click', resetGame);
 });
 
 // Back to Top Button
