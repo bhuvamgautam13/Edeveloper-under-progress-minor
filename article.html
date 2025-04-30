@@ -4,170 +4,149 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Web Technologies Overview - Edeveloper</title>
-    <link rel="stylesheet" href="article.css">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
 </head>
-<body>
+<body class="bg-gradient-to-r from-gray-900 via-gray-800 to-gray-900 text-gray-200">
 
     <!-- Navbar -->
-<nav class="navbar">
-    <div class="container navbar-container">
-        <a href="index.html" class="logo">Edeveloper</a>
-        <ul class="nav-links">
-            <li><a href="#frontend">Front-End</a></li>
-            <li><a href="#backend">Back-End</a></li>
-            <li><a href="#database">Database</a></li>
-        </ul>
-    </div>
-</nav>
-
+    <nav class="bg-gradient-to-r from-blue-900 to-blue-600 shadow-lg py-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <a href="index.html" class="text-3xl font-extrabold text-white tracking-wide">Edeveloper</a>
+            <ul class="flex space-x-8">
+                <li><a href="#frontend" class="text-lg font-semibold hover:text-yellow-400 transition">Front-End</a></li>
+                <li><a href="#backend" class="text-lg font-semibold hover:text-yellow-400 transition">Back-End</a></li>
+                <li><a href="#database" class="text-lg font-semibold hover:text-yellow-400 transition">Database</a></li>
+            </ul>
+        </div>
+    </nav>
 
     <!-- Hero Section -->
-    <header class="hero">
-        <div class="container">
-            <h1>Explore Modern Web Development Technologies</h1>
-            <p>Understand the key technologies used in building powerful web applications—from front-end to back-end and databases.</p>
+    <header class="bg-gradient-to-r from-purple-700 via-pink-600 to-red-500 text-white py-24">
+        <div class="container mx-auto text-center">
+            <h1 class="text-5xl font-extrabold mb-6">Explore Modern Web Development Technologies</h1>
+            <p class="text-xl font-light mb-8">Understand the key technologies used in building powerful web applications—from front-end to back-end and databases.</p>
+            <a href="#frontend" class="px-8 py-4 bg-yellow-500 text-gray-900 font-bold rounded-full shadow-lg hover:bg-yellow-400 transition">Get Started</a>
         </div>
     </header>
 
     <!-- Front-End Section -->
-<section id="frontend" class="section">
-    <div class="container">
-        <h2>Front-End Technologies</h2>
-        <p>Front-end technologies shape the visual experience of users and include markup, styling, and interactivity layers.</p>
-        
-        <h3>1. HTML</h3>
-        <ul>
-            <li>Defines the structure of web content using semantic tags like <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;form&gt;</code>.</li>
-            <li>Integrates multimedia like images, audio, and video seamlessly into web pages.</li>
-            <li>Supports accessibility features like screen-reader compatibility and ARIA roles.</li>
-        </ul>
+    <section id="frontend" class="py-16 bg-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-yellow-400 mb-8">Front-End Technologies</h2>
+            <p class="text-lg mb-6">Front-end technologies shape the visual experience of users and include markup, styling, and interactivity layers.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-yellow-300 mb-4">1. HTML</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Defines the structure of web content using semantic tags.</li>
+                        <li>Integrates multimedia like images, audio, and video seamlessly into web pages.</li>
+                        <li>Supports accessibility features like screen-reader compatibility and ARIA roles.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-yellow-300 mb-4">2. CSS</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Creates responsive layouts using Flexbox, Grid, and media queries.</li>
+                        <li>Applies visual styles like colors, fonts, shadows, transitions, and animations.</li>
+                        <li>Supports dark mode, theming, and modern UI effects like glassmorphism.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>2. CSS</h3>
-        <ul>
-            <li>Creates responsive layouts using Flexbox, Grid, and media queries.</li>
-            <li>Applies visual styles like colors, fonts, shadows, transitions, and animations.</li>
-            <li>Supports dark mode, theming, and modern UI effects like glassmorphism.</li>
-        </ul>
+    <!-- Back-End Section -->
+    <section id="backend" class="py-16 bg-gradient-to-r from-gray-900 to-gray-800">
+        <div class="container mx-auto">
+            <h2 class="text-4xl font-bold text-yellow-400 mb-8">Back-End Technologies</h2>
+            <p class="text-lg mb-6">Back-end technologies power the business logic, database communication, and server-side processing.</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-yellow-300 mb-4">1. Node.js</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Executes JavaScript on the server, enabling full-stack development with a single language.</li>
+                        <li>Handles asynchronous I/O for high-performance applications like chat apps and real-time games.</li>
+                        <li>Has a rich ecosystem via npm for modules like authentication, file uploads, and testing.</li>
+                    </ul>
+                </div>
+                <div class="bg-gray-700 p-6 rounded-lg shadow-lg">
+                    <h3 class="text-2xl font-semibold text-yellow-300 mb-4">2. Express.js</h3>
+                    <ul class="list-disc pl-6 space-y-2">
+                        <li>Builds RESTful APIs with route handling, middleware, and error management.</li>
+                        <li>Supports templating engines like EJS or Pug for server-rendered views.</li>
+                        <li>Used in MERN stack applications as the web server component.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <h3>3. JavaScript</h3>
-        <ul>
-            <li>Handles client-side logic such as form validation and event handling.</li>
-            <li>Manipulates the DOM dynamically to update content without page reloads.</li>
-            <li>Integrates APIs for tasks like fetching data, displaying maps, or handling payments.</li>
-        </ul>
+    <!-- Database Section -->
+    <section id="database" class="section">
+        <div class="container">
+            <h2>Database Technologies</h2>
+            <p>Databases store and manage data efficiently for web applications.</p>
 
-        <h3>4. Frameworks/Libraries</h3>
-        <ul>
-            <li><strong>React.js:</strong> Builds reusable UI components and efficiently updates the DOM with a virtual DOM.</li>
-            <li><strong>Vue.js:</strong> Offers reactive data binding and a gentle learning curve for building dynamic interfaces.</li>
-            <li><strong>Bootstrap/Tailwind:</strong> Enables fast, responsive design with pre-built components and utility classes.</li>
-        </ul>
-    </div>
-</section>
+            <h3>1. SQL Databases</h3>
+            <ul>
+                <li><strong>MySQL:</strong> 
+                    <ul>
+                        <li>Widely supported by hosting providers and web frameworks.</li>
+                        <li>Uses structured query language for reliable data manipulation and retrieval.</li>
+                        <li>Ideal for e-commerce platforms, CMS, and ERP systems.</li>
+                    </ul>
+                </li>
+                <li><strong>PostgreSQL:</strong> 
+                    <ul>
+                        <li>Supports complex queries, full-text search, and indexing features.</li>
+                        <li>Handles structured and semi-structured data (JSON, XML).</li>
+                        <li>Used in financial systems, analytics, and geo-spatial applications.</li>
+                    </ul>
+                </li>
+            </ul>
 
+            <h3>2. NoSQL Databases</h3>
+            <ul>
+                <li><strong>MongoDB:</strong>
+                    <ul>
+                        <li>Stores data in flexible, JSON-like documents (BSON).</li>
+                        <li>Scales horizontally across clusters for high availability.</li>
+                        <li>Popular in real-time analytics, IoT, and content management systems.</li>
+                    </ul>
+                </li>
+                <li><strong>Firebase Realtime DB:</strong>
+                    <ul>
+                        <li>Offers real-time data syncing between clients and the server.</li>
+                        <li>Ideal for chat apps, games, and collaborative tools.</li>
+                        <li>Includes authentication, file storage, and cloud functions out-of-the-box.</li>
+                    </ul>
+                </li>
+            </ul>
 
-
-   <!-- Back-End Section -->
-<section id="backend" class="section">
-    <div class="container">
-        <h2>Back-End Technologies</h2>
-        <p>Back-end technologies power the business logic, database communication, and server-side processing.</p>
-
-        <h3>1. Node.js</h3>
-        <ul>
-            <li>Executes JavaScript on the server, enabling full-stack development with a single language.</li>
-            <li>Handles asynchronous I/O for high-performance applications like chat apps and real-time games.</li>
-            <li>Has a rich ecosystem via npm for modules like authentication, file uploads, and testing.</li>
-        </ul>
-
-        <h3>2. Express.js</h3>
-        <ul>
-            <li>Builds RESTful APIs with route handling, middleware, and error management.</li>
-            <li>Supports templating engines like EJS or Pug for server-rendered views.</li>
-            <li>Used in MERN stack applications as the web server component.</li>
-        </ul>
-
-        <h3>3. Django</h3>
-        <ul>
-            <li>Provides built-in features like user authentication, admin panel, and URL routing.</li>
-            <li>Uses ORM (Object-Relational Mapping) to interact with databases using Python classes.</li>
-            <li>Follows the DRY (Don't Repeat Yourself) principle, making development efficient and clean.</li>
-        </ul>
-
-        <h3>4. Other Popular Options</h3>
-        <ul>
-            <li><strong>Laravel (PHP):</strong> Offers elegant syntax, routing, MVC structure, and database migration tools.</li>
-            <li><strong>Spring Boot (Java):</strong> Ideal for enterprise apps with support for REST APIs, security, and microservices.</li>
-            <li><strong>Ruby on Rails:</strong> Follows convention over configuration for faster prototyping and development.</li>
-        </ul>
-    </div>
-</section>
-<!-- Database Section -->
-<section id="database" class="section">
-    <div class="container">
-        <h2>Database Technologies</h2>
-        <p>Databases store and manage data efficiently for web applications.</p>
-
-        <h3>1. SQL Databases</h3>
-        <ul>
-            <li><strong>MySQL:</strong> 
-                <ul>
-                    <li>Widely supported by hosting providers and web frameworks.</li>
-                    <li>Uses structured query language for reliable data manipulation and retrieval.</li>
-                    <li>Ideal for e-commerce platforms, CMS, and ERP systems.</li>
-                </ul>
-            </li>
-            <li><strong>PostgreSQL:</strong> 
-                <ul>
-                    <li>Supports complex queries, full-text search, and indexing features.</li>
-                    <li>Handles structured and semi-structured data (JSON, XML).</li>
-                    <li>Used in financial systems, analytics, and geo-spatial applications.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>2. NoSQL Databases</h3>
-        <ul>
-            <li><strong>MongoDB:</strong>
-                <ul>
-                    <li>Stores data in flexible, JSON-like documents (BSON).</li>
-                    <li>Scales horizontally across clusters for high availability.</li>
-                    <li>Popular in real-time analytics, IoT, and content management systems.</li>
-                </ul>
-            </li>
-            <li><strong>Firebase Realtime DB:</strong>
-                <ul>
-                    <li>Offers real-time data syncing between clients and the server.</li>
-                    <li>Ideal for chat apps, games, and collaborative tools.</li>
-                    <li>Includes authentication, file storage, and cloud functions out-of-the-box.</li>
-                </ul>
-            </li>
-        </ul>
-
-        <h3>3. When to Use What?</h3>
-        <ul>
-            <li><strong>Use SQL:</strong> 
-                <ul>
-                    <li>For structured data requiring relational integrity (e.g., banking systems).</li>
-                    <li>When transactions (ACID properties) are important.</li>
-                    <li>When complex joins, indexing, and schemas are critical to performance.</li>
-                </ul>
-            </li>
-            <li><strong>Use NoSQL:</strong> 
-                <ul>
-                    <li>For scalable applications with dynamic or unstructured data models.</li>
-                    <li>When flexibility and rapid development are more important than strict schema.</li>
-                    <li>In projects like social networks, real-time dashboards, and content platforms.</li>
-                </ul>
-            </li>
-        </ul>
-    </div>
-</section>
+            <h3>3. When to Use What?</h3>
+            <ul>
+                <li><strong>Use SQL:</strong> 
+                    <ul>
+                        <li>For structured data requiring relational integrity (e.g., banking systems).</li>
+                        <li>When transactions (ACID properties) are important.</li>
+                        <li>When complex joins, indexing, and schemas are critical to performance.</li>
+                    </ul>
+                </li>
+                <li><strong>Use NoSQL:</strong> 
+                    <ul>
+                        <li>For scalable applications with dynamic or unstructured data models.</li>
+                        <li>When flexibility and rapid development are more important than strict schema.</li>
+                        <li>In projects like social networks, real-time dashboards, and content platforms.</li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </section>
     
     <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>&copy; 2025 Edeveloper. All rights reserved.</p>
+    <footer class="bg-gray-900 text-gray-400 py-8">
+        <div class="container mx-auto text-center">
+            <p class="text-lg">&copy; 2025 Edeveloper. All rights reserved.</p>
         </div>
     </footer>
 
