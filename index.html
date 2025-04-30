@@ -5,6 +5,71 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Edeveloper - Learn Full-Stack Development for Free</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for enhancements */
+        .hero-section {
+            background: linear-gradient(to right, #a8dadc, #457b9d); /* Calming blue-green gradient */
+            color: #f1faee; /* Soft white text */
+            text-align: center;
+            padding: 4rem 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .hero-section h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .hero-section p {
+            font-size: 1.5rem;
+            margin-bottom: 2rem;
+        }
+        .cta-button {
+            background-color: #6c757d; /* Muted gray button */
+            color: white;
+            padding: 1rem 2rem;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+        .cta-button:hover {
+            background-color: #495057; /* Slightly darker gray hover effect */
+        }
+        .features, .stories, .team-members {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        .feature, .story, .member {
+            background-color: #f8f9fa; /* Light gray background */
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+        .feature:hover, .story:hover {
+            transform: scale(1.05);
+        }
+        .feature h3, .story h4, .member h3 {
+            color: #457b9d; /* Muted blue for headings */
+        }
+        footer {
+            background-color: #2c3e50; /* Muted navy footer */
+            color: #ecf0f1; /* Light gray text */
+            text-align: center;
+            padding: 2rem 1rem;
+        }
+        footer .social-media a {
+            color: #a8dadc; /* Soft blue-green links */
+            margin: 0 0.5rem;
+            transition: color 0.3s;
+        }
+        footer .social-media a:hover {
+            color: #457b9d; /* Slightly darker blue-green hover effect */
+        }
+    </style>
 </head>
 <body>
     <!-- Navbar -->
@@ -31,7 +96,16 @@
     <!-- About Section -->
     <section id="about" class="about-section">
         <h2>About Us</h2>
-        <p>Edeveloper is a platform dedicated to providing free, high-quality resources for aspiring developers. Whether you're a beginner or an experienced programmer, we have something for everyone. Our mission is to make full-stack development accessible to all.</p>
+        <div class="about-content">
+            <div class="about-text">
+                <p>At <strong>Edeveloper</strong>, we are on a mission to make web development education accessible to everyone. Whether you're just starting your journey or looking to enhance your skills, we provide free, high-quality resources tailored to your needs.</p>
+                <p>Our platform is built for learners of all levels, offering comprehensive courses, tutorials, and community support to help you achieve your goals. We believe in breaking down barriers to education and empowering individuals to unlock their full potential.</p>
+                <p>Join us and become part of a global community of developers who are passionate about learning, sharing, and growing together.</p>
+            </div>
+            <div class="about-image">
+                <img src="about-us.jpg" alt="About Edeveloper" style="border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            </div>
+        </div> 
     </section>
 
     <!-- Vision Section -->
@@ -118,15 +192,31 @@
     </section>
 
     <!-- Upcoming Events Section -->
-    <section id="events" class="events-section">
+    <section id="upcoming-events">
         <h2>Upcoming Events</h2>
-        <ul>
-            <li><strong>Web Development Bootcamp:</strong> May 15, 2025</li>
-            <li><strong>React.js Workshop:</strong> June 10, 2025</li>
-            <li><strong>Full-Stack Hackathon:</strong> July 20, 2025</li>
-        </ul>
+        
+        <div class="event">
+            <h3>Tech Talk: AI and Machine Learning</h3>
+            <p><strong>Date:</strong> May 25, 2025</p>
+            <p><strong>Time:</strong> 2:00 PM - 4:00 PM</p>
+            <p><strong>Description:</strong> Dive into the latest trends in Artificial Intelligence and Machine Learning. Join industry experts for an insightful discussion and Q&A.</p>
+        </div>
+        
+        <div class="event">
+            <h3>Frontend Development Conference</h3>
+            <p><strong>Date:</strong> June 5, 2025</p>
+            <p><strong>Time:</strong> 9:00 AM - 5:00 PM</p>
+            <p><strong>Description:</strong> Learn the newest techniques in frontend development, including frameworks like React, Angular, and Vue. Perfect for web developers looking to level up!</p>
+        </div>
+        
+        <div class="event">
+            <h3>Hackathon: Code for a Cause</h3>
+            <p><strong>Date:</strong> June 15, 2025</p>
+            <p><strong>Time:</strong> 10:00 AM - 6:00 PM</p>
+            <p><strong>Description:</strong> Join this exciting hackathon and build solutions for social good! Whether you're an experienced developer or just starting out, there's a place for you!</p>
+        </div>
+        
     </section>
-
     <!-- Team Section -->
     <section id="team" class="team-section">
         <h2>Meet Our Team</h2>
@@ -154,8 +244,8 @@
     <section id="contact-info" class="contact-info-section">
         <h2>Contact Information</h2>
         <p>Email: support@edeveloper.com</p>
-        <p>Phone: +1-800-123-4567</p>
-        <p>Address: 123 Developer Lane, Tech City, USA</p>
+        <p>Phone: +9194168-28129</p>
+        <p>Address: Chitkara University,Rajpura,India</p>
     </section>
 
     <!-- Footer Section -->
@@ -167,5 +257,52 @@
             <a href="https://linkedin.com" target="_blank" aria-label="LinkedIn">LinkedIn</a>
         </div>
     </footer>
+
+    <script>
+        /* Smooth scrolling for navigation links */
+        document.querySelectorAll('.nav-options a').forEach(anchor => {
+            const targetId = anchor.getAttribute('href');
+            if (targetId.startsWith('#') && document.querySelector(targetId)) {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(targetId).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            }
+        });
+
+        /* Back to Top Button */
+        const backToTopButton = document.createElement('button');
+        backToTopButton.id = 'backToTop';
+        backToTopButton.textContent = '↑';
+        backToTopButton.style.position = 'fixed';
+        backToTopButton.style.bottom = '20px';
+        backToTopButton.style.right = '20px';
+        backToTopButton.style.display = 'none';
+        backToTopButton.style.backgroundColor = '#007bff';
+        backToTopButton.style.color = 'white';
+        backToTopButton.style.border = 'none';
+        backToTopButton.style.borderRadius = '50%';
+        backToTopButton.style.width = '50px';
+        backToTopButton.style.height = '50px';
+        backToTopButton.style.cursor = 'pointer';
+        document.body.appendChild(backToTopButton);
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                backToTopButton.style.display = 'block';
+            } else {
+                backToTopButton.style.display = 'none';
+            }
+        });
+
+        backToTopButton.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>

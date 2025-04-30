@@ -33,6 +33,13 @@ function addTask(task) {
 
 // Remove Tic Tac Toe game logic
 document.addEventListener('DOMContentLoaded', () => {
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    if (darkModeToggle) {
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+        });
+    }
     const gameBoard = document.getElementById('game-board');
     const resetButton = document.getElementById('resetButton');
 
@@ -52,20 +59,36 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     // Smooth Scrolling for Navigation Links
-    document.querySelectorAll('nav a').forEach(anchor => {
+    document.querySelectorAll('#main-navbar a').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
             e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
         });
     });
 
-    // Back to Top Button
-    const backToTopButton = document.getElementById('backToTop');
+    // Back to Top Button Functionality
+    const backToTopButton = document.createElement('button');
+    backToTopButton.id = 'backToTop';
+    backToTopButton.textContent = '↑';
+    backToTopButton.style.position = 'fixed';
+    backToTopButton.style.bottom = '20px';
+    backToTopButton.style.right = '20px';
+    backToTopButton.style.display = 'none';
+    backToTopButton.style.backgroundColor = '#007bff';
+    backToTopButton.style.color = 'white';
+    backToTopButton.style.border = 'none';
+    backToTopButton.style.borderRadius = '50%';
+    backToTopButton.style.width = '50px';
+    backToTopButton.style.height = '50px';
+    backToTopButton.style.cursor = 'pointer';
+    document.body.appendChild(backToTopButton);
+
     window.addEventListener('scroll', () => {
         if (window.scrollY > 300) {
-            backToTopButton.style.display = 'flex';
+            backToTopButton.style.display = 'block';
         } else {
             backToTopButton.style.display = 'none';
         }
@@ -77,31 +100,8 @@ document.addEventListener('DOMContentLoaded', () => {
             behavior: 'smooth'
         });
     });
-});
 
-// Back to Top Button
-const backToTopButton = document.createElement('button');
-backToTopButton.id = 'backToTop';
-backToTopButton.textContent = '↑';
-document.body.appendChild(backToTopButton);
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Dynamic greeting message
-document.addEventListener('DOMContentLoaded', () => {
+    // Dynamic Greeting Message Based on Time
     const greeting = document.createElement('p');
     const hours = new Date().getHours();
     if (hours < 12) {
@@ -112,4 +112,130 @@ document.addEventListener('DOMContentLoaded', () => {
         greeting.textContent = 'Good Evening! Explore our free resources.';
     }
     document.querySelector('header').appendChild(greeting);
+
+    // Real-Time Clock
+    const clock = document.createElement('p');
+    clock.id = 'liveClock';
+    clock.style.fontWeight = 'bold';
+    clock.style.marginTop = '10px';
+    document.querySelector('header').appendChild(clock);
+
+    function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        clock.textContent = `Current Time: ${timeString}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Interactive To-Do List with Task Counter
+    const todoCounter = document.createElement('p');
+    todoCounter.id = 'todoCounter';
+    todoCounter.style.marginTop = '10px';
+    document.querySelector('#todoForm').appendChild(todoCounter);
+
+    function updateTaskCounter() {
+        const todoList = document.getElementById('todoList');
+        const taskCount = todoList.children.length;
+        todoCounter.textContent = `Total Tasks: ${taskCount}`;
+    }
+
+    document.getElementById('todoForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const task = document.getElementById('todoInput').value.trim();
+        if (task !== '') {
+            addTask(task);
+            document.getElementById('todoInput').value = '';
+        }
+    });
+
+    function addTask(task) {
+        const todoList = document.getElementById('todoList');
+        const listItem = document.createElement('li');
+        listItem.textContent = task;
+
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Complete';
+        completeButton.style.marginLeft = '10px';
+        completeButton.addEventListener('click', () => {
+            listItem.style.textDecoration = 'line-through';
+            listItem.style.color = 'gray';
+            completeButton.disabled = true;
+            completedTasks++;
+            updateCompletedTasksCounter();
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.marginLeft = '10px';
+        deleteButton.addEventListener('click', () => {
+            todoList.removeChild(listItem);
+            updateTaskCounter();
+        });
+
+        listItem.appendChild(completeButton);
+        listItem.appendChild(deleteButton);
+        todoList.appendChild(listItem);
+        updateTaskCounter();
+    }
+
+    // Navbar Clickable Logo Redirect
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            window.location.href = 'index.html'; // Redirects to the main homepage
+        });
+    }
+
+    // Real-Time Weather Updates
+    const weatherContainer = document.createElement('div');
+    weatherContainer.id = 'weatherContainer';
+    weatherContainer.style.marginTop = '20px';
+    weatherContainer.style.textAlign = 'center';
+    document.querySelector('header').appendChild(weatherContainer);
+
+    async function fetchWeather() {
+        try {
+            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=YOUR_API_KEY');
+            const data = await response.json();
+            weatherContainer.textContent = `Current Weather in ${data.name}: ${data.weather[0].description}, ${data.main.temp}°C`;
+        } catch (error) {
+            weatherContainer.textContent = 'Unable to fetch weather data.';
+        }
+    }
+    fetchWeather();
+
+    // Daily Motivational Quote
+    const quoteContainer = document.createElement('div');
+    quoteContainer.id = 'quoteContainer';
+    quoteContainer.style.marginTop = '20px';
+    quoteContainer.style.textAlign = 'center';
+    quoteContainer.style.fontStyle = 'italic';
+    document.querySelector('header').appendChild(quoteContainer);
+
+    async function fetchQuote() {
+        try {
+            const response = await fetch('https://api.quotable.io/random');
+            const data = await response.json();
+            quoteContainer.textContent = `"${data.content}" - ${data.author}`;
+        } catch (error) {
+            quoteContainer.textContent = 'Unable to fetch quote.';
+        }
+    }
+    fetchQuote();
+
+    // Task Completion Tracker
+    const completedTasksCounter = document.createElement('p');
+    completedTasksCounter.id = 'completedTasksCounter';
+    completedTasksCounter.style.marginTop = '10px';
+    completedTasksCounter.style.fontWeight = 'bold';
+    document.querySelector('#todoForm').appendChild(completedTasksCounter);
+
+    let completedTasks = 0;
+
+    function updateCompletedTasksCounter() {
+        completedTasksCounter.textContent = `Completed Tasks: ${completedTasks}`;
+    }
+
+    updateCompletedTasksCounter();
 });
