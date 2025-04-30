@@ -1,6 +1,262 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Courses - Edeveloper</title>
+  <style>
+    :root {
+      --primary-color: #007bff;
+      --dark-blue: #1a1a2e;
+      --light-blue: #e3f2fd;
+      --section-bg: #f9f9f9;
+      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f5f7fa;
+      color: #333;
+    }
+
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(to right, #007bff, #0056b3);
+      color: white;
+      border-radius: 0 0 20px 20px;
+    }
+
+    header h1 {
+      font-size: 2.8rem;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 1.2rem;
+    }
+
+    nav {
+      background-color: var(--dark-blue);
+      padding: 10px 20px;
+      box-shadow: var(--box-shadow);
+    }
+
+    nav .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    nav img {
+      height: 50px;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 20px;
+      padding: 0;
+      margin: 0;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #00cfff;
+    }
+
+    section {
+      background-color: var(--section-bg);
+      padding: 30px;
+      border-radius: 12px;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1000px;
+      box-shadow: var(--box-shadow);
+    }
+
+    h2 {
+      color: var(--primary-color);
+      margin-bottom: 15px;
+    }
+
+    ul {
+      padding-left: 20px;
+    }
+
+    ul li {
+      margin-bottom: 10px;
+    }
+
+    ul li::marker {
+      color: var(--primary-color);
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: var(--dark-blue);
+      color: white;
+      margin-top: 40px;
+    }
+
+    footer a {
+      color: #00cfff;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    @media (max-width: 768px) {
+      nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav .container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      section {
+        padding: 20px;
+      }
+
+      header h1 {
+        font-size: 2rem;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <nav>
+    <div class="container">
+      <a href="index.html">
+        <img src="https://via.placeholder.com/100x50?text=Logo" alt="Edeveloper Logo"/>
+      </a>
+      <ul>
+        <li><a href="#html-css">HTML & CSS</a></li>
+        <li><a href="#javascript">JavaScript</a></li>
+        <li><a href="#node-express">Node.js & Express</a></li>
+        <li><a href="#react">React</a></li>
+        <li><a href="#mongodb">MongoDB</a></li>
+        <li><a href="#fullstack-projects">Projects</a></li>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#resources">Resources</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <header>
+    <h1>Master Full-Stack Development for Free</h1>
+    <p>Join thousands of learners and become a professional developer from scratch!</p>
+  </header>
+
+  <section id="html-css">
+    <h2>HTML & CSS Basics</h2>
+    <p>Build clean, structured, and responsive web pages using HTML5 and CSS3.</p>
+    <ul>
+      <li>HTML Elements, Forms & Accessibility</li>
+      <li>CSS Styling, Box Model, Flexbox & Grid</li>
+      <li>Responsive Design using Media Queries</li>
+      <li>Mini-projects: Portfolio, Blog, Forms</li>
+    </ul>
+  </section>
+
+  <section id="javascript">
+    <h2>JavaScript Fundamentals</h2>
+    <p>Make your websites interactive with JavaScript.</p>
+    <ul>
+      <li>Variables, Functions, and Loops</li>
+      <li>DOM Manipulation and Event Handling</li>
+      <li>Modern ES6 Features</li>
+      <li>Project: Dynamic To-Do List</li>
+    </ul>
+  </section>
+
+  <section id="node-express">
+    <h2>Node.js & Express</h2>
+    <p>Create powerful backends and APIs with Node.js and Express.</p>
+    <ul>
+      <li>Server-side JavaScript</li>
+      <li>Routing, Middleware & REST APIs</li>
+      <li>User Authentication and Security</li>
+      <li>Project: API for Task Manager</li>
+    </ul>
+  </section>
+
+  <section id="react">
+    <h2>React.js for Beginners</h2>
+    <p>Build modern web apps with React's component-based architecture.</p>
+    <ul>
+      <li>JSX, Props, State & Events</li>
+      <li>Hooks and Functional Components</li>
+      <li>Routing and Dynamic UIs</li>
+      <li>Project: Weather App or Blog UI</li>
+    </ul>
+  </section>
+
+  <section id="mongodb">
+    <h2>MongoDB Database</h2>
+    <p>Store, query, and manage data using MongoDB.</p>
+    <ul>
+      <li>CRUD Operations with MongoDB</li>
+      <li>Data Modeling and Indexing</li>
+      <li>Aggregation & Performance</li>
+      <li>Project: Blog Post DB or User Store</li>
+    </ul>
+  </section>
+
+  <section id="fullstack-projects">
+    <h2>Full-Stack Projects</h2>
+    <p>Combine everything into real-world applications.</p>
+    <ul>
+      <li>E-Commerce Platform</li>
+      <li>Social Media Dashboard</li>
+      <li>AI Chatbot Integration</li>
+      <li>Deployment using Vercel, Netlify, or Heroku</li>
+    </ul>
+  </section>
+
+  <section id="career">
+    <h2>Career Opportunities</h2>
+    <p>Explore paths like Web Developer, Full-Stack Engineer, or Frontend Developer.</p>
+  </section>
+
+  <section id="resources">
+    <h2>Resources</h2>
+    <p>Helpful links and tools:</p>
+    <ul>
+      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a></li>
+      <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
+      <li><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a></li>
+      <li><a href="https://gridgarden.game/" target="_blank">Grid Garden</a></li>
+    </ul>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Edeveloper. All rights reserved.</p>
+    <p>Contact: <a href="mailto:support@edeveloper.com">support@edeveloper.com</a></p>
+  </footer>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Courses - Edeveloper</title>
@@ -153,5 +409,6 @@
         <p>&copy; 2025 Edeveloper. All rights reserved.</p>
         <p>Contact us at <a href="mailto:support@edeveloper.com" style="color: #007bff; text-decoration: none;">Edevelopers@gmail.com</a></p>
     </footer>
+
 </body>
 </html>
