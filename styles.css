@@ -669,6 +669,102 @@ input, textarea {
     border-radius: 5px;
 }
 
+
+/* General Styles for the Resources Page */
+body {
+    font-family: 'Poppins', sans-serif; /* Modern sans-serif font */
+    background-color: #f5f5f5; /* Soft light background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+/* Section Heading */
+section h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #222;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Resource Cards Layout */
+.resource-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid layout for cards */
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Individual Resource Card */
+.resource-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Hover Effects for Resource Cards */
+.resource-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(105, 4, 4, 0.15);
+}
+
+/* Resource Card Title */
+.resource-card h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #00ff7b; /* Blue for titles */
+    margin-bottom: 1rem;
+}
+
+/* Resource Card Description */
+.resource-card p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Resource Card Button */
+.resource-card a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: beige;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect on Resource Card Button */
+.resource-card a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+}
+
 textarea {
     resize: vertical;
 }
@@ -761,6 +857,7 @@ body {
     color: #999;
   }
   
+
 
   /* General Styles */
 body {
@@ -962,3 +1059,4 @@ body {
     }
   }
   
+

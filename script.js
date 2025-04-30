@@ -238,4 +238,73 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCompletedTasksCounter();
+
+    // Voice Command Feature for To-Do List
+    const voiceCommandButton = document.createElement('button');
+    voiceCommandButton.textContent = '🎤 Voice Command';
+    voiceCommandButton.style.marginTop = '10px';
+    voiceCommandButton.style.padding = '10px 20px';
+    voiceCommandButton.style.backgroundColor = '#007bff';
+    voiceCommandButton.style.color = 'white';
+    voiceCommandButton.style.border = 'none';
+    voiceCommandButton.style.borderRadius = '5px';
+    voiceCommandButton.style.cursor = 'pointer';
+    document.querySelector('#todoForm').appendChild(voiceCommandButton);
+
+    voiceCommandButton.addEventListener('click', () => {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.start();
+
+        recognition.onresult = (event) => {
+            const command = event.results[0][0].transcript.toLowerCase();
+            if (command.includes('add task')) {
+                const task = command.replace('add task', '').trim();
+                if (task) {
+                    addTask(task);
+                } else {
+                    alert('Please specify a task to add.');
+                }
+            } else if (command.includes('clear tasks')) {
+                document.getElementById('todoList').innerHTML = '';
+                updateTaskCounter();
+                completedTasks = 0;
+                updateCompletedTasksCounter();
+            } else {
+                alert('Command not recognized. Try saying "Add task [task name]" or "Clear tasks".');
+            }
+        };
+
+        recognition.onerror = () => {
+            alert('Voice recognition failed. Please try again.');
+        };
+    });
+
+    // Theme Switcher
+    const themeSwitcher = document.createElement('select');
+    themeSwitcher.id = 'themeSwitcher';
+    themeSwitcher.style.marginTop = '20px';
+    themeSwitcher.style.padding = '10px';
+    themeSwitcher.style.borderRadius = '5px';
+    themeSwitcher.style.border = '1px solid #ccc';
+    themeSwitcher.innerHTML = `
+        <option value="default">Default Theme</option>
+        <option value="dark">Dark Theme</option>
+        <option value="light">Light Theme</option>
+    `;
+    document.body.insertBefore(themeSwitcher, document.body.firstChild);
+
+    themeSwitcher.addEventListener('change', (event) => {
+        const theme = event.target.value;
+        if (theme === 'dark') {
+            document.body.style.backgroundColor = '#121212';
+            document.body.style.color = '#ffffff';
+        } else if (theme === 'light') {
+            document.body.style.backgroundColor = '#f9f9f9';
+            document.body.style.color = '#333333';
+        } else {
+            document.body.style.backgroundColor = '';
+            document.body.style.color = '';
+        }
+    });
 });
