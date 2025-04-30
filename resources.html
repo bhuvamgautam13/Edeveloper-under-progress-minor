@@ -5,6 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resources - Edeveloper</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Additional styles for better presentation */
+        header {
+            text-align: center;
+            padding: 2rem;
+            background: linear-gradient(to right, #a8dadc, #457b9d);
+            color: white;
+            border-radius: 10px;
+            margin-bottom: 2rem;
+        }
+        section h2 {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            color: #2c3e50;
+        }
+        .useful-links-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+            padding: 20px;
+        }
+        .useful-link-card {
+            background: #f8f9fa;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 15px;
+            width: 250px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .useful-link-card a {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: #007bff;
+            text-decoration: none;
+        }
+        .useful-link-card a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+        .useful-link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+    </style>
 </head>
 <body>
     <nav id="main-navbar">
@@ -28,24 +75,125 @@
     </header>
     <section id="useful-links">
         <h2>Useful Links</h2>
+        <div class="useful-links-container">
+            <div class="useful-link-card">
+                <a href="https://developer.mozilla.org/" target="_blank">MDN Web Docs</a>
+                <p>Comprehensive documentation for web developers.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://www.w3schools.com/" target="_blank">W3Schools</a>
+                <p>Interactive tutorials for web development.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://reactjs.org/" target="_blank">React.js Official Docs</a>
+                <p>Learn React.js with official documentation.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://nodejs.org/" target="_blank">Node.js Official Docs</a>
+                <p>Master backend development with Node.js.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://getbootstrap.com/" target="_blank">Bootstrap</a>
+                <p>Build responsive websites with Bootstrap.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://tailwindcss.com/" target="_blank">Tailwind CSS</a>
+                <p>Utility-first CSS framework for rapid UI development.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://expressjs.com/" target="_blank">Express.js</a>
+                <p>Fast, unopinionated, minimalist web framework for Node.js.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://www.mongodb.com/docs/" target="_blank">MongoDB Docs</a>
+                <p>Learn NoSQL database management with MongoDB.</p>
+            </div>
+        </div>
     </section>
-    
-    <section class="useful-links-container">
-        <div class="useful-link-card">
-            <a href="https://developer.mozilla.org/">MDN Web Docs</a>
-        </div>
-        <div class="useful-link-card">
-            <a href="https://www.w3schools.com/">W3Schools</a>
-        </div>
-        <div class="useful-link-card">
-            <a href="https://reactjs.org/">React.js Official Docs</a>
-        </div>
-        <div class="useful-link-card">
-            <a href="https://nodejs.org/">Node.js Official Docs</a>
+    <section id="cheat-sheets">
+        <h2>Cheat Sheets</h2>
+        <div class="useful-links-container">
+            <div class="useful-link-card">
+                <a href="https://htmlcheatsheet.com/" target="_blank">HTML Cheat Sheet</a>
+                <p>Quick reference for HTML elements and attributes.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://css-tricks.com/snippets/css/" target="_blank">CSS Cheat Sheet</a>
+                <p>Handy CSS snippets and tips.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://devhints.io/js" target="_blank">JavaScript Cheat Sheet</a>
+                <p>Essential JavaScript syntax and functions.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://devhints.io/react" target="_blank">React Cheat Sheet</a>
+                <p>Quick guide to React.js concepts and APIs.</p>
+            </div>
         </div>
     </section>
-    
-
+    <section id="tools">
+        <h2>Developer Tools</h2>
+        <div class="useful-links-container">
+            <div class="useful-link-card">
+                <a href="https://code.visualstudio.com/" target="_blank">Visual Studio Code</a>
+                <p>Powerful code editor for developers.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://git-scm.com/" target="_blank">Git</a>
+                <p>Version control system for tracking changes in code.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://postman.com/" target="_blank">Postman</a>
+                <p>API testing and collaboration tool.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="https://www.docker.com/" target="_blank">Docker</a>
+                <p>Containerization platform for deploying applications.</p>
+            </div>
+        </div>
+    </section>
+    <section id="projects">
+        <h2>Projects</h2>
+        <div class="useful-links-container">
+            <div class="useful-link-card">
+                <a href="ecommerce-project.html" target="_blank">E-Commerce Platform</a>
+                <p>Build a fully functional e-commerce website with payment integration.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="social-media-dashboard.html" target="_blank">Social Media Dashboard</a>
+                <p>Create an interactive dashboard for managing social media accounts.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="task-manager.html" target="_blank">Task Management System</a>
+                <p>Develop a productivity tool to manage tasks efficiently.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="ai-web-app.html" target="_blank">AI-Powered Web App</a>
+                <p>Integrate artificial intelligence features into a web application.</p>
+            </div>
+        </div>
+    </section>
+    <section id="events">
+        <h2>Events</h2>
+        <div class="useful-links-container">
+            <div class="useful-link-card">
+                <a href="webinar-fullstack.html" target="_blank">Full-Stack Development Webinar</a>
+                <p>Join our live webinar to learn the latest trends in full-stack development.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="hackathon.html" target="_blank">Hackathon</a>
+                <p>Participate in our coding hackathon and showcase your skills.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="workshop-react.html" target="_blank">React.js Workshop</a>
+                <p>Attend a hands-on workshop to master React.js fundamentals.</p>
+            </div>
+            <div class="useful-link-card">
+                <a href="career-fair.html" target="_blank">Career Fair</a>
+                <p>Meet industry experts and explore job opportunities in tech.</p>
+            </div>
+        </div>
+    </section>
     <footer>
         <p>&copy; 2025 Edeveloper. All rights reserved.</p>
     </footer>
