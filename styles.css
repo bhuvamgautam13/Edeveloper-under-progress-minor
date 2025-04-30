@@ -479,6 +479,43 @@ footer .social-media a:hover {
 }
 
 /* Contact Section Styles */
+
+
+/* Enhanced Contact Section */
+#contact {
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+    border: 2px solid #007bff;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#contact h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #0056b3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.contact-form button {
+    background-image: linear-gradient(to right, #007bff, #00bcd4);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+    background-image: linear-gradient(to right, #00b351, #007bff);
+
 #contact {
     background: linear-gradient(135deg, #e0f7fa, #ffffff);
     box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
@@ -554,6 +591,7 @@ footer .social-media a:hover {
 
 .contact-form button:hover {
     background-image: linear-gradient(to right, #00b351, #5dade2);
+
     box-shadow: 0 4px 10px rgba(0, 179, 81, 0.3);
 }
 
@@ -631,6 +669,102 @@ input, textarea {
     border-radius: 5px;
 }
 
+
+/* General Styles for the Resources Page */
+body {
+    font-family: 'Poppins', sans-serif; /* Modern sans-serif font */
+    background-color: #f5f5f5; /* Soft light background */
+    margin: 0;
+    padding: 0;
+}
+
+/* Section Styles */
+section {
+    padding: 4rem 2rem;
+    text-align: center;
+    background-color: #ffffff;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    margin-bottom: 2rem;
+    border-radius: 8px;
+}
+
+/* Section Heading */
+section h2 {
+    font-size: 2.8rem;
+    font-weight: 600;
+    color: #222;
+    text-align: center;
+    margin-bottom: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Resource Cards Layout */
+.resource-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); /* Grid layout for cards */
+    gap: 2rem;
+    justify-items: center;
+}
+
+/* Individual Resource Card */
+.resource-card {
+    background-color: #fff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Hover Effects for Resource Cards */
+.resource-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(105, 4, 4, 0.15);
+}
+
+/* Resource Card Title */
+.resource-card h3 {
+    font-size: 1.8rem;
+    font-weight: 500;
+    color: #00ff7b; /* Blue for titles */
+    margin-bottom: 1rem;
+}
+
+/* Resource Card Description */
+.resource-card p {
+    font-size: 1.2rem;
+    color: #555;
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+/* Resource Card Button */
+.resource-card a {
+    display: inline-block;
+    padding: 1rem 2rem;
+    background-color: #007bff;
+    color: beige;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+/* Hover Effect on Resource Card Button */
+.resource-card a:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+
+}
+
 textarea {
     resize: vertical;
 }
@@ -661,4 +795,67 @@ footer {
     margin-top: 20px;
 }
 }
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: #fef9f9;
+    color: #333;
+  }
+  
+  .contact-header {
+    text-align: center;
+    padding: 2rem;
+    background: #ffd6e0;
+    color: #4a001f;
+  }
+  
+  #contact {
+    max-width: 600px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  }
+  
+  .contact-form label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+  }
+  
+  .contact-form input,
+  .contact-form textarea {
+    width: 100%;
+    padding: 0.8rem;
+    margin-top: 0.3rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+  }
+  
+  button {
+    margin-top: 1.5rem;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    background: #5cd1ff;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: #4cb4e1;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: #999;
+  }
+  
+
 
