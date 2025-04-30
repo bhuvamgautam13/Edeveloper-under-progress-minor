@@ -1,0 +1,54 @@
+/* Header Styles */
+header {
+    text-align: center;
+    padding: 2rem;
+    background: linear-gradient(to right, #a8dadc, #457b9d);
+    color: white;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+}
+
+/* Section Heading Styles */
+section h2 {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    color: #2c3e50;
+}
+
+/* Useful Links Container */
+.useful-links-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Useful Link Card */
+.useful-link-card {
+    background: #f8f9fa;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    width: 250px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.useful-link-card a {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.useful-link-card a:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+.useful-link-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
