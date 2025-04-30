@@ -1,147 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Courses - Edeveloper</title>
-  <style>
-    :root {
-      --primary-color: #007bff;
-      --dark-blue: #1a1a2e;
-      --light-blue: #e3f2fd;
-      --section-bg: #f9f9f9;
-      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(to right, #007bff, #0056b3);
-      color: white;
-      border-radius: 0 0 20px 20px;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    nav {
-      background-color: var(--dark-blue);
-      padding: 10px 20px;
-      box-shadow: var(--box-shadow);
-    }
-
-    nav .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav img {
-      height: 50px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #00cfff;
-    }
-
-    section {
-      background-color: var(--section-bg);
-      padding: 30px;
-      border-radius: 12px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 1000px;
-      box-shadow: var(--box-shadow);
-    }
-
-    h2 {
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    ul li::marker {
-      color: var(--primary-color);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--dark-blue);
-      color: white;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #00cfff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav .container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses - Edeveloper</title>
+    <link rel="stylesheet" href="courses.css">
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">
+                <img src="logo.png" alt="Edeveloper Logo" />
+                <span>Edeveloper</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="#html-css">HTML & CSS</a></li>
+                <li><a href="#javascript">JavaScript</a></li>
+                <li><a href="#node-express">Node.js</a></li>
+                <li><a href="#react">React</a></li>
+                <li><a href="#mongodb">MongoDB</a></li>
+                <li><a href="#fullstack-projects">Projects</a></li>
+                <li><a href="#career">Career</a></li>
+                <li><a href="#resources">Resources</a></li>
+            </ul>
+        </div>
+    </nav>
+    
+    <style>
+       
+    </style>
 </head>
 <body>
 
@@ -250,10 +136,9 @@
     </ul>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Edeveloper. All rights reserved.</p>
-    <p>Contact: <a href="mailto:support@edeveloper.com">support@edeveloper.com</a></p>
-  </footer>
-
+    <footer style="text-align: center; padding: 20px; background-color: #1a1a2e; color: white; margin-top: 30px;">
+        <p>&copy; 2025 Edeveloper. All rights reserved.</p>
+        <p>Contact us at <a href="mailto:support@edeveloper.com" style="color: #007bff; text-decoration: none;">Edevelopers@gmail.com</a></p>
+    </footer>
 </body>
 </html>
