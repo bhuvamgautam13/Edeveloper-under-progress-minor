@@ -2,6 +2,155 @@
 <html lang="en">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blog - Edeveloper</title>
+  <link rel="stylesheet" href="blog.css" />
+</head>
+<body>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">Edeveloper</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="article.html">Technologies</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>Edeveloper Blog</h1>
+      <p>Stay updated with the latest tutorials and tips in full-stack development.</p>
+    </div>
+  </section>
+
+  <!-- Categories Section -->
+  <section class="categories">
+    <h2>Popular Categories</h2>
+    <ul>
+      <li><a href="#">Frontend Development</a></li>
+      <li><a href="#">Backend Development</a></li>
+      <li><a href="#">Full-stack Projects</a></li>
+    </ul>
+  </section>
+
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Get the latest posts delivered to your inbox.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Readers Say</h2>
+    <div class="testimonial-card">
+      <blockquote>
+        “Edeveloper has transformed the way I learn web development. The tutorials are clear and practical.”
+        <cite>– Surya T.</cite>
+      </blockquote>
+    </div>
+    <div class="testimonial-card">
+      <blockquote>
+        “As a backend developer, I struggled with frontend. Now I feel confident building beautiful UIs!”
+        <cite>– Maria S.</cite>
+      </blockquote>
+    </div>
+    <div class="testimonial-card">
+      <blockquote>
+        “Great blog with real-world examples. Love the full-stack projects section!”
+        <cite>– Manish T.</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-container">
+      <div class="footer-about">
+        <h3>About Edeveloper</h3>
+        <p>Your go-to platform for mastering full-stack development. Learn, build, and grow with us.</p>
+      </div>
+      <div class="footer-links">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-social">
+        <h3>Follow Us</h3>
+        <ul>
+         
+          <li><a href="#">Twitter</a></li>
+          <li><a href="#">LinkedIn</a></li>
+          <li><a href="#">Instagram</a></li>
+        </ul>
+      </div>
+    </div>
+    <p>&copy; 2025 Edeveloper. All rights reserved.</p>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+
+    // Back to Top Button
+    const backToTopButton = document.createElement('button');
+    backToTopButton.id = 'backToTop';
+    backToTopButton.textContent = '↑';
+    backToTopButton.style.position = 'fixed';
+    backToTopButton.style.bottom = '20px';
+    backToTopButton.style.right = '20px';
+    backToTopButton.style.display = 'none';
+    backToTopButton.style.backgroundColor = '#007bff';
+    backToTopButton.style.color = 'white';
+    backToTopButton.style.border = 'none';
+    backToTopButton.style.borderRadius = '50%';
+    backToTopButton.style.width = '50px';
+    backToTopButton.style.height = '50px';
+    backToTopButton.style.cursor = 'pointer';
+    document.body.appendChild(backToTopButton);
+
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
+
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
+  </script>
+
+
+
+<head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Edeveloper</title>
@@ -265,7 +414,7 @@
         </div>
 
 
-+
+
         <section class="hero">
             <div class="hero-content">
                 <h2>Unlock Your Web Dev Potential</h2>
@@ -402,6 +551,8 @@
                 el.style.color = '#1d3557'; // Slightly darker blue on hover
             });
         </script>
+
+
 </body>
 
 </html>
