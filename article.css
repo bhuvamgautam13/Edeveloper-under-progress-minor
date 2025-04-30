@@ -96,3 +96,45 @@ footer {
     padding: 20px;
     font-size: 0.9rem;
 }
+x/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Navbar container spacing fix */
+.navbar-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+/* Make nav links horizontal */
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+/* Responsive: stack nav items on small screens */
+@media (max-width: 768px) {
+    .navbar-container {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .nav-links li {
+        width: 100%;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 10px 0;
+    }
+}
