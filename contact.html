@@ -292,6 +292,7 @@
 
         <label for="message">Message</label>
         <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <p id="charCounter" style="text-align: right; font-size: 0.9rem; color: #555;">0/500</p>
 
         <button type="submit">Send Message</button>
       </form>
@@ -323,6 +324,38 @@
   <footer>
     <p>&copy; 2025 Edeveloper. All rights reserved. <a href="privacy.html">Privacy Policy</a></p>
   </footer>
+
+  <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #457b9d; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;">Toggle Dark Mode</button>
+
+  <script>
+    // Live Character Counter
+    const messageField = document.getElementById('message');
+    const charCounter = document.getElementById('charCounter');
+    const maxChars = 500;
+
+    messageField.addEventListener('input', () => {
+      const currentLength = messageField.value.length;
+      charCounter.textContent = `${currentLength}/${maxChars}`;
+      charCounter.style.color = currentLength > maxChars ? 'red' : '#555';
+    });
+
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        document.body.style.backgroundColor = '#1d1d1d';
+        document.body.style.color = '#f5f5f5';
+        darkModeToggle.style.backgroundColor = '#f5f5f5';
+        darkModeToggle.style.color = '#1d1d1d';
+      } else {
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+        darkModeToggle.style.backgroundColor = '#457b9d';
+        darkModeToggle.style.color = 'white';
+      }
+    });
+  </script>
 </body>
 
 </html>
