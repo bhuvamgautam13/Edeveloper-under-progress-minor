@@ -1,5 +1,137 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Contact - Edeveloper</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      font-family: Arial, sans-serif;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 30px;
+    }
+
+    section {
+      margin-bottom: 30px;
+    }
+
+    #contact {
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .contact-form .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .contact-form label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .contact-form button {
+      background-color: #00b351;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    footer {
+      background-color: #222;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+  </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <img src="logo.png" alt="Edeveloper Logo" aria-label="Site Logo">
+        </div>
+        <ul class="nav-options">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="courses.html">Courses</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="resources.html">Resources</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+  <main>
+    <header>
+      <h1>Contact Us</h1>
+      <p>Have questions? Reach out to us!</p>
+    </header>
+    <section style="display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #f9f9f9;">
+        <form id="contactForm" style="width: 100%; max-width: 500px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; outline: none;">
+
+            <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; outline: none;">
+
+            <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold;">Message:</label>
+            <textarea id="message" name="message" placeholder="Write your message here..." required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; outline: none; resize: vertical;"></textarea>
+
+            <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: background-color 0.3s;">Send</button>
+        </form>
+
+    <section id="upcoming-events">
+      <h2>Upcoming Events</h2>
+      <div class="event">
+        <h3>Web Development Workshop</h3>
+        <p>Date: May 15, 2025</p>
+        <p>Time: 10:00 AM - 1:00 PM</p>
+        <p>Description: Join us for an in-depth workshop on modern web development techniques.</p>
+      </div>
+
+      <div class="event">
+        <h3>App Design and Development Bootcamp</h3>
+        <p>Date: June 10, 2025</p>
+        <p>Time: 9:00 AM - 5:00 PM</p>
+        <p>Description: Learn mobile app design and development with hands-on projects.</p>
+      </div>
+
+      <div class="event">
+        <h3>Digital Marketing Summit</h3>
+        <p>Date: July 20, 2025</p>
+        <p>Time: 11:00 AM - 3:00 PM</p>
+        <p>Description: Covering SEO, social media, content marketing, and more.</p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Get in Touch</h2>
+      <form class="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+        <div class="form-group">
+
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -20,6 +152,7 @@
           action="https://formspree.io/f/xqkgrqwb"
           method="POST"
         >
+
           <label for="name">Name</label>
           <input type="text" id="name" name="name" required />
 
