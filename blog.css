@@ -1,0 +1,164 @@
+/* Navbar styles for Blog Page */
+.navbar {
+    background-color: #1a1a2e;
+    padding: 15px 30px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    backdrop-filter: blur(10px);
+}
+
+.navbar a {
+    color: white;
+    font-weight: bold;
+    transition: color 0.3s;
+    text-decoration: none;
+}
+
+.navbar a:hover {
+    color: #007bff;
+}
+
+/* Hero Section for Blog Page */
+.hero-content {
+    text-align: center;
+    padding: 50px 20px;
+    background: linear-gradient(to right, #a8dadc, #457b9d);
+    color: white;
+    border-radius: 10px;
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+.hero-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+}
+
+.hero-content p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+}
+
+.cta-button {
+    background-color: #ff9800;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #e68900;
+}
+
+/* Categories Section */
+.categories ul li a {
+    color: #007bff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+.categories ul li a:hover {
+    color: #0056b3;
+}
+
+/* Newsletter Section */
+.newsletter {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(to right, #a8dadc, #457b9d);
+    color: white;
+    text-align: center;
+    padding: 40px;
+    border-radius: 20px;
+}
+
+.newsletter input::placeholder {
+    color: #aaa;
+}
+
+.newsletter input:focus {
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+}
+
+.newsletter button:hover {
+    background: linear-gradient(to right, #e68900, #d97700);
+    transform: scale(1.05);
+}
+
+/* Testimonials Section */
+.testimonials blockquote {
+    transition: transform 0.3s;
+}
+
+.testimonials blockquote:hover {
+    transform: scale(1.05);
+}
+
+/* Keyframes for Hero Section Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Search Bar */
+.search-bar select:hover,
+.search-bar input:hover {
+    border-color: #007bff;
+}
+
+.search-bar button:hover {
+    background: linear-gradient(to right, #0056b3, #003f7f);
+    transform: scale(1.05);
+}
+
+/* Pagination */
+.pagination a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 10px 15px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin: 0 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination a:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* Back to Top Button */
+#backToTop {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+    display: none;
+    transition: background-color 0.3s;
+}
+
+#backToTop:hover {
+    background-color: #0056b3;
+    color: white;
+}
