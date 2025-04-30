@@ -1,30 +1,30 @@
 /* General styles */
 body {
-    font-family: 'Arial', sans-serif;
+    font-family: 'Roboto', sans-serif; /* Softer, modern font */
     margin: 0;
     padding: 0;
     line-height: 1.6;
-    color: #333;
-    background-color: #f9f9f9; /* Light background for a clean look */
+    color: #4a4a4a; /* Soft gray text */
+    background-color: #f5f7fa; /* Light, calming background */
 }
 
 h1, h2, h3, h4 {
-    color: #222;
+    color: #2c3e50; /* Muted dark blue for headings */
 }
 
 a {
     text-decoration: none;
-    color: #007bff; /* Blue links */
+    color: #5dade2; /* Soft blue links */
     transition: color 0.3s;
 }
 
 a:hover {
-    color: #0056b3; /* Darker blue hover effect */
+    color: #3498db; /* Slightly brighter blue hover effect */
 }
 
 p {
-    font-size: 1.2rem;
-    color: #555;
+    font-size: 1.1rem;
+    color: #6c757d; /* Muted gray for paragraphs */
     margin-bottom: 1.5rem;
 }
 
@@ -60,13 +60,13 @@ button {
     padding: 0.7rem 1.5rem;
     font-size: 1rem;
     border-radius: 5px;
-    background-color: #007bff; /* Blue buttons */
+    background-color: #5dade2; /* Soft blue buttons */
     color: white;
     transition: background-color 0.3s;
 }
 
 button:hover {
-    background-color: #0056b3; /* Darker blue hover effect */
+    background-color: #3498db; /* Slightly brighter blue hover effect */
 }
 
 /* Navbar styles */
@@ -74,7 +74,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a1a2e; /* Dark navy blue for navbar */
+    background-color: #34495e; /* Muted navy blue for navbar */
     padding: 1rem 2rem;
     position: sticky;
     top: 0;
@@ -92,23 +92,24 @@ nav .nav-options {
 }
 
 nav .nav-options li a {
-    color: white; /* White text for navbar links */
+    color: #ecf0f1; /* Light gray text for navbar links */
     font-weight: bold;
     transition: color 0.3s ease, background-color 0.3s ease;
 }
 
 nav .nav-options li a:hover {
-    color: #007bff; /* Blue hover effect */
+    color: #5dade2; /* Soft blue hover effect */
     background-color: rgba(255, 255, 255, 0.1); /* Subtle white background */
     padding: 5px 10px;
     border-radius: 5px;
 }
+
 /* Sticky Navbar */
 #main-navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #1a1a2e;
+    background-color: #34495e;
     padding: 1rem 2rem;
     position: fixed; /* Makes it stick to the top */
     top: 0;
@@ -124,7 +125,6 @@ body {
     padding-bottom: 100px; /* Extra space at the bottom */
 }
 
-
 #main-navbar .nav-options {
     list-style: none;
     display: flex;
@@ -138,7 +138,7 @@ body {
 }
 
 #main-navbar .nav-options li a {
-    color: white;
+    color: #ecf0f1;
     font-size: 1.2rem;
     font-weight: 500;
     padding: 10px 15px;
@@ -147,16 +147,15 @@ body {
 }
 
 #main-navbar .nav-options li a:hover {
-    color: #007bff;
+    color: #5dade2;
     background-color: rgba(255, 255, 255, 0.1);
 }
-
 
 /* Hero Section */
 .hero-section {
     text-align: center;
     padding: 4rem 2rem;
-    background: linear-gradient(to right, #007bff, #0056b3); /* Blue gradient */
+    background: linear-gradient(to right, #a8dadc, #457b9d); /* Calming blue-green gradient */
     color: white;
 }
 
@@ -168,11 +167,11 @@ body {
 .hero-section p {
     font-size: 1.5rem;
     margin-bottom: 2rem;
-    color: #FFD700; /* Yellow color for the paragraph */
+    color: #f1faee; /* Soft white for paragraph text */
 }
 
 .hero-section .cta-button {
-    background-color: #ff9800; /* Orange button */
+    background-color: #5dade2; /* Soft blue button */
     color: white;
     padding: 1rem 2rem;
     font-size: 1.2rem;
@@ -181,7 +180,7 @@ body {
 }
 
 .hero-section .cta-button:hover {
-    background-color: #e67e22; /* Darker orange hover effect */
+    background-color: #3498db; /* Slightly brighter blue hover effect */
 }
 
 /* Section styles */
@@ -193,12 +192,12 @@ section {
 section h2 {
     font-size: 2.5rem;
     margin-bottom: 1.5rem;
-    color: #222;
+    color: #2c3e50; /* Muted dark blue for headings */
 }
 
 section p {
     font-size: 1.1rem;
-    color: #555;
+    color: #6c757d; /* Muted gray for paragraphs */
     margin-bottom: 1.5rem;
 }
 
@@ -221,7 +220,7 @@ section p {
 }
 
 .feature h3 {
-    color: #007bff; /* Blue headings */
+    color: #5dade2; /* Soft blue headings */
     margin-bottom: 1rem;
 }
 
@@ -264,7 +263,9 @@ section p {
 .cell {
     width: 100px;
     height: 100px;
-    background-color: #f4f4f4;}
+    background-color: #f4f4f4;
+}
+
 .path {
     background-color: white;
     padding: 2rem;
@@ -298,7 +299,7 @@ section p {
     position: fixed;
     bottom: 20px;
     right: 20px;
-    background-color: #1a1a2e; /* Dark navy blue button */
+    background-color: #5dade2; /* Soft blue button */
     color: white;
     border-radius: 50%;
     width: 50px;
@@ -312,42 +313,41 @@ section p {
 }
 
 #backToTop:hover {
-    background-color: #007bff; /* Blue hover */
+    background-color: #3498db; /* Slightly brighter blue hover effect */
     color: white;
 }
 
 /* Footer styles */
-/* Sticky footer */
 footer {
-    background-color: #1a1a2e; /* Dark navy footer */
-    color: white;
+    background-color: #34495e; /* Muted navy footer */
+    color: #ecf0f1; /* Light gray text */
     text-align: center;
     padding: 2rem 1rem;
     width: 100%;
 }
 
 footer .social-media a {
-    color: #007bff; /* Blue links */
+    color: #5dade2; /* Soft blue links */
     margin: 0 0.5rem;
     transition: color 0.3s;
 }
 
 footer .social-media a:hover {
-    color: #0056b3; /* Darker blue hover effect */
+    color: #3498db; /* Slightly brighter blue hover effect */
 }
 
 /* To-Do List Section styles */
 #todo-section {
     padding: 2rem;
-    background-color: #f9f9f9;
+    background-color: #f5f7fa;
     text-align: center;
 }
 
-#names{
+#names {
     font-size: 1.5rem;
     margin-bottom: 1rem;
-    
 }
+
 #todoForm {
     margin-bottom: 1rem;
 }
@@ -416,7 +416,15 @@ footer .social-media a:hover {
     }
 
     section {
-        padding: 1rem;
+        padding: 2rem;
+    }
+
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
     }
 }
 
@@ -456,12 +464,12 @@ footer .social-media a:hover {
 .useful-link-card a {
     font-size: 1.2rem;
     font-weight: bold;
-    color: #007bff;
+    color: #5dade2;
     text-decoration: none;
 }
 
 .useful-link-card a:hover {
-    color: #0056b3;
+    color: #3498db;
     text-decoration: underline;
 }
 
@@ -469,21 +477,31 @@ footer .social-media a:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
+
 /* Contact Section Styles */
 #contact {
-    background-color: #ffffff;
-    padding: 4rem 2rem;
-    max-width: 800px;
-    margin: 50px auto;
-    border-radius: 10px;
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+    border: 2px solid #5dade2;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 #contact h2 {
-    font-size: 2.5rem;
-    color: #1a1a2e;
-    margin-bottom: 2rem;
-    text-align: center;
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #3498db;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
 }
 
 .contact-form {
@@ -516,13 +534,15 @@ footer .social-media a:hover {
 .form-group input:focus,
 .form-group textarea:focus {
     outline: none;
-    border-color: #007bff;
+    border-color: #5dade2;
     background-color: #fff;
 }
 
 .contact-form button {
     align-self: flex-start;
-    background-color: #007bff;
+    background-image: linear-gradient(to right, #5dade2, #3498db);
+    font-weight: bold;
+    letter-spacing: 1px;
     color: white;
     padding: 0.8rem 1.5rem;
     border: none;
@@ -533,66 +553,6 @@ footer .social-media a:hover {
 }
 
 .contact-form button:hover {
-    background-color: #00b351;
-}
-/* Enhanced Contact Section */
-#contact {
-    background: linear-gradient(135deg, #e0f7fa, #ffffff);
-    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
-    border: 2px solid #007bff;
-    animation: fadeInUp 0.8s ease-in-out;
-}
-
-@keyframes fadeInUp {
-    from {
-        transform: translateY(30px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-#contact h2 {
-    font-size: 2.8rem;
-    font-weight: bold;
-    color: #0056b3;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
-}
-
-.contact-form button {
-    background-image: linear-gradient(to right, #007bff, #00bcd4);
-    font-weight: bold;
-    letter-spacing: 1px;
-}
-
-.contact-form button:hover {
-    background-image: linear-gradient(to right, #00b351, #007bff);
+    background-image: linear-gradient(to right, #00b351, #5dade2);
     box-shadow: 0 4px 10px rgba(0, 179, 81, 0.3);
-}
-/* Gradient Text Effect */
-#contact h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    background: linear-gradient(to right, #007bff, #00bcd4); /* Gradient from blue to light blue */
-   color: transparent; /* Makes text color transparent to show the gradient */
-    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft text shadow for depth */
-    letter-spacing: 2px;
-    margin-bottom: 1.5rem;
-    text-align: center;
-    line-height: 1.4;
-    padding: 0.5rem 0;
-}
-
-/* Glowing Text Effect */
-#contact h2 {
-    font-size: 3rem;
-    font-weight: bold;
-    color: #ffffff; /* White text */
-    text-align: center;
-    margin-bottom: 1.5rem;
-    padding: 0.5rem 1rem;
-    background: linear-gradient(45deg, #007bff, #00bcd4); /* Blue gradient */
-    text-shadow: 0 0 5px #007bff, 0 0 10px #00bcd4, 0 0 15px #007bff; /* Glowing text shadow */
 }
