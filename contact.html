@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -101,6 +102,7 @@
 
             <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: background-color 0.3s;">Send</button>
         </form>
+    </section>
 
     <section id="upcoming-events">
       <h2>Upcoming Events</h2>
@@ -130,32 +132,113 @@
       <h2>Get in Touch</h2>
       <form class="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
         <div class="form-group">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edeveloper - Contact</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main>
+      <header class="contact-header">
+        <h1>Contact Us</h1>
+        <p>Feel free to reach out to us for any inquiries or feedback.</p>
+      </header>
+
+      <section id="contact">
+        <h2>Get in Touch</h2>
+        <form
+          class="contact-form"
+          action="https://formspree.io/f/xqkgrqwb"
+          method="POST"
+        >
+
           <label for="name">Name</label>
-          <input type="text" id="name" name="name" placeholder="Your Name" required />
-        </div>
+          <input type="text" id="name" name="name" required />
 
-        <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" name="_replyto" placeholder="Your Email" required />
-        </div>
+          <input type="email" id="email" name="email" required />
 
-        <div class="form-group">
           <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" placeholder="Subject" required />
-        </div>
+          <input type="text" id="subject" name="subject" required />
 
-        <div class="form-group">
           <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" placeholder="Your Message..." required></textarea>
-        </div>
+          <textarea id="message" name="message" rows="5" required></textarea>
+
 
         <button type="submit">Send Message</button>
       </form>
     </section>
+
+    <!-- Live Location Sharing -->
+    <section id="live-location" style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <h2>Share Your Location</h2>
+      <p>Allow us to access your location to provide personalized assistance.</p>
+      <button id="shareLocation" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Share Location</button>
+      <p id="locationStatus" style="margin-top: 10px; color: #555;"></p>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+      <h2>Frequently Asked Questions</h2>
+      <div>
+        <h3 style="cursor: pointer; color: #007bff;" class="faq-question">What services do you offer?</h3>
+        <p class="faq-answer" style="display: none; margin-top: 5px;">We offer web development tutorials, project guidance, and career tips for aspiring developers.</p>
+      </div>
+      <div>
+        <h3 style="cursor: pointer; color: #007bff;" class="faq-question">How can I join your events?</h3>
+        <p class="faq-answer" style="display: none; margin-top: 5px;">You can register for our events through the Events page on our website.</p>
+      </div>
+      <div>
+        <h3 style="cursor: pointer; color: #007bff;" class="faq-question">Do you provide one-on-one mentorship?</h3>
+        <p class="faq-answer" style="display: none; margin-top: 5px;">Yes, we offer personalized mentorship programs. Contact us for more details.</p>
+      </div>
+    </section>
+
+          <button type="submit">Send</button>
+        </form>
+      </section>
+    </main>
+
+
+    <footer>
+      <p>&copy; 2025 Edeveloper. All rights reserved.</p>
+    </footer>
+
   </main>
 
-  <footer>
-    <p>&copy; 2025 Edeveloper. All rights reserved.</p>
-  </footer>
+  <script>
+    // Live Location Sharing
+    const shareLocationButton = document.getElementById('shareLocation');
+    const locationStatus = document.getElementById('locationStatus');
+
+    shareLocationButton.addEventListener('click', () => {
+      if (navigator.geolocation) {
+        locationStatus.textContent = 'Fetching your location...';
+        navigator.geolocation.getCurrentPosition(
+          (position) => {
+            const { latitude, longitude } = position.coords;
+            locationStatus.textContent = `Your location: Latitude ${latitude}, Longitude ${longitude}`;
+          },
+          () => {
+            locationStatus.textContent = 'Unable to fetch your location. Please try again.';
+          }
+        );
+      } else {
+        locationStatus.textContent = 'Geolocation is not supported by your browser.';
+      }
+    });
+
+    // FAQ Toggle
+    document.querySelectorAll('.faq-question').forEach((question) => {
+      question.addEventListener('click', () => {
+        const answer = question.nextElementSibling;
+        answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+      });
+    });
+  </script>
 </body>
+ </body>
+
 </html>
