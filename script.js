@@ -205,6 +205,29 @@ document.addEventListener('DOMContentLoaded', () => {
     }
     fetchWeather();
 
+    // Real-Time Weather Updates with Location
+    async function fetchWeatherWithLocation() {
+        const weatherContainer = document.getElementById('weatherContainer');
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(async (position) => {
+                const { latitude, longitude } = position.coords;
+                try {
+                    const response = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&units=metric&appid=YOUR_API_KEY`);
+                    const data = await response.json();
+                    weatherContainer.textContent = `Current Weather in ${data.name}: ${data.weather[0].description}, ${data.main.temp}°C`;
+                } catch (error) {
+                    weatherContainer.textContent = 'Unable to fetch weather data.';
+                }
+            }, () => {
+                weatherContainer.textContent = 'Location access denied. Unable to fetch weather data.';
+            });
+        } else {
+            weatherContainer.textContent = 'Geolocation is not supported by your browser.';
+        }
+    }
+
+    fetchWeatherWithLocation();
+
     // Daily Motivational Quote
     const quoteContainer = document.createElement('div');
     quoteContainer.id = 'quoteContainer';
@@ -238,4 +261,135 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     updateCompletedTasksCounter();
+
+    // Voice Command Feature for To-Do List
+    const voiceCommandButton = document.createElement('button');
+    voiceCommandButton.textContent = '🎤 Voice Command';
+    voiceCommandButton.style.marginTop = '10px';
+    voiceCommandButton.style.padding = '10px 20px';
+    voiceCommandButton.style.backgroundColor = '#007bff';
+    voiceCommandButton.style.color = 'white';
+    voiceCommandButton.style.border = 'none';
+    voiceCommandButton.style.borderRadius = '5px';
+    voiceCommandButton.style.cursor = 'pointer';
+    document.querySelector('#todoForm').appendChild(voiceCommandButton);
+
+    voiceCommandButton.addEventListener('click', () => {
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition)();
+        recognition.lang = 'en-US';
+        recognition.start();
+
+        recognition.onresult = (event) => {
+            const command = event.results[0][0].transcript.toLowerCase();
+            if (command.includes('add task')) {
+                const task = command.replace('add task', '').trim();
+                if (task) {
+                    addTask(task);
+                } else {
+                    alert('Please specify a task to add.');
+                }
+            } else if (command.includes('clear tasks')) {
+                document.getElementById('todoList').innerHTML = '';
+                updateTaskCounter();
+                completedTasks = 0;
+                updateCompletedTasksCounter();
+            } else {
+                alert('Command not recognized. Try saying "Add task [task name]" or "Clear tasks".');
+            }
+        };
+
+        recognition.onerror = () => {
+            alert('Voice recognition failed. Please try again.');
+        };
+    });
+
+    // Theme Switcher
+    const themeSwitcher = document.createElement('select');
+    themeSwitcher.id = 'themeSwitcher';
+    themeSwitcher.style.marginTop = '20px';
+    themeSwitcher.style.padding = '10px';
+    themeSwitcher.style.borderRadius = '5px';
+    themeSwitcher.style.border = '1px solid #ccc';
+    themeSwitcher.innerHTML = `
+        <option value="default">Default Theme</option>
+        <option value="dark">Dark Theme</option>
+        <option value="light">Light Theme</option>
+    `;
+    document.body.insertBefore(themeSwitcher, document.body.firstChild);
+
+    themeSwitcher.addEventListener('change', (event) => {
+        const theme = event.target.value;
+        if (theme === 'dark') {
+            document.body.style.backgroundColor = '#121212';
+            document.body.style.color = '#ffffff';
+        } else if (theme === 'light') {
+            document.body.style.backgroundColor = '#f9f9f9';
+            document.body.style.color = '#333333';
+        } else {
+            document.body.style.backgroundColor = '';
+            document.body.style.color = '';
+        }
+    });
+
+    // Task Due Date Reminder
+    function addTaskWithReminder(task, dueDate) {
+        const todoList = document.getElementById('todoList');
+        const listItem = document.createElement('li');
+        listItem.textContent = `${task} (Due: ${dueDate})`;
+
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Complete';
+        completeButton.style.marginLeft = '10px';
+        completeButton.addEventListener('click', () => {
+            listItem.style.textDecoration = 'line-through';
+            listItem.style.color = 'gray';
+            completeButton.disabled = true;
+            completedTasks++;
+            updateCompletedTasksCounter();
+        });
+
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.marginLeft = '10px';
+        deleteButton.addEventListener('click', () => {
+            todoList.removeChild(listItem);
+            updateTaskCounter();
+        });
+
+        listItem.appendChild(completeButton);
+        listItem.appendChild(deleteButton);
+        todoList.appendChild(listItem);
+        updateTaskCounter();
+
+        // Reminder Notification
+        const dueTime = new Date(dueDate).getTime();
+        const now = new Date().getTime();
+        const timeUntilDue = dueTime - now;
+
+        if (timeUntilDue > 0) {
+            setTimeout(() => {
+                alert(`Reminder: Task "${task}" is due now!`);
+            }, timeUntilDue);
+        }
+    }
+
+    document.getElementById('todoForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const task = document.getElementById('todoInput').value.trim();
+        const dueDate = document.getElementById('dueDateInput').value;
+        if (task && dueDate) {
+            addTaskWithReminder(task, dueDate);
+            document.getElementById('todoInput').value = '';
+            document.getElementById('dueDateInput').value = '';
+        } else {
+            alert('Please enter both task and due date.');
+        }
+    });
+
+    // Add Due Date Input Field
+    const dueDateInput = document.createElement('input');
+    dueDateInput.type = 'date';
+    dueDateInput.id = 'dueDateInput';
+    dueDateInput.style.marginLeft = '10px';
+    document.querySelector('#todoForm').appendChild(dueDateInput);
 });

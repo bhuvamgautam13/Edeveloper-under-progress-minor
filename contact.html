@@ -3,108 +3,302 @@
 
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Edeveloper</title>
   <link rel="stylesheet" href="contact.css" />
   <style>
+    /* General Styles */
     html, body {
       height: 100%;
       margin: 0;
       padding: 0;
-      display: flex;
-      flex-direction: column;
-      font-family: Arial, sans-serif;
+      font-family: 'Arial', sans-serif;
+      background-color: #eef2f3; /* Light calming gray-blue */
+      color: #333;
+      scroll-behavior: smooth;
     }
 
-    main {
-      flex: 1;
-      padding: 20px;
+    nav {
+      background-color: #a8dadc; /* Soft teal */
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav .logo img {
+      height: 50px;
+    }
+
+    nav .nav-options {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav .nav-options li a {
+      text-decoration: none;
+      color: #1d3557; /* Deep blue */
+      font-weight: bold;
+      transition: color 0.3s, transform 0.2s;
+    }
+
+    nav .nav-options li a:hover {
+      color: #457b9d; /* Softer blue */
+      transform: scale(1.1);
     }
 
     header {
       text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(to right, #a8dadc, #457b9d); /* Calming gradient */
+      color: white;
+      border-radius: 10px;
       margin-bottom: 30px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    header h1 {
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    header p {
+      font-size: 1.2rem;
     }
 
     section {
       margin-bottom: 30px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    #contact {
+    section:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    section h2 {
+      text-align: center;
+      font-size: 2rem;
+      color: #457b9d; /* Softer blue */
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .contact-form {
       max-width: 600px;
       margin: 0 auto;
+      padding: 30px;
+      background: linear-gradient(to bottom, #ffffff, #f9f9f9);
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+      position: relative;
+      overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
     }
 
-    .contact-form .form-group {
-      margin-bottom: 1rem;
+    .contact-form:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-form::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(135deg, #a8dadc, #457b9d, #1d3557);
+      z-index: 0;
+      transform: rotate(0deg);
+      transition: transform 0.5s;
+      opacity: 0.1;
+    }
+
+    .contact-form:hover::before {
+      transform: rotate(360deg);
     }
 
     .contact-form label {
       display: block;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
+      font-weight: bold;
+      color: #1d3557;
+      position: relative;
+      z-index: 1;
+      font-size: 1rem;
     }
 
     .contact-form input,
     .contact-form textarea {
       width: 100%;
-      padding: 10px;
-      box-sizing: border-box;
+      padding: 12px;
+      margin-bottom: 20px;
       border: 1px solid #ccc;
-      border-radius: 4px;
+      border-radius: 8px;
+      outline: none;
+      font-size: 1rem;
+      transition: border-color 0.3s, box-shadow 0.3s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: #457b9d;
+      box-shadow: 0 0 10px rgba(69, 123, 157, 0.5);
     }
 
     .contact-form button {
-      background-color: #00b351;
+      width: 100%;
+      padding: 15px;
+      background-color: #457b9d;
       color: white;
-      padding: 10px 20px;
       border: none;
-      border-radius: 4px;
+      border-radius: 8px;
+      font-weight: bold;
+      font-size: 1.1rem;
       cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+      position: relative;
+      z-index: 1;
+    }
+
+    .contact-form button:hover {
+      background-color: #1d3557;
+      transform: scale(1.05);
+    }
+
+    .contact-form button:active {
+      transform: scale(0.98);
+    }
+
+    .contact-form input::placeholder,
+    .contact-form textarea::placeholder {
+      color: #aaa;
+      font-style: italic;
+    }
+
+    .contact-form input:focus::placeholder,
+    .contact-form textarea:focus::placeholder {
+      color: transparent;
+    }
+
+    .event {
+      margin-bottom: 20px;
+      padding: 15px;
+      background: #f9f9f9;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .event:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .event h3 {
+      font-size: 1.5rem;
+      color: #1d3557; /* Deep blue */
+      margin-bottom: 10px;
+    }
+
+    .event p {
+      margin: 5px 0;
+      color: #555;
     }
 
     footer {
-      background-color: #222;
+      background-color: #457b9d; /* Softer blue */
       color: white;
       text-align: center;
-      padding: 1rem 0;
+      padding: 20px;
+      margin-top: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    footer p {
+      margin: 0;
+    }
+
+    footer a {
+      color: #a8dadc; /* Soft teal */
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+
+    footer a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
   </style>
 </head>
+
 <body>
-    <nav>
-        <div class="logo">
-            <img src="logo.png" alt="Edeveloper Logo" aria-label="Site Logo">
-        </div>
-        <ul class="nav-options">
-            <li><a href="index.html">Home</a></li>
-            <li><a href="courses.html">Courses</a></li>
-            <li><a href="blog.html">Blog</a></li>
-            <li><a href="resources.html">Resources</a></li>
-            <li><a href="contact.html">Contact</a></li>
-        </ul>
-    </nav>
+  <nav>
+    <div class="logo">
+      <img src="logo.png" alt="Edeveloper Logo" aria-label="Site Logo">
+    </div>
+    <ul class="nav-options">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="courses.html">Courses</a></li>
+      <li><a href="blog.html">Blog</a></li>
+      <li><a href="resources.html">Resources</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
   <main>
     <header>
       <h1>Contact Us</h1>
       <p>Have questions? Reach out to us!</p>
     </header>
-    <section style="display: flex; justify-content: center; align-items: center; padding: 20px; background-color: #f9f9f9;">
-        <form id="contactForm" style="width: 100%; max-width: 500px; background: white; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-            <label for="name" style="display: block; margin-bottom: 5px; font-weight: bold;">Name:</label>
-            <input type="text" id="name" name="name" placeholder="Enter your name" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; outline: none;">
 
-            <label for="email" style="display: block; margin-bottom: 5px; font-weight: bold;">Email:</label>
-            <input type="email" id="email" name="email" placeholder="Enter your email" required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; outline: none;">
+    <section>
+      <h2>Contact Form</h2>
+      <form class="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" placeholder="Your Name" required />
 
-            <label for="message" style="display: block; margin-bottom: 5px; font-weight: bold;">Message:</label>
-            <textarea id="message" name="message" placeholder="Write your message here..." required style="width: 100%; padding: 10px; margin-bottom: 15px; border: 1px solid #ccc; border-radius: 5px; outline: none; resize: vertical;"></textarea>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Your Email" required />
 
-            <button type="submit" style="width: 100%; padding: 10px; background-color: #007bff; color: white; border: none; border-radius: 5px; font-weight: bold; cursor: pointer; transition: background-color 0.3s;">Send</button>
-        </form>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        <p id="charCounter" style="text-align: right; font-size: 0.9rem; color: #555;">0/500</p>
+
+        <button type="submit">Send Message</button>
+      </form>
     </section>
 
-    <section id="upcoming-events">
+    <section>
       <h2>Upcoming Events</h2>
       <div class="event">
         <h3>Web Development Workshop</h3>
@@ -112,14 +306,12 @@
         <p>Time: 10:00 AM - 1:00 PM</p>
         <p>Description: Join us for an in-depth workshop on modern web development techniques.</p>
       </div>
-
       <div class="event">
         <h3>App Design and Development Bootcamp</h3>
         <p>Date: June 10, 2025</p>
         <p>Time: 9:00 AM - 5:00 PM</p>
         <p>Description: Learn mobile app design and development with hands-on projects.</p>
       </div>
-
       <div class="event">
         <h3>Digital Marketing Summit</h3>
         <p>Date: July 20, 2025</p>
@@ -127,118 +319,43 @@
         <p>Description: Covering SEO, social media, content marketing, and more.</p>
       </div>
     </section>
-
-    <section id="contact">
-      <h2>Get in Touch</h2>
-      <form class="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
-        <div class="form-group">
-
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Edeveloper - Contact</title>
-    <link rel="stylesheet" href="styles.css" />
-  </head>
-  <body>
-    <main>
-      <header class="contact-header">
-        <h1>Contact Us</h1>
-        <p>Feel free to reach out to us for any inquiries or feedback.</p>
-      </header>
-
-      <section id="contact">
-        <h2>Get in Touch</h2>
-        <form
-          class="contact-form"
-          action="https://formspree.io/f/xqkgrqwb"
-          method="POST"
-        >
-
-          <label for="name">Name</label>
-          <input type="text" id="name" name="name" required />
-
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-
-          <label for="subject">Subject</label>
-          <input type="text" id="subject" name="subject" required />
-
-          <label for="message">Message</label>
-          <textarea id="message" name="message" rows="5" required></textarea>
-
-
-        <button type="submit">Send Message</button>
-      </form>
-    </section>
-
-    <!-- Live Location Sharing -->
-    <section id="live-location" style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-      <h2>Share Your Location</h2>
-      <p>Allow us to access your location to provide personalized assistance.</p>
-      <button id="shareLocation" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Share Location</button>
-      <p id="locationStatus" style="margin-top: 10px; color: #555;"></p>
-    </section>
-
-    <!-- FAQ Section -->
-    <section id="faq" style="margin-top: 30px; padding: 20px; background-color: #f9f9f9; border-radius: 10px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
-      <h2>Frequently Asked Questions</h2>
-      <div>
-        <h3 style="cursor: pointer; color: #007bff;" class="faq-question">What services do you offer?</h3>
-        <p class="faq-answer" style="display: none; margin-top: 5px;">We offer web development tutorials, project guidance, and career tips for aspiring developers.</p>
-      </div>
-      <div>
-        <h3 style="cursor: pointer; color: #007bff;" class="faq-question">How can I join your events?</h3>
-        <p class="faq-answer" style="display: none; margin-top: 5px;">You can register for our events through the Events page on our website.</p>
-      </div>
-      <div>
-        <h3 style="cursor: pointer; color: #007bff;" class="faq-question">Do you provide one-on-one mentorship?</h3>
-        <p class="faq-answer" style="display: none; margin-top: 5px;">Yes, we offer personalized mentorship programs. Contact us for more details.</p>
-      </div>
-    </section>
-
-          <button type="submit">Send</button>
-        </form>
-      </section>
-    </main>
-
-
-    <footer>
-      <p>&copy; 2025 Edeveloper. All rights reserved.</p>
-    </footer>
-
   </main>
 
-  <script>
-    // Live Location Sharing
-    const shareLocationButton = document.getElementById('shareLocation');
-    const locationStatus = document.getElementById('locationStatus');
+  <footer>
+    <p>&copy; 2025 Edeveloper. All rights reserved. <a href="privacy.html">Privacy Policy</a></p>
+  </footer>
 
-    shareLocationButton.addEventListener('click', () => {
-      if (navigator.geolocation) {
-        locationStatus.textContent = 'Fetching your location...';
-        navigator.geolocation.getCurrentPosition(
-          (position) => {
-            const { latitude, longitude } = position.coords;
-            locationStatus.textContent = `Your location: Latitude ${latitude}, Longitude ${longitude}`;
-          },
-          () => {
-            locationStatus.textContent = 'Unable to fetch your location. Please try again.';
-          }
-        );
-      } else {
-        locationStatus.textContent = 'Geolocation is not supported by your browser.';
-      }
+  <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #457b9d; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;">Toggle Dark Mode</button>
+
+  <script>
+    // Live Character Counter
+    const messageField = document.getElementById('message');
+    const charCounter = document.getElementById('charCounter');
+    const maxChars = 500;
+
+    messageField.addEventListener('input', () => {
+      const currentLength = messageField.value.length;
+      charCounter.textContent = `${currentLength}/${maxChars}`;
+      charCounter.style.color = currentLength > maxChars ? 'red' : '#555';
     });
 
-    // FAQ Toggle
-    document.querySelectorAll('.faq-question').forEach((question) => {
-      question.addEventListener('click', () => {
-        const answer = question.nextElementSibling;
-        answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
-      });
+    // Dark Mode Toggle
+    const darkModeToggle = document.getElementById('darkModeToggle');
+    darkModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        document.body.style.backgroundColor = '#1d1d1d';
+        document.body.style.color = '#f5f5f5';
+        darkModeToggle.style.backgroundColor = '#f5f5f5';
+        darkModeToggle.style.color = '#1d1d1d';
+      } else {
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+        darkModeToggle.style.backgroundColor = '#457b9d';
+        darkModeToggle.style.color = 'white';
+      }
     });
   </script>
 </body>
- </body>
 
 </html>
