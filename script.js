@@ -58,13 +58,39 @@ document.addEventListener('DOMContentLoaded', () => {
         tictactoeSection.remove();
     }
 
-// Smooth Scrolling for Navigation Links
-document.querySelectorAll('#main-navbar a').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-            target.scrollIntoView({ behavior: 'smooth' });
+    // Smooth Scrolling for Navigation Links
+    document.querySelectorAll('#main-navbar a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth' });
+            }
+        });
+    });
+
+    // Back to Top Button Functionality
+    const backToTopButton = document.createElement('button');
+    backToTopButton.id = 'backToTop';
+    backToTopButton.textContent = '↑';
+    backToTopButton.style.position = 'fixed';
+    backToTopButton.style.bottom = '20px';
+    backToTopButton.style.right = '20px';
+    backToTopButton.style.display = 'none';
+    backToTopButton.style.backgroundColor = '#007bff';
+    backToTopButton.style.color = 'white';
+    backToTopButton.style.border = 'none';
+    backToTopButton.style.borderRadius = '50%';
+    backToTopButton.style.width = '50px';
+    backToTopButton.style.height = '50px';
+    backToTopButton.style.cursor = 'pointer';
+    document.body.appendChild(backToTopButton);
+
+    window.addEventListener('scroll', () => {
+        if (window.scrollY > 300) {
+            backToTopButton.style.display = 'block';
+        } else {
+            backToTopButton.style.display = 'none';
         }
     });
 
@@ -75,154 +101,77 @@ document.querySelectorAll('#main-navbar a').forEach(anchor => {
         });
     });
 
-   
+    // Dynamic Greeting Message Based on Time
+    const greeting = document.createElement('p');
+    const hours = new Date().getHours();
+    if (hours < 12) {
+        greeting.textContent = 'Good Morning! Start learning full-stack development today.';
+    } else if (hours < 18) {
+        greeting.textContent = 'Good Afternoon! Keep building your skills.';
+    } else {
+        greeting.textContent = 'Good Evening! Explore our free resources.';
+    }
+    document.querySelector('header').appendChild(greeting);
 
-    // Function to create the game board
-    function createGameBoard() {
-        gameBoard.innerHTML = ''; // Clear the board
-        for (let i = 0; i < 9; i++) {
-            const cell = document.createElement('div');
-            cell.classList.add('cell');
-            cell.dataset.index = i;
-            cell.addEventListener('click', handleCellClick);
-            gameBoard.appendChild(cell);
-        }
+    // Real-Time Clock
+    const clock = document.createElement('p');
+    clock.id = 'liveClock';
+    clock.style.fontWeight = 'bold';
+    clock.style.marginTop = '10px';
+    document.querySelector('header').appendChild(clock);
+
+    function updateClock() {
+        const now = new Date();
+        const timeString = now.toLocaleTimeString();
+        clock.textContent = `Current Time: ${timeString}`;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Interactive To-Do List with Task Counter
+    const todoCounter = document.createElement('p');
+    todoCounter.id = 'todoCounter';
+    todoCounter.style.marginTop = '10px';
+    document.querySelector('#todoForm').appendChild(todoCounter);
+
+    function updateTaskCounter() {
+        const todoList = document.getElementById('todoList');
+        const taskCount = todoList.children.length;
+        todoCounter.textContent = `Total Tasks: ${taskCount}`;
     }
 
-    // Function to handle cell clicks
-    function handleCellClick(event) {
-        const cell = event.target;
-        const cellIndex = cell.dataset.index;
-
-        if (board[cellIndex] !== '' || !gameActive) {
-            return;
+    document.getElementById('todoForm').addEventListener('submit', function (event) {
+        event.preventDefault();
+        const task = document.getElementById('todoInput').value.trim();
+        if (task !== '') {
+            addTask(task);
+            document.getElementById('todoInput').value = '';
         }
+    });
 
-        board[cellIndex] = currentPlayer;
-        cell.textContent = currentPlayer;
+    function addTask(task) {
+        const todoList = document.getElementById('todoList');
+        const listItem = document.createElement('li');
+        listItem.textContent = task;
 
-        if (checkWin()) {
-            gameActive = false;
-            alert(`Player ${currentPlayer} wins!`);
-            return;
-        }
+        const deleteButton = document.createElement('button');
+        deleteButton.textContent = 'Delete';
+        deleteButton.style.marginLeft = '10px';
+        deleteButton.addEventListener('click', () => {
+            todoList.removeChild(listItem);
+            updateTaskCounter();
+        });
 
-        if (board.every(cell => cell !== '')) {
-            gameActive = false;
-            alert('It\'s a draw!');
-            return;
-        }
-
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
+        listItem.appendChild(deleteButton);
+        todoList.appendChild(listItem);
+        updateTaskCounter();
     }
 
-    // Function to check for a win
-    function checkWin() {
-        return winningConditions.some(condition => {
-            const [a, b, c] = condition;
-            return board[a] && board[a] === board[b] && board[a] === board[c];
+    // Navbar Clickable Logo Redirect
+    const logo = document.querySelector('.logo');
+    if (logo) {
+        logo.addEventListener('click', () => {
+            window.location.href = 'index.html'; // Redirects to the main homepage
         });
     }
-
-    // Function to reset the game
-    function resetGame() {
-        board = ['', '', '', '', '', '', '', '', ''];
-        currentPlayer = 'X';
-        gameActive = true;
-        createGameBoard();
-    }
-
-    // Initialize the game
-    createGameBoard();
-    resetButton.addEventListener('click', resetGame);
 });
-
-// Back to Top Button Functionality
-const backToTopButton = document.createElement('button');
-backToTopButton.id = 'backToTop';
-backToTopButton.textContent = '↑';
-document.body.appendChild(backToTopButton);
-
-window.addEventListener('scroll', () => {
-    if (window.scrollY > 300) {
-        backToTopButton.style.display = 'block';
-    } else {
-        backToTopButton.style.display = 'none';
-    }
-});
-
-backToTopButton.addEventListener('click', () => {
-    window.scrollTo({
-        top: 0,
-        behavior: 'smooth'
-    });
-});
-
-// Dynamic Greeting Message Based on Time
-document.addEventListener('DOMContentLoaded', () => {
-    const greeting = document.createElement('p');
-    const hours = new Date().getHours();
-    if (hours < 12) {
-        greeting.textContent = 'Good Morning! Start learning full-stack development today.';
-    } else if (hours < 18) {
-        greeting.textContent = 'Good Afternoon! Keep building your skills.';
-    } else {
-        greeting.textContent = 'Good Evening! Explore our free resources.';
-    }
-    document.querySelector('header').appendChild(greeting);
-});
-
-// Interactive To-Do List
-document.getElementById('todoForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const task = document.getElementById('todoInput').value.trim();
-    if (task !== '') {
-        addTask(task);
-        document.getElementById('todoInput').value = '';
-    }
-});
-
-function addTask(task) {
-    const todoList = document.getElementById('todoList');
-    const listItem = document.createElement('li');
-    listItem.textContent = task;
-
-    const deleteButton = document.createElement('button');
-    deleteButton.textContent = 'Delete';
-    deleteButton.addEventListener('click', () => {
-        todoList.removeChild(listItem);
-    });
-
-    listItem.appendChild(deleteButton);
-    todoList.appendChild(listItem);
-}
-
-// Form Greeting Interaction
-document.getElementById('greetingForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const name = document.getElementById('name').value.trim();
-    if (name) {
-        const greetingMessage = `Hello, ${name}! Welcome to our site.`;
-        document.getElementById('greetingMessage').textContent = greetingMessage;
-    }
-});
-
-// Navbar Clickable Logo Redirect
-document.querySelector('.logo').addEventListener('click', () => {
-    window.location.href = 'index.html'; // Redirects to the main homepage
-});
-
-
-// Dynamic greeting message
-document.addEventListener('DOMContentLoaded', () => {
-    const greeting = document.createElement('p');
-    const hours = new Date().getHours();
-    if (hours < 12) {
-        greeting.textContent = 'Good Morning! Start learning full-stack development today.';
-    } else if (hours < 18) {
-        greeting.textContent = 'Good Afternoon! Keep building your skills.';
-    } else {
-        greeting.textContent = 'Good Evening! Explore our free resources.';
-    }
-    document.querySelector('header').appendChild(greeting);
-})})

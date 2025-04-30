@@ -9,13 +9,21 @@
         /* Additional styles for enhancements */
         .navbar {
             background-color: #1a1a2e;
-            padding: 10px 20px;
+            padding: 15px 30px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
         }
         .navbar a {
             color: white;
             font-weight: bold;
             transition: color 0.3s;
+            text-decoration: none;
         }
         .navbar a:hover {
             color: #007bff;
@@ -75,13 +83,20 @@
                 transform: translateY(0);
             }
         }
+        .search-bar select:hover, .search-bar input:hover {
+            border-color: #007bff;
+        }
+        .search-bar button:hover {
+            background: linear-gradient(to right, #0056b3, #003f7f);
+            transform: scale(1.05);
+        }
     </style>
 </head>
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">Edeveloper</a>
+            <div class="logo" style="font-size: 1.5rem; font-weight: bold; color: white;">
+                <a href="index.html" style="text-decoration: none; color: white;">Edeveloper</a>
             </div>
             <ul class="nav-links" style="display: flex; gap: 20px; align-items: center; list-style: none; padding: 0; margin: 0;">
                 <li><a href="index.html">Home</a></li>
@@ -89,10 +104,6 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="search-bar" style="display: flex; align-items: center; gap: 10px; background-color: #f0f0f0; padding: 5px 10px; border-radius: 5px;">
-                <input type="text" placeholder="Search articles..." style="border: none; outline: none; padding: 10px; flex: 1; border-radius: 5px;">
-                <button style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Search</button>
-            </div>
         </nav>
         <h1>Edeveloper Blog</h1>
         <p>Stay updated with the latest tutorials and tips in full-stack development.</p>
@@ -142,13 +153,27 @@
             <a href="#" style="background-color: #f0f0f0; padding: 5px 10px; border-radius: 5px;">#WebDevelopment</a>
         </div>
     </section>
-    <section class="newsletter" style="margin-top: 30px; text-align: center; background-color: #f9f9f9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2>Subscribe to Our Newsletter</h2>
-        <p>Get the latest articles and updates delivered straight to your inbox.</p>
-        <form action="#" method="post" style="display: flex; justify-content: center; gap: 10px; margin-top: 10px; max-width: 600px; margin: 0 auto;">
-            <input type="email" placeholder="Enter your email" required style="flex: 1; padding: 10px; border: 1px solid #ccc; border-radius: 5px; outline: none;">
-            <button type="submit" style="padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Subscribe</button>
+    <section class="newsletter" style="margin-top: 40px; text-align: center; background: linear-gradient(to right, #007bff, #0056b3); padding: 40px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); color: white;">
+        <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: bold;">Stay Updated!</h2>
+        <p style="font-size: 1.2rem; margin-bottom: 30px;">Subscribe to our newsletter and never miss an update.</p>
+        <form action="#" method="post" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 700px; margin: 0 auto;">
+            <input type="email" placeholder="Enter your email address" required style="flex: 1; padding: 15px; border: none; border-radius: 10px; outline: none; font-size: 1rem; color: #333; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+            <button type="submit" style="padding: 15px 40px; background: linear-gradient(to right, #ff9800, #e68900); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: background 0.3s, transform 0.2s; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                Subscribe
+            </button>
         </form>
+        <style>
+            .newsletter input::placeholder {
+                color: #aaa;
+            }
+            .newsletter input:focus {
+                box-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+            }
+            .newsletter button:hover {
+                background: linear-gradient(to right, #e68900, #d97700);
+                transform: scale(1.05);
+            }
+        </style>
     </section>
     <section class="trending-articles" style="margin-top: 30px;">
         <h2>Trending Articles</h2>
