@@ -1,174 +1,49 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Courses - Edeveloper</title>
-  <style>
-    :root {
-      --primary-color: #007bff;
-      --dark-blue: #1a1a2e;
-      --light-blue: #e3f2fd;
-      --section-bg: #f9f9f9;
-      --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
-
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background-color: #f5f7fa;
-      color: #333;
-    }
-
-    header {
-      text-align: center;
-      padding: 50px 20px;
-      background: linear-gradient(to right, #007bff, #0056b3);
-      color: white;
-      border-radius: 0 0 20px 20px;
-    }
-
-    header h1 {
-      font-size: 2.8rem;
-      margin-bottom: 10px;
-    }
-
-    header p {
-      font-size: 1.2rem;
-    }
-
-    nav {
-      background-color: var(--dark-blue);
-      padding: 10px 20px;
-      box-shadow: var(--box-shadow);
-    }
-
-    nav .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    nav img {
-      height: 50px;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 20px;
-      padding: 0;
-      margin: 0;
-    }
-
-    nav ul li a {
-      color: white;
-      text-decoration: none;
-      font-weight: bold;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #00cfff;
-    }
-
-    section {
-      background-color: var(--section-bg);
-      padding: 30px;
-      border-radius: 12px;
-      margin: 20px auto;
-      width: 90%;
-      max-width: 1000px;
-      box-shadow: var(--box-shadow);
-    }
-
-    h2 {
-      color: var(--primary-color);
-      margin-bottom: 15px;
-    }
-
-    ul {
-      padding-left: 20px;
-    }
-
-    ul li {
-      margin-bottom: 10px;
-    }
-
-    ul li::marker {
-      color: var(--primary-color);
-    }
-
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--dark-blue);
-      color: white;
-      margin-top: 40px;
-    }
-
-    footer a {
-      color: #00cfff;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      nav .container {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      section {
-        padding: 20px;
-      }
-
-      header h1 {
-        font-size: 2rem;
-      }
-
-      header p {
-        font-size: 1rem;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="courses.css" />
 </head>
 <body>
-
-  <nav>
-    <div class="container">
-      <a href="index.html">
-        <img src="https://via.placeholder.com/100x50?text=Logo" alt="Edeveloper Logo"/>
-      </a>
-      <ul>
-        <li><a href="#html-css">HTML & CSS</a></li>
-        <li><a href="#javascript">JavaScript</a></li>
-        <li><a href="#node-express">Node.js & Express</a></li>
-        <li><a href="#react">React</a></li>
-        <li><a href="#mongodb">MongoDB</a></li>
-        <li><a href="#fullstack-projects">Projects</a></li>
-        <li><a href="#career">Career</a></li>
-        <li><a href="#resources">Resources</a></li>
-      </ul>
-    </div>
-  </nav>
-
+  <!-- Navbar -->
   <header>
-    <h1>Master Full-Stack Development for Free</h1>
-    <p>Join thousands of learners and become a professional developer from scratch!</p>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">Edeveloper</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="resources.html">Resources</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="article.html">Technologies</a></li>
+      </ul>
+    </nav>
   </header>
 
+  <!-- Section Links -->
+  <div class="section-links">
+    <ul>
+      <li><a href="#html-css">HTML & CSS</a></li>
+      <li><a href="#javascript">JavaScript</a></li>
+      <li><a href="#node-express">Node.js & Express</a></li>
+      <li><a href="#react">React</a></li>
+      <li><a href="#mongodb">MongoDB</a></li>
+      <li><a href="#fullstack-projects">Full-Stack Projects</a></li>
+    </ul>
+  </div>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Unlock Your Web Dev Potential</h2>
+      <p>Tips, tricks, and deep dives into web development topics.</p>
+      <a href="blog.html" class="cta-button">Read the Blog</a>
+    </div>
+  </section>
+
+  <!-- Full-Stack Development Sections -->
   <section id="html-css">
     <h2>HTML & CSS Basics</h2>
     <p>Build clean, structured, and responsive web pages using HTML5 and CSS3.</p>
@@ -182,233 +57,158 @@
 
   <section id="javascript">
     <h2>JavaScript Fundamentals</h2>
-    <p>Make your websites interactive with JavaScript.</p>
+    <p>Learn the core concepts of JavaScript to build dynamic and interactive web applications.</p>
     <ul>
-      <li>Variables, Functions, and Loops</li>
+      <li>Variables, Data Types, and Functions</li>
       <li>DOM Manipulation and Event Handling</li>
-      <li>Modern ES6 Features</li>
-      <li>Project: Dynamic To-Do List</li>
+      <li>ES6+ Features: Arrow Functions, Promises, Async/Await</li>
+      <li>Mini-projects: To-Do App, Calculator</li>
     </ul>
   </section>
 
   <section id="node-express">
     <h2>Node.js & Express</h2>
-    <p>Create powerful backends and APIs with Node.js and Express.</p>
+    <p>Master backend development with Node.js and Express to build scalable web applications.</p>
     <ul>
-      <li>Server-side JavaScript</li>
-      <li>Routing, Middleware & REST APIs</li>
-      <li>User Authentication and Security</li>
-      <li>Project: API for Task Manager</li>
+      <li>Setting up a Node.js Server</li>
+      <li>RESTful APIs with Express</li>
+      <li>Middleware and Routing</li>
+      <li>Mini-projects: Blog API, Authentication System</li>
     </ul>
   </section>
 
   <section id="react">
     <h2>React.js for Beginners</h2>
-    <p>Build modern web apps with React's component-based architecture.</p>
+    <p>Learn React.js to build modern, fast, and scalable frontend applications.</p>
     <ul>
-      <li>JSX, Props, State & Events</li>
-      <li>Hooks and Functional Components</li>
-      <li>Routing and Dynamic UIs</li>
-      <li>Project: Weather App or Blog UI</li>
+      <li>Components, Props, and State</li>
+      <li>React Hooks: useState, useEffect</li>
+      <li>Routing with React Router</li>
+      <li>Mini-projects: Weather App, E-commerce UI</li>
     </ul>
   </section>
 
   <section id="mongodb">
-    <h2>MongoDB Database</h2>
-    <p>Store, query, and manage data using MongoDB.</p>
+    <h2>MongoDB</h2>
+    <p>Understand MongoDB to store and manage data for your web applications.</p>
     <ul>
-      <li>CRUD Operations with MongoDB</li>
-      <li>Data Modeling and Indexing</li>
-      <li>Aggregation & Performance</li>
-      <li>Project: Blog Post DB or User Store</li>
+      <li>CRUD Operations</li>
+      <li>Schema Design and Indexing</li>
+      <li>Aggregation Framework</li>
+      <li>Mini-projects: User Management System</li>
     </ul>
   </section>
 
   <section id="fullstack-projects">
     <h2>Full-Stack Projects</h2>
-    <p>Combine everything into real-world applications.</p>
+    <p>Combine your frontend and backend skills to build complete web applications.</p>
     <ul>
-      <li>E-Commerce Platform</li>
-      <li>Social Media Dashboard</li>
-      <li>AI Chatbot Integration</li>
-      <li>Deployment using Vercel, Netlify, or Heroku</li>
+      <li>Blog Platform</li>
+      <li>E-commerce Website</li>
+      <li>Social Media App</li>
+      <li>Portfolio Website</li>
     </ul>
   </section>
 
-  <section id="career">
-    <h2>Career Opportunities</h2>
-    <p>Explore paths like Web Developer, Full-Stack Engineer, or Frontend Developer.</p>
+  <!-- Newsletter Section -->
+  <section class="newsletter">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Get the latest posts delivered to your inbox.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
   </section>
 
-  <section id="resources">
-    <h2>Resources</h2>
-    <p>Helpful links and tools:</p>
-    <ul>
-      <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs</a></li>
-      <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
-      <li><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy</a></li>
-      <li><a href="https://gridgarden.game/" target="_blank">Grid Garden</a></li>
-    </ul>
+  <!-- Testimonials Section -->
+  <section class="testimonials">
+    <h2>What Our Readers Say</h2>
+    <div class="testimonial-card">
+      <blockquote>
+        “Edeveloper has transformed the way I learn web development. The tutorials are clear and practical.”
+        <cite>– Alex R.</cite>
+      </blockquote>
+    </div>
+    <div class="testimonial-card">
+      <blockquote>
+        “As a backend developer, I struggled with frontend. Now I feel confident building beautiful UIs!”
+        <cite>– Maria S.</cite>
+      </blockquote>
+    </div>
+    <div class="testimonial-card">
+      <blockquote>
+        “Great blog with real-world examples. Love the full-stack projects section!”
+        <cite>– Daniel T.</cite>
+      </blockquote>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Edeveloper. All rights reserved.</p>
-    <p>Contact: <a href="mailto:support@edeveloper.com">support@edeveloper.com</a></p>
   </footer>
 
+  <script>
+    // Smooth scrolling for navigation links
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Courses - Edeveloper</title>
-    <link rel="stylesheet" href="courses.css">
-    <!-- Navbar -->
-    <nav class="navbar">
-        <div class="container">
-            <a href="index.html" class="logo">
-                <img src="logo.png" alt="Edeveloper Logo" />
-                <span>Edeveloper</span>
-            </a>
-            <ul class="nav-links">
-                <li><a href="#html-css">HTML & CSS</a></li>
-                <li><a href="#javascript">JavaScript</a></li>
-                <li><a href="#node-express">Node.js</a></li>
-                <li><a href="#react">React</a></li>
-                <li><a href="#mongodb">MongoDB</a></li>
-                <li><a href="#fullstack-projects">Projects</a></li>
-                <li><a href="#career">Career</a></li>
-                <li><a href="#resources">Resources</a></li>
-            </ul>
-        </div>
-    </nav>
-    
-    <style>
-       
-    </style>
-</head>
-<body>
-    <header style="text-align: center; padding: 50px 20px; background: linear-gradient(to right, #007bff, #0056b3); color: white; border-radius: 10px; margin-bottom: 30px;">
-        <h1 style="font-size: 2.5rem; margin-bottom: 20px;">Master Full-Stack Development for Free</h1>
-        <p style="font-size: 1.2rem;">Join thousands of learners on a journey to become a proficient full-stack developer with our expert-led, beginner-friendly courses.</p>
-    </header>
-    
-    <section id="html-css">
-        <h2>HTML & CSS Basics</h2>
-        <p>Master the fundamental building blocks of the web. This course provides a thorough introduction to creating structured, accessible, and visually appealing web pages using HTML and CSS.</p>
-        
-        <h3>What You'll Learn</h3>
-        <ul>
-            <li><strong>HTML5 Essentials:</strong> Understand the semantic structure of HTML elements like <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, <code>&lt;section&gt;</code>, and more.</li>
-            <li><strong>Forms and Inputs:</strong> Create user input forms with text fields, radio buttons, checkboxes, dropdowns, file uploads, and form validation.</li>
-            <li><strong>CSS3 Styling:</strong> Learn how to apply fonts, colors, spacing, and layout techniques using classes, IDs, and pseudo-selectors.</li>
-            <li><strong>Box Model and Positioning:</strong> Understand margin, padding, border, and content flow to design pixel-perfect layouts.</li>
-            <li><strong>Flexbox and Grid:</strong> Build modern, responsive layouts with powerful layout modules like Flexbox and CSS Grid.</li>
-            <li><strong>Responsive Web Design:</strong> Use media queries to ensure your website looks great on mobile, tablet, and desktop screens.</li>
-            <li><strong>Accessibility:</strong> Follow best practices to make websites usable for all, including screen reader support and proper use of semantic tags.</li>
-        </ul>
-    
-        <h3>Hands-On Practice</h3>
-        <p>Build the following mini-projects to apply what you’ve learned:</p>
-        <ul>
-            <li>Personal Portfolio Website</li>
-            <li>Restaurant Menu Page</li>
-            <li>Sign-Up and Login Form</li>
-            <li>Responsive Blog Template</li>
-        </ul>
-    
-        <h3>Bonus Resources</h3>
-        <ul>
-            <li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML" target="_blank">MDN Web Docs - HTML</a></li>
-            <li><a href="https://css-tricks.com/" target="_blank">CSS-Tricks</a></li>
-            <li><a href="https://flexboxfroggy.com/" target="_blank">Flexbox Froggy Game</a></li>
-            <li><a href="https://gridgarden.game/" target="_blank">Grid Garden Game</a></li>
+    // Back to Top Button
+    const backToTopButton = document.createElement('button');
+    backToTopButton.id = 'backToTop';
+    backToTopButton.textContent = '↑';
+    backToTopButton.style.position = 'fixed';
+    backToTopButton.style.bottom = '20px';
+    backToTopButton.style.right = '20px';
+    backToTopButton.style.display = 'none';
+    backToTopButton.style.backgroundColor = '#007bff';
+    backToTopButton.style.color = 'white';
+    backToTopButton.style.border = 'none';
+    backToTopButton.style.borderRadius = '50%';
+    backToTopButton.style.width = '50px';
+    backToTopButton.style.height = '50px';
+    backToTopButton.style.cursor = 'pointer';
+    document.body.appendChild(backToTopButton);
 
-    <section id="html-css" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2 style="color: #007bff; margin-bottom: 10px;">HTML & CSS Basics</h2>
-        <p style="margin-bottom: 10px;">Learn the building blocks of web development with structured content and styling techniques.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 5px;">✔ HTML Elements & Forms – Structure web pages efficiently.</li>
-            <li style="margin-bottom: 5px;">✔ CSS Styling & Layouts – Create visually stunning designs.</li>
-            <li style="margin-bottom: 5px;">✔ Responsive Web Design – Make your sites mobile-friendly.</li>
-            <li style="margin-bottom: 5px;">✔ Flexbox & Grid – Master modern layout techniques.</li>
-            <li>✔ Accessibility Best Practices – Ensure inclusivity in your designs.</li>
-        </ul>
-    </section>
-    
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 300) {
+        backToTopButton.style.display = 'block';
+      } else {
+        backToTopButton.style.display = 'none';
+      }
+    });
 
-    <section id="javascript" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2 style="color: #007bff; margin-bottom: 10px;">JavaScript Fundamentals</h2>
-        <p style="margin-bottom: 10px;">Understand JavaScript, the backbone of web interactivity, through key concepts and best practices.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 5px;">✔ Variables & Data Types – Store and manipulate values dynamically.</li>
-            <li style="margin-bottom: 5px;">✔ Functions & Scope – Write reusable and maintainable code.</li>
-            <li style="margin-bottom: 5px;">✔ DOM Manipulation – Interact with webpage elements.</li>
-            <li style="margin-bottom: 5px;">✔ Event Handling – Create engaging user experiences.</li>
-            <li>✔ ES6 Features – Utilize modern JavaScript techniques.</li>
-        </ul>
-    </section>
+    backToTopButton.addEventListener('click', () => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    });
 
-    <section id="node-express" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2 style="color: #007bff; margin-bottom: 10px;">Node.js and Express</h2>
-        <p style="margin-bottom: 10px;">Develop backend applications using Node.js and Express for scalable solutions.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 5px;">✔ Server-Side Programming – Handle client requests efficiently.</li>
-            <li style="margin-bottom: 5px;">✔ Routing & Middleware – Structure backend logic effectively.</li>
-            <li style="margin-bottom: 5px;">✔ RESTful APIs – Build and integrate API endpoints.</li>
-            <li style="margin-bottom: 5px;">✔ Authentication & Security – Protect user data and manage access.</li>
-            <li>✔ Database Integration – Connect backend logic to data storage.</li>
-        </ul>
-    </section>
-
-    <section id="react" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2 style="color: #007bff; margin-bottom: 10px;">React.js for Beginners</h2>
-        <p style="margin-bottom: 10px;">Dive into modern frontend frameworks with React.js and build dynamic applications.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 5px;">✔ Component-Based Architecture – Create reusable UI elements.</li>
-            <li style="margin-bottom: 5px;">✔ State & Props – Manage and pass data efficiently.</li>
-            <li style="margin-bottom: 5px;">✔ Hooks & Functional Components – Optimize performance with React's latest features.</li>
-            <li style="margin-bottom: 5px;">✔ React Router – Implement navigation in single-page applications.</li>
-            <li>✔ Performance Optimization – Ensure smooth rendering and responsiveness.</li>
-        </ul>
-    </section>
-
-    <section id="mongodb" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2 style="color: #007bff; margin-bottom: 10px;">Database Management with MongoDB</h2>
-        <p style="margin-bottom: 10px;">Store and manage data efficiently with MongoDB, a leading NoSQL database.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 5px;">✔ CRUD Operations – Create, Read, Update, and Delete data.</li>
-            <li style="margin-bottom: 5px;">✔ Indexing & Query Optimization – Improve database efficiency.</li>
-            <li style="margin-bottom: 5px;">✔ Data Modeling – Design scalable database structures.</li>
-            <li style="margin-bottom: 5px;">✔ Aggregation Pipelines – Perform complex data operations.</li>
-            <li>✔ Backup & Recovery – Safeguard data integrity and security.</li>
-        </ul>
-    </section>
-
-    <section id="fullstack-projects" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2 style="color: #007bff; margin-bottom: 10px;">Advanced Full-Stack Projects</h2>
-        <p style="margin-bottom: 10px;">Apply your knowledge to real-world projects and master software development best practices.</p>
-        <ul style="list-style: none; padding: 0;">
-            <li style="margin-bottom: 5px;">✔ E-Commerce Platform – Build a complete shopping experience.</li>
-            <li style="margin-bottom: 5px;">✔ Social Media Dashboard – Create an interactive user-driven platform.</li>
-            <li style="margin-bottom: 5px;">✔ Task Management System – Develop efficient productivity tools.</li>
-            <li style="margin-bottom: 5px;">✔ AI-Powered Web Apps – Integrate artificial intelligence features.</li>
-            <li>✔ Deployment Strategies – Publish projects to the web seamlessly.</li>
-        </ul>
-    </section>
-
-    <section id="career" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2 style="color: #007bff; margin-bottom: 10px;">Career Opportunities</h2>
-        <p style="margin-bottom: 10px;">Explore the various career paths available after mastering full-stack development.</p>
-    </section>
-
-    <section id="resources" style="padding: 20px; background-color: #f9f9f9; border-radius: 10px; margin-bottom: 20px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
-        <h2 style="color: #007bff; margin-bottom: 10px;">Resources</h2>
-        <p style="margin-bottom: 10px;">Enhance your learning experience with documentation, forums, and live sessions.</p>
-    </section>
-
-    <footer style="text-align: center; padding: 20px; background-color: #1a1a2e; color: white; margin-top: 30px;">
-        <p>&copy; 2025 Edeveloper. All rights reserved.</p>
-        <p>Contact us at <a href="mailto:support@edeveloper.com" style="color: #007bff; text-decoration: none;">Edevelopers@gmail.com</a></p>
-    </footer>
-
+    // Reader Mode Toggle
+    const readerModeToggle = document.getElementById('readerModeToggle');
+    readerModeToggle.addEventListener('click', () => {
+      document.body.classList.toggle('reader-mode');
+      if (document.body.classList.contains('reader-mode')) {
+        document.body.style.backgroundColor = '#fdf6e3'; // Soft beige for reader mode
+        document.body.style.color = '#333'; // Relaxing dark gray text
+        document.querySelectorAll('header, nav, .navbar, footer, .pagination').forEach(el => el.style.display = 'none');
+        readerModeToggle.textContent = 'Exit Reader Mode';
+        readerModeToggle.style.backgroundColor = '#007bff';
+      } else {
+        document.body.style.backgroundColor = '';
+        document.body.style.color = '';
+        document.querySelectorAll('header, nav, .navbar, footer, .pagination').forEach(el => el.style.display = '');
+        readerModeToggle.textContent = 'Toggle Reader Mode';
+        readerModeToggle.style.backgroundColor = '#6c757d';
+      }
+    });
+  </script>
 </body>
 </html>
