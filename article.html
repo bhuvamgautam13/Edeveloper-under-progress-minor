@@ -30,77 +30,140 @@
     </header>
 
     <!-- Front-End Section -->
-    <section id="frontend" class="section">
-        <div class="container">
-            <h2>Front-End Technologies</h2>
-            <p>Front-end technologies shape the visual experience of users and include markup, styling, and interactivity layers.</p>
-            
-            <h3>1. HTML</h3>
-            <p><strong>Use:</strong> Provides the basic structure of web pages using semantic elements like headings, sections, and forms.</p>
+<section id="frontend" class="section">
+    <div class="container">
+        <h2>Front-End Technologies</h2>
+        <p>Front-end technologies shape the visual experience of users and include markup, styling, and interactivity layers.</p>
+        
+        <h3>1. HTML</h3>
+        <ul>
+            <li>Defines the structure of web content using semantic tags like <code>&lt;header&gt;</code>, <code>&lt;article&gt;</code>, and <code>&lt;form&gt;</code>.</li>
+            <li>Integrates multimedia like images, audio, and video seamlessly into web pages.</li>
+            <li>Supports accessibility features like screen-reader compatibility and ARIA roles.</li>
+        </ul>
 
-            <h3>2. CSS</h3>
-            <p><strong>Use:</strong> Adds design, layout, and responsive features using styles, animations, and modern layout systems (Flexbox, Grid).</p>
+        <h3>2. CSS</h3>
+        <ul>
+            <li>Creates responsive layouts using Flexbox, Grid, and media queries.</li>
+            <li>Applies visual styles like colors, fonts, shadows, transitions, and animations.</li>
+            <li>Supports dark mode, theming, and modern UI effects like glassmorphism.</li>
+        </ul>
 
-            <h3>3. JavaScript</h3>
-            <p><strong>Use:</strong> Adds interactivity and dynamic content—form validation, modals, animations, etc.</p>
+        <h3>3. JavaScript</h3>
+        <ul>
+            <li>Handles client-side logic such as form validation and event handling.</li>
+            <li>Manipulates the DOM dynamically to update content without page reloads.</li>
+            <li>Integrates APIs for tasks like fetching data, displaying maps, or handling payments.</li>
+        </ul>
 
-            <h3>4. Frameworks/Libraries</h3>
-            <ul>
-                <li><strong>React.js:</strong> Component-based UI development.</li>
-                <li><strong>Vue.js:</strong> Lightweight and progressive JavaScript framework.</li>
-                <li><strong>Bootstrap/Tailwind:</strong> Rapid UI development with responsive design support.</li>
-            </ul>
-        </div>
-    </section>
+        <h3>4. Frameworks/Libraries</h3>
+        <ul>
+            <li><strong>React.js:</strong> Builds reusable UI components and efficiently updates the DOM with a virtual DOM.</li>
+            <li><strong>Vue.js:</strong> Offers reactive data binding and a gentle learning curve for building dynamic interfaces.</li>
+            <li><strong>Bootstrap/Tailwind:</strong> Enables fast, responsive design with pre-built components and utility classes.</li>
+        </ul>
+    </div>
+</section>
 
-    <!-- Back-End Section -->
-    <section id="backend" class="section">
-        <div class="container">
-            <h2>Back-End Technologies</h2>
-            <p>Back-end technologies power the business logic, database communication, and server-side processing.</p>
 
-            <h3>1. Node.js</h3>
-            <p><strong>Use:</strong> JavaScript runtime for building fast, scalable server applications using event-driven architecture.</p>
 
-            <h3>2. Express.js</h3>
-            <p><strong>Use:</strong> Minimal and flexible Node.js web framework for building REST APIs and middleware support.</p>
+   <!-- Back-End Section -->
+<section id="backend" class="section">
+    <div class="container">
+        <h2>Back-End Technologies</h2>
+        <p>Back-end technologies power the business logic, database communication, and server-side processing.</p>
 
-            <h3>3. Django</h3>
-            <p><strong>Use:</strong> High-level Python framework for secure, fast development with built-in admin, ORM, and templating.</p>
+        <h3>1. Node.js</h3>
+        <ul>
+            <li>Executes JavaScript on the server, enabling full-stack development with a single language.</li>
+            <li>Handles asynchronous I/O for high-performance applications like chat apps and real-time games.</li>
+            <li>Has a rich ecosystem via npm for modules like authentication, file uploads, and testing.</li>
+        </ul>
 
-            <h3>4. Other Popular Options</h3>
-            <ul>
-                <li><strong>Laravel (PHP):</strong> Elegant syntax, robust routing and MVC structure.</li>
-                <li><strong>Spring Boot (Java):</strong> Used for enterprise-grade scalable applications.</li>
-                <li><strong>Ruby on Rails:</strong> Convention-over-configuration rapid development.</li>
-            </ul>
-        </div>
-    </section>
+        <h3>2. Express.js</h3>
+        <ul>
+            <li>Builds RESTful APIs with route handling, middleware, and error management.</li>
+            <li>Supports templating engines like EJS or Pug for server-rendered views.</li>
+            <li>Used in MERN stack applications as the web server component.</li>
+        </ul>
 
-    <!-- Database Section -->
-    <section id="database" class="section">
-        <div class="container">
-            <h2>Database Technologies</h2>
-            <p>Databases store and manage data efficiently for web applications.</p>
+        <h3>3. Django</h3>
+        <ul>
+            <li>Provides built-in features like user authentication, admin panel, and URL routing.</li>
+            <li>Uses ORM (Object-Relational Mapping) to interact with databases using Python classes.</li>
+            <li>Follows the DRY (Don't Repeat Yourself) principle, making development efficient and clean.</li>
+        </ul>
 
-            <h3>1. SQL Databases</h3>
-            <ul>
-                <li><strong>MySQL:</strong> Popular open-source relational DB for structured data and transactional systems.</li>
-                <li><strong>PostgreSQL:</strong> Advanced features like JSON support, indexing, and high concurrency.</li>
-            </ul>
+        <h3>4. Other Popular Options</h3>
+        <ul>
+            <li><strong>Laravel (PHP):</strong> Offers elegant syntax, routing, MVC structure, and database migration tools.</li>
+            <li><strong>Spring Boot (Java):</strong> Ideal for enterprise apps with support for REST APIs, security, and microservices.</li>
+            <li><strong>Ruby on Rails:</strong> Follows convention over configuration for faster prototyping and development.</li>
+        </ul>
+    </div>
+</section>
+<!-- Database Section -->
+<section id="database" class="section">
+    <div class="container">
+        <h2>Database Technologies</h2>
+        <p>Databases store and manage data efficiently for web applications.</p>
 
-            <h3>2. NoSQL Databases</h3>
-            <ul>
-                <li><strong>MongoDB:</strong> Document-based storage ideal for fast and flexible data modeling.</li>
-                <li><strong>Firebase Realtime DB:</strong> Backend-as-a-service with real-time updates and sync.</li>
-            </ul>
+        <h3>1. SQL Databases</h3>
+        <ul>
+            <li><strong>MySQL:</strong> 
+                <ul>
+                    <li>Widely supported by hosting providers and web frameworks.</li>
+                    <li>Uses structured query language for reliable data manipulation and retrieval.</li>
+                    <li>Ideal for e-commerce platforms, CMS, and ERP systems.</li>
+                </ul>
+            </li>
+            <li><strong>PostgreSQL:</strong> 
+                <ul>
+                    <li>Supports complex queries, full-text search, and indexing features.</li>
+                    <li>Handles structured and semi-structured data (JSON, XML).</li>
+                    <li>Used in financial systems, analytics, and geo-spatial applications.</li>
+                </ul>
+            </li>
+        </ul>
 
-            <h3>3. When to Use What?</h3>
-            <p><strong>Use SQL:</strong> For complex relational data with strict schemas.<br>
-            <strong>Use NoSQL:</strong> For large-scale, flexible, or rapidly evolving data.</p>
-        </div>
-    </section>
+        <h3>2. NoSQL Databases</h3>
+        <ul>
+            <li><strong>MongoDB:</strong>
+                <ul>
+                    <li>Stores data in flexible, JSON-like documents (BSON).</li>
+                    <li>Scales horizontally across clusters for high availability.</li>
+                    <li>Popular in real-time analytics, IoT, and content management systems.</li>
+                </ul>
+            </li>
+            <li><strong>Firebase Realtime DB:</strong>
+                <ul>
+                    <li>Offers real-time data syncing between clients and the server.</li>
+                    <li>Ideal for chat apps, games, and collaborative tools.</li>
+                    <li>Includes authentication, file storage, and cloud functions out-of-the-box.</li>
+                </ul>
+            </li>
+        </ul>
 
+        <h3>3. When to Use What?</h3>
+        <ul>
+            <li><strong>Use SQL:</strong> 
+                <ul>
+                    <li>For structured data requiring relational integrity (e.g., banking systems).</li>
+                    <li>When transactions (ACID properties) are important.</li>
+                    <li>When complex joins, indexing, and schemas are critical to performance.</li>
+                </ul>
+            </li>
+            <li><strong>Use NoSQL:</strong> 
+                <ul>
+                    <li>For scalable applications with dynamic or unstructured data models.</li>
+                    <li>When flexibility and rapid development are more important than strict schema.</li>
+                    <li>In projects like social networks, real-time dashboards, and content platforms.</li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</section>
+    
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
