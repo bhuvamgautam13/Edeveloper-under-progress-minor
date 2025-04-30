@@ -322,3 +322,19 @@ footer .social-media a {
 footer .social-media a:hover {
     color: #007bff;
 }
+/*  Responsive Styles */
+@media (max-width: 768px) {
+    nav .nav-options {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .technologies {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .feature {
+        max-width: 90%;
+    }
+}
