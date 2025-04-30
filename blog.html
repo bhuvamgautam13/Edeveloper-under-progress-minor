@@ -1,207 +1,409 @@
 <!DOCTYPE html>
 <html lang="en">
+
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Blog - Edeveloper</title>
-  <link rel="stylesheet" href="blog.css" />
-</head>
-<body>
-  <!-- Navbar -->
-  <header>
-    <nav class="navbar">
-      <div class="logo">
-        <a href="index.html">Edeveloper</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="blog.html">Blog</a></li>
-        <li><a href="contact.html">Contact</a></li>
-      </ul>
-    </nav>
-    <h1 class="main-title">Edeveloper Blog</h1>
-    <p class="main-subtitle">Stay updated with the latest tutorials and tips in full-stack development.</p>
-  </header>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <div class="hero-content">
-      <h2>Welcome to the Edeveloper Blog</h2>
-      <p>Your go-to resource for mastering full-stack development, exploring new technologies, and staying ahead in the tech world.</p>
-      <a href="#latest-articles" class="cta-button">Explore Articles</a>
-    </div>
-  </section>
-
-  <!-- Categories -->
-  <section class="categories">
-    <h2>Categories</h2>
-    <ul>
-      <li><a href="#">Frontend Development</a></li>
-      <li><a href="#">Backend Development</a></li>
-      <li><a href="#">DevOps</a></li>
-      <li><a href="#">Career Tips</a></li>
-    </ul>
-  </section>
-
-  <!-- Latest Articles -->
-  <section id="latest-articles">
-    <h2>Latest Articles</h2>
-    <ul>
-      <li><a href="#">Understanding REST APIs</a></li>
-      <li><a href="#">Top 10 JavaScript Libraries in 2025</a></li>
-      <li><a href="#">How to Deploy Your Web App</a></li>
-    </ul>
-  </section>
-
-  <!-- Featured Articles -->
-  <section>
-    <h2>Featured Articles</h2>
-    <article>
-      <h3><a href="#">Mastering React in 30 Days</a></h3>
-      <p>Learn how to build scalable and efficient web applications using React.</p>
-    </article>
-    <article>
-      <h3><a href="#">The Future of Web Development</a></h3>
-      <p>Explore the trends and technologies shaping the future of web development.</p>
-    </article>
-  </section>
-
-  <!-- Tags -->
-  <section class="popular-tags">
-    <h2>Popular Tags</h2>
-    <div class="tags-container">
-      <a href="#">#JavaScript</a>
-      <a href="#">#React</a>
-      <a href="#">#NodeJS</a>
-      <a href="#">#CSS</a>
-      <a href="#">#WebDevelopment</a>
-    </div>
-  </section>
-
-  <!-- Newsletter -->
-  <section class="newsletter">
-    <h2>Stay Updated!</h2>
-    <p>Subscribe to our newsletter and never miss an update.</p>
-    <form action="#" method="post" class="newsletter-form">
-      <input type="email" placeholder="Enter your email" required />
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
-
-  <!-- Trending Articles -->
-  <section class="trending-articles">
-    <h2>Trending Articles</h2>
-    <ul>
-      <li><a href="#">10 Tips to Improve Your Coding Skills</a></li>
-      <li><a href="#">Why TypeScript is the Future of JavaScript</a></li>
-      <li><a href="#">How to Build a Portfolio That Stands Out</a></li>
-      <li><a href="#">Understanding Microservices Architecture</a></li>
-    </ul>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Readers Say</h2>
-    <div class="testimonial-cards">
-      <blockquote>
-        <p>"Edeveloper has been a game-changer for my career."</p>
-        <cite>- Priya Sharma</cite>
-      </blockquote>
-      <blockquote>
-        <p>"Thanks to Edeveloper, I landed my first job as a full-stack developer."</p>
-        <cite>- Rahul Verma</cite>
-      </blockquote>
-      <blockquote>
-        <p>"The articles here are always insightful and practical."</p>
-        <cite>- Anjali Gupta</cite>
-      </blockquote>
-    </div>
-  </section>
-
-  <!-- History -->
-  <section class="history">
-    <h2>History of Edevelopers</h2>
-    <p>In 2024, a group of passionate students began building Edeveloper, aiming to make web development learning accessible to everyone...</p>
-  </section>
-
-  <!-- Pagination -->
-  <section class="pagination">
-    <a href="#">Previous</a>
-    <a href="#">Next</a>
-  </section>
-
-  <!-- Reader Mode Toggle -->
-  <div class="reader-toggle">
-    <button id="readerModeToggle">Toggle Reader Mode</button>
-  </div>
-
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 Edeveloper. All rights reserved.</p>
-    <ul>
-      <li><a href="privacy.html">Privacy Policy</a></li>
-      <li><a href="terms.html">Terms of Service</a></li>
-      <li><a href="sitemap.html">Sitemap</a></li>
-    </ul>
-  </footer>
-
-  <!-- JavaScript -->
-  <script>
-    // Smooth scrolling
-    document.querySelectorAll('.nav-links a').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        const target = document.querySelector(this.getAttribute('href'));
-        if (target) {
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth' });
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - Edeveloper</title>
+    <link rel="stylesheet" href="blog.css">
+    <style>
+        /* Additional styles for enhancements */
+        .navbar {
+            background-color: #1a1a2e;
+            padding: 15px 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
         }
-      });
-    });
 
-    // Back to Top Button
-    const backToTopButton = document.createElement('button');
-    backToTopButton.id = 'backToTop';
-    backToTopButton.textContent = '↑';
-    Object.assign(backToTopButton.style, {
-      position: 'fixed',
-      bottom: '20px',
-      right: '20px',
-      display: 'none',
-      backgroundColor: '#007bff',
-      color: 'white',
-      border: 'none',
-      borderRadius: '50%',
-      width: '50px',
-      height: '50px',
-      cursor: 'pointer',
-      fontSize: '24px'
-    });
-    document.body.appendChild(backToTopButton);
-    window.addEventListener('scroll', () => {
-      backToTopButton.style.display = window.scrollY > 300 ? 'block' : 'none';
-    });
-    backToTopButton.addEventListener('click', () => {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    });
+        .navbar a {
+            color: white;
+            font-weight: bold;
+            transition: color 0.3s;
+            text-decoration: none;
+        }
 
-    // Reader Mode
-    const readerToggle = document.getElementById('readerModeToggle');
-    readerToggle.addEventListener('click', () => {
-      document.body.classList.toggle('reader-mode');
-      const hideElements = document.querySelectorAll('header, nav, .navbar, footer, .pagination');
-      if (document.body.classList.contains('reader-mode')) {
-        document.body.style.backgroundColor = '#fdf6e3';
-        document.body.style.color = '#333';
-        hideElements.forEach(el => el.style.display = 'none');
-        readerToggle.textContent = 'Exit Reader Mode';
-      } else {
-        document.body.style.backgroundColor = '';
-        document.body.style.color = '';
-        hideElements.forEach(el => el.style.display = '');
-        readerToggle.textContent = 'Toggle Reader Mode';
-      }
-    });
-  </script>
+        .navbar a:hover {
+            color: #007bff;
+        }
+
+        .hero-content {
+            text-align: center;
+            padding: 50px 20px;
+            background: linear-gradient(to right, #a8dadc, #457b9d);
+            color: white;
+            border-radius: 10px;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        .hero-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 20px;
+        }
+
+        .cta-button {
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .cta-button:hover {
+            background-color: #e68900;
+        }
+
+        .categories ul li a {
+            color: #007bff;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        .categories ul li a:hover {
+            color: #0056b3;
+        }
+
+        .newsletter {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #a8dadc, #457b9d);
+        }
+
+        .testimonials blockquote {
+            transition: transform 0.3s;
+        }
+
+        .testimonials blockquote:hover {
+            transform: scale(1.05);
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .search-bar select:hover,
+        .search-bar input:hover {
+            border-color: #007bff;
+        }
+
+        .search-bar button:hover {
+            background: linear-gradient(to right, #0056b3, #003f7f);
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <header>
+            <nav class="navbar">
+                <div class="logo" style="font-size: 1.5rem; font-weight: bold; color: white;">
+                    <a href="index.html" style="text-decoration: none; color: white;">Edeveloper</a>
+                </div>
+                <ul class="nav-links"
+                    style="display: flex; gap: 20px; align-items: center; list-style: none; padding: 0; margin: 0;">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <h1>Edeveloper Blog</h1>
+            <p>Stay updated with the latest tutorials and tips in full-stack development.</p>
+        </header>
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Welcome to the Edeveloper Blog</h2>
+                <p>Your go-to resource for mastering full-stack development, exploring new technologies, and staying
+                    ahead
+                    in the tech world.</p>
+                <a href="#latest-articles" class="cta-button">Explore Articles</a>
+            </div>
+        </section>
+        <section class="categories">
+            <h2>Categories</h2>
+            <ul style="list-style-type: none;">
+                <li><a href="#">Frontend Development</a></li>
+                <li><a href="#">Backend Development</a></li>
+                <li><a href="#">DevOps</a></li>
+                <li><a href="#">Career Tips</a></li>
+            </ul>
+        </section>
+        <section id="latest-articles">
+            <h2>Latest Articles</h2>
+            <ul style="list-style-type: none;">
+                <li><a href="#">Understanding REST APIs</a></li>
+                <li><a href="#">Top 10 JavaScript Libraries in 2025</a></li>
+                <li><a href="#">How to Deploy Your Web App</a></li>
+            </ul>
+        </section>
+        <section>
+            <h2>Featured Articles</h2>
+            <article>
+                <h3><a href="#">Mastering React in 30 Days</a></h3>
+                <p>Learn how to build scalable and efficient web applications using React.</p>
+            </article>
+            <article>
+                <h3><a href="#">The Future of Web Development</a></h3>
+                <p>Explore the trends and technologies shaping the future of web development.</p>
+            </article>
+        </section>
+        <section class="popular-tags">
+            <h2>Popular Tags</h2>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap;">
+                <a href="#" style="background-color: #f0f0f0; padding: 5px 10px; border-radius: 5px;">#JavaScript</a>
+                <a href="#" style="background-color: #f0f0f0; padding: 5px 10px; border-radius: 5px;">#React</a>
+                <a href="#" style="background-color: #f0f0f0; padding: 5px 10px; border-radius: 5px;">#NodeJS</a>
+                <a href="#" style="background-color: #f0f0f0; padding: 5px 10px; border-radius: 5px;">#CSS</a>
+                <a href="#"
+                    style="background-color: #f0f0f0; padding: 5px 10px; border-radius: 5px;">#WebDevelopment</a>
+            </div>
+        </section>
+        <section class="newsletter"
+            style="margin-top: 40px; text-align: center; padding: 40px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); color: white;">
+            <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: bold;">Stay Updated!</h2>
+            <p style="font-size: 1.2rem; margin-bottom: 30px;">Subscribe to our newsletter and never miss an update.</p>
+            <form action="#" method="post"
+                style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 700px; margin: 0 auto;">
+                <input type="email" placeholder="Enter your email address" required
+                    style="flex: 1; padding: 15px; border: none; border-radius: 10px; outline: none; font-size: 1rem; color: #333; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+                <button type="submit"
+                    style="padding: 15px 40px; background: linear-gradient(to right, #ff9800, #e68900); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 1rem; transition: background 0.3s, transform 0.2s; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);">
+                    Subscribe
+                </button>
+            </form>
+            <style>
+                .newsletter input::placeholder {
+                    color: #aaa;
+                }
+
+                .newsletter input:focus {
+                    box-shadow: 0 0 8px rgba(0, 123, 255, 0.8);
+                }
+
+                .newsletter button:hover {
+                    background: linear-gradient(to right, #e68900, #d97700);
+                    transform: scale(1.05);
+                }
+            </style>
+        </section>
+        <section class="trending-articles" style="margin-top: 30px;">
+            <h2>Trending Articles</h2>
+            <ul style="list-style-type: none; padding: 0;">
+                <li><a href="#">10 Tips to Improve Your Coding Skills</a></li>
+                <li><a href="#">Why TypeScript is the Future of JavaScript</a></li>
+                <li><a href="#">How to Build a Portfolio That Stands Out</a></li>
+                <li><a href="#">Understanding Microservices Architecture</a></li>
+            </ul>
+        </section>
+        <section class="testimonials" style="margin-top: 30px; text-align: center;">
+            <h2>What Our Readers Say</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-top: 20px;">
+                <blockquote
+                    style="max-width: 300px; padding: 20px; background-color: #f9f9f9; border-radius: 5px; transition: transform 0.3s;">
+                    <p>"Edeveloper has been a game-changer for my career. The tutorials are easy to follow and very
+                        informative."</p>
+                    <cite>- Priya Sharma</cite>
+                </blockquote>
+                <blockquote
+                    style="max-width: 300px; padding: 20px; background-color: #f9f9f9; border-radius: 5px; transition: transform 0.3s;">
+                    <p>"Thanks to Edeveloper, I landed my first job as a full-stack developer. Highly recommended!"</p>
+                    <cite>- Rahul Verma</cite>
+                </blockquote>
+                <blockquote
+                    style="max-width: 300px; padding: 20px; background-color: #f9f9f9; border-radius: 5px; transition: transform 0.3s;">
+                    <p>"The resources and articles on this platform are top-notch. I always learn something new."</p>
+                    <cite>- Anjali Gupta</cite>
+                </blockquote>
+            </div>
+        </section>
+        <section class="history" style="margin-top: 30px; padding: 20px; background-color: #f9f9f9;">
+            <h2>History of Edevelopers</h2>
+            <p>In 2024, a group of passionate students embarked on a journey to create a platform that would
+                revolutionize
+                the way people learn web development. Among them was a student named Rohan, who had a vision to make
+                learning accessible to everyone, regardless of their background or financial situation.</p>
+            <p>Rohan started by developing a simple website using HTML, CSS, and JavaScript. He spent countless nights
+                perfecting the design and functionality. The website featured tutorials, project ideas, and a community
+                forum where learners could interact and share knowledge.</p>
+            <p>By mid-2024, the website had gained traction among students and professionals alike. Rohan introduced
+                advanced features like interactive coding challenges, real-time collaboration tools, and personalized
+                learning paths. These innovations made the platform stand out in the crowded ed-tech space.</p>
+            <p>Today, Edeveloper is a thriving community of developers, with thousands of users benefiting from its
+                resources. Rohan's story is a testament to the power of determination and the impact of technology in
+                transforming lives.</p>
+        </section>
+        <section class="pagination" style="display: flex; justify-content: center; gap: 20px; margin-top: 20px;">
+            <a href="#" class="prev">Previous</a>
+            <a href="#" class="next">Next</a>
+        </section>
+        <!-- Reader Mode Toggle -->
+        <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+            <button id="readerModeToggle"
+                style="padding: 10px 20px; background-color: #6c757d; color: white; border: none; border-radius: 5px; cursor: pointer;">
+                Toggle Reader Mode
+            </button>
+        </div>
+
+
++
+        <section class="hero">
+            <div class="hero-content">
+                <h2>Unlock Your Web Dev Potential</h2>
+                <p>Tips, tricks, and deep dives into web development topics.</p>
+                <a href="blog.html" class="cta-button">Read the Blog</a>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h2>Popular Categories</h2>
+            <ul>
+                <li><a href="#">Frontend Development</a></li>
+                <li><a href="#">Backend Development</a></li>
+                <li><a href="#">Full-stack Projects</a></li>
+            </ul>
+        </section>
+
+        <section class="newsletter">
+            <h2>Subscribe to Our Newsletter</h2>
+            <p>Get the latest posts delivered to your inbox.</p>
+            <form>
+                <input type="email" placeholder="Enter your email" required />
+                <button type="submit">Subscribe</button>
+            </form>
+        </section>
+
+        <section class="testimonials">
+            <h2>What Our Readers Say</h2>
+            <div class="testimonial-card">
+                <blockquote>
+                    “Edeveloper has transformed the way I learn web development. The tutorials are clear and practical.”
+                    <cite>– Alex R.</cite>
+                </blockquote>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>
+                    “As a backend developer, I struggled with frontend. Now I feel confident building beautiful UIs!”
+                    <cite>– Maria S.</cite>
+                </blockquote>
+            </div>
+            <div class="testimonial-card">
+                <blockquote>
+                    “Great blog with real-world examples. Love the full-stack projects section!”
+                    <cite>– Daniel T.</cite>
+                </blockquote>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer-content">
+                <p>&copy; 2025 Edeveloper. All rights reserved.</p>
+                <ul style="list-style-type: none;">
+                    <li><a href="privacy.html">Privacy Policy</a></li>
+                    <li><a href="terms.html">Terms of Service</a></li>
+                    <li><a href="sitemap.html">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="social-links">
+                <a href="#"><img src="icons/facebook.svg" alt="Facebook"></a>
+                <a href="#"><img src="icons/twitter.svg" alt="Twitter"></a>
+                <a href="#"><img src="icons/linkedin.svg" alt="LinkedIn"></a>
+            </div>
+        </footer>
+        <script>
+            // Smooth scrolling for navigation links
+            document.querySelectorAll('.nav-links a').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Back to Top Button
+            const backToTopButton = document.createElement('button');
+            backToTopButton.id = 'backToTop';
+            backToTopButton.textContent = '↑';
+            backToTopButton.style.position = 'fixed';
+            backToTopButton.style.bottom = '20px';
+            backToTopButton.style.right = '20px';
+            backToTopButton.style.display = 'none';
+            backToTopButton.style.backgroundColor = '#007bff';
+            backToTopButton.style.color = 'white';
+            backToTopButton.style.border = 'none';
+            backToTopButton.style.borderRadius = '50%';
+            backToTopButton.style.width = '50px';
+            backToTopButton.style.height = '50px';
+            backToTopButton.style.cursor = 'pointer';
+            document.body.appendChild(backToTopButton);
+
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 300) {
+                    backToTopButton.style.display = 'block';
+                } else {
+                    backToTopButton.style.display = 'none';
+                }
+            });
+
+            backToTopButton.addEventListener('click', () => {
+                window.scrollTo({
+                    top: 0,
+                    behavior: 'smooth'
+                });
+            });
+
+            // Reader Mode Toggle
+            const readerModeToggle = document.getElementById('readerModeToggle');
+            readerModeToggle.addEventListener('click', () => {
+                document.body.classList.toggle('reader-mode');
+                if (document.body.classList.contains('reader-mode')) {
+                    document.body.style.backgroundColor = '#fdf6e3'; // Soft beige for reader mode
+                    document.body.style.color = '#333'; // Relaxing dark gray text
+                    document.querySelectorAll('header, nav, .navbar, footer, .pagination').forEach(el => el.style.display = 'none');
+                    readerModeToggle.textContent = 'Exit Reader Mode';
+                    readerModeToggle.style.backgroundColor = '#007bff';
+                } else {
+                    document.body.style.backgroundColor = '';
+                    document.body.style.color = '';
+                    document.querySelectorAll('header, nav, .navbar, footer, .pagination').forEach(el => el.style.display = '');
+                    readerModeToggle.textContent = 'Toggle Reader Mode';
+                    readerModeToggle.style.backgroundColor = '#6c757d';
+                }
+            });
+
+            // Adjust colors for a more relaxing experience
+            document.querySelectorAll('.hero-content, .newsletter').forEach(section => {
+                section.style.background = 'linear-gradient(to right, #a8dadc, #457b9d)'; // Softer blue-green gradient
+            });
+            document.querySelectorAll('h2, h3, a').forEach(el => {
+                el.style.color = '#2c3e50'; // Calming dark blue for headings and links
+            });
+            document.querySelectorAll('a:hover').forEach(el => {
+                el.style.color = '#1d3557'; // Slightly darker blue on hover
+            });
+        </script>
+
 </body>
+
 </html>
