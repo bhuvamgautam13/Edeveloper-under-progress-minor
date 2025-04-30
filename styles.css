@@ -236,6 +236,16 @@ section p {
 .technology {
     background-color: white;
     padding: 2rem;
+    background-color: #fff;
+}
+
+/* Tic Tac Toe Game Board */
+#game-board {
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-gap: 5px;
+    justify-content: center;
+    margin: 20px auto;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     flex: 1;
@@ -251,6 +261,10 @@ section p {
     gap: 2rem;
 }
 
+.cell {
+    width: 100px;
+    height: 100px;
+    background-color: #f4f4f4;}
 .path {
     background-color: white;
     padding: 2rem;
@@ -388,7 +402,7 @@ footer .social-media a:hover {
         grid-template-columns: repeat(3, 80px);
     }
 
-    #game-board div {
+    .cell {
         width: 80px;
         height: 80px;
     }
@@ -454,4 +468,131 @@ footer .social-media a:hover {
 .useful-link-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+/* Contact Section Styles */
+#contact {
+    background-color: #ffffff;
+    padding: 4rem 2rem;
+    max-width: 800px;
+    margin: 50px auto;
+    border-radius: 10px;
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+#contact h2 {
+    font-size: 2.5rem;
+    color: #1a1a2e;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    padding: 0.8rem;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f4f4f4;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    background-color: #fff;
+}
+
+.contact-form button {
+    align-self: flex-start;
+    background-color: #007bff;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #00b351;
+}
+/* Enhanced Contact Section */
+#contact {
+    background: linear-gradient(135deg, #e0f7fa, #ffffff);
+    box-shadow: 0 8px 20px rgba(0, 123, 255, 0.1);
+    border: 2px solid #007bff;
+    animation: fadeInUp 0.8s ease-in-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        transform: translateY(30px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+#contact h2 {
+    font-size: 2.8rem;
+    font-weight: bold;
+    color: #0056b3;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.contact-form button {
+    background-image: linear-gradient(to right, #007bff, #00bcd4);
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.contact-form button:hover {
+    background-image: linear-gradient(to right, #00b351, #007bff);
+    box-shadow: 0 4px 10px rgba(0, 179, 81, 0.3);
+}
+/* Gradient Text Effect */
+#contact h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    background: linear-gradient(to right, #007bff, #00bcd4); /* Gradient from blue to light blue */
+   color: transparent; /* Makes text color transparent to show the gradient */
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2); /* Soft text shadow for depth */
+    letter-spacing: 2px;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    line-height: 1.4;
+    padding: 0.5rem 0;
+}
+
+/* Glowing Text Effect */
+#contact h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #ffffff; /* White text */
+    text-align: center;
+    margin-bottom: 1.5rem;
+    padding: 0.5rem 1rem;
+    background: linear-gradient(45deg, #007bff, #00bcd4); /* Blue gradient */
+    text-shadow: 0 0 5px #007bff, 0 0 10px #00bcd4, 0 0 15px #007bff; /* Glowing text shadow */
 }
