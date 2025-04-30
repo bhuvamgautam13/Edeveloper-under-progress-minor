@@ -31,7 +31,7 @@
         .hero-content {
             text-align: center;
             padding: 50px 20px;
-            background: linear-gradient(to right, #007bff, #0056b3);
+            background: linear-gradient(to right, #a8dadc, #457b9d);
             color: white;
             border-radius: 10px;
             animation: fadeIn 1.5s ease-in-out;
@@ -66,6 +66,7 @@
         }
         .newsletter {
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            background: linear-gradient(to right, #a8dadc, #457b9d);
         }
         .testimonials blockquote {
             transition: transform 0.3s;
@@ -153,7 +154,7 @@
             <a href="#" style="background-color: #f0f0f0; padding: 5px 10px; border-radius: 5px;">#WebDevelopment</a>
         </div>
     </section>
-    <section class="newsletter" style="margin-top: 40px; text-align: center; background: linear-gradient(to right, #007bff, #0056b3); padding: 40px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); color: white;">
+    <section class="newsletter" style="margin-top: 40px; text-align: center; padding: 40px; border-radius: 20px; box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); color: white;">
         <h2 style="font-size: 2.5rem; margin-bottom: 20px; font-weight: bold;">Stay Updated!</h2>
         <p style="font-size: 1.2rem; margin-bottom: 30px;">Subscribe to our newsletter and never miss an update.</p>
         <form action="#" method="post" style="display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; max-width: 700px; margin: 0 auto;">
@@ -212,6 +213,12 @@
         <a href="#" class="prev">Previous</a>
         <a href="#" class="next">Next</a>
     </section>
+    <!-- Reader Mode Toggle -->
+    <div style="position: fixed; top: 20px; left: 20px; z-index: 1000;">
+        <button id="readerModeToggle" style="padding: 10px 20px; background-color: #6c757d; color: white; border: none; border-radius: 5px; cursor: pointer;">
+            Toggle Reader Mode
+        </button>
+    </div>
     <footer>
         <div class="footer-content">
             <p>&copy; 2025 Edeveloper. All rights reserved.</p>
@@ -307,6 +314,36 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+
+        // Reader Mode Toggle
+        const readerModeToggle = document.getElementById('readerModeToggle');
+        readerModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('reader-mode');
+            if (document.body.classList.contains('reader-mode')) {
+                document.body.style.backgroundColor = '#fdf6e3'; // Soft beige for reader mode
+                document.body.style.color = '#333'; // Relaxing dark gray text
+                document.querySelectorAll('header, nav, .navbar, footer, .pagination').forEach(el => el.style.display = 'none');
+                readerModeToggle.textContent = 'Exit Reader Mode';
+                readerModeToggle.style.backgroundColor = '#007bff';
+            } else {
+                document.body.style.backgroundColor = '';
+                document.body.style.color = '';
+                document.querySelectorAll('header, nav, .navbar, footer, .pagination').forEach(el => el.style.display = '');
+                readerModeToggle.textContent = 'Toggle Reader Mode';
+                readerModeToggle.style.backgroundColor = '#6c757d';
+            }
+        });
+
+        // Adjust colors for a more relaxing experience
+        document.querySelectorAll('.hero-content, .newsletter').forEach(section => {
+            section.style.background = 'linear-gradient(to right, #a8dadc, #457b9d)'; // Softer blue-green gradient
+        });
+        document.querySelectorAll('h2, h3, a').forEach(el => {
+            el.style.color = '#2c3e50'; // Calming dark blue for headings and links
+        });
+        document.querySelectorAll('a:hover').forEach(el => {
+            el.style.color = '#1d3557'; // Slightly darker blue on hover
         });
     </script>
 </body>
