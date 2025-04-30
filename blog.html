@@ -9,13 +9,21 @@
         /* Additional styles for enhancements */
         .navbar {
             background-color: #1a1a2e;
-            padding: 10px 20px;
+            padding: 15px 30px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            backdrop-filter: blur(10px);
         }
         .navbar a {
             color: white;
             font-weight: bold;
             transition: color 0.3s;
+            text-decoration: none;
         }
         .navbar a:hover {
             color: #007bff;
@@ -87,8 +95,8 @@
 <body>
     <header>
         <nav class="navbar">
-            <div class="logo">
-                <a href="index.html">Edeveloper</a>
+            <div class="logo" style="font-size: 1.5rem; font-weight: bold; color: white;">
+                <a href="index.html" style="text-decoration: none; color: white;">Edeveloper</a>
             </div>
             <ul class="nav-links" style="display: flex; gap: 20px; align-items: center; list-style: none; padding: 0; margin: 0;">
                 <li><a href="index.html">Home</a></li>
@@ -96,20 +104,6 @@
                 <li><a href="blog.html">Blog</a></li>
                 <li><a href="contact.html">Contact</a></li>
             </ul>
-            <div class="search-bar" style="display: flex; align-items: center; gap: 15px; background: linear-gradient(to right, #ffffff, #f0f0f0); padding: 20px; border-radius: 12px; box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15); max-width: 700px; margin: 20px auto;">
-                <select style="padding: 12px; border: 1px solid #ddd; border-radius: 10px; outline: none; background-color: #fff; flex-shrink: 0; font-size: 16px; color: #555; transition: border-color 0.3s;">
-                    <option value="" disabled selected>Select Category</option>
-                    <option value="all">All Categories</option>
-                    <option value="frontend">Frontend</option>
-                    <option value="backend">Backend</option>
-                    <option value="devops">DevOps</option>
-                    <option value="career">Career Tips</option>
-                </select>
-                <input type="text" placeholder="Search articles..." style="border: 1px solid #ddd; outline: none; padding: 12px; flex: 1; border-radius: 10px; font-size: 16px; color: #555; transition: border-color 0.3s;">
-                <button style="padding: 12px 30px; background: linear-gradient(to right, #007bff, #0056b3); color: white; border: none; border-radius: 10px; cursor: pointer; font-weight: bold; font-size: 16px; transition: transform 0.2s, background 0.3s;">
-                    🔍 Search
-                </button>
-            </div>
         </nav>
         <h1>Edeveloper Blog</h1>
         <p>Stay updated with the latest tutorials and tips in full-stack development.</p>
