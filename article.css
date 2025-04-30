@@ -14,7 +14,7 @@ body {
 
 /* Navbar */
 .navbar {
-    background-color: #1a202c;
+    background-color: #ADD8D8;
     padding: 15px 30px;
     display: flex;
     justify-content: space-between;
@@ -39,14 +39,14 @@ body {
 }
 
 .navbar ul li a {
-    color: #cbd5e0;
+    color: #0e1216f1;
     text-decoration: none;
     font-weight: 500;
     transition: color 0.3s ease;
 }
 
 .navbar ul li a:hover {
-    color: #63b3ed;
+    color: #090f13f3;
 }
 
 /* Main content */
