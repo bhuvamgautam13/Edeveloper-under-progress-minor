@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Blog - Edeveloper</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <nav class="navbar">
+      <div class="logo">
+        <a href="index.html">Edeveloper</a>
+      </div>
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="blog.html">Blog</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <h1>Edeveloper Blog</h1>
+    <p>Stay updated with the latest tutorials and tips in full-stack development.</p>
+  </header>
+=
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Blog - Edeveloper</title>
@@ -237,43 +260,58 @@
     <script>
         // JavaScript specific to this page
 
-        // Search functionality
-        document.querySelector('.search-bar button').addEventListener('click', () => {
-            const query = document.querySelector('.search-bar input').value.trim();
-            if (query) {
 
-                console.log(`Search initiated for: ${query}`);
-                alert(`Searching for: ${query}`);
-            } else {
-                console.warn('Search term is empty.');
-                alert('Please enter a search term.');
-            }
-        });
+  <section class="hero">
+    <div class="hero-content">
+      <h2>Unlock Your Web Dev Potential</h2>
+      <p>Tips, tricks, and deep dives into web development topics.</p>
+      <a href="blog.html" class="cta-button">Read the Blog</a>
+    </div>
+  </section>
 
-        // Newsletter subscription
-        document.querySelector('.newsletter form').addEventListener('submit', (event) => {
-            event.preventDefault();
-            const email = document.querySelector('.newsletter input').value.trim();
-            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-            if (email && emailRegex.test(email)) {
-                console.log(`Newsletter subscription successful for: ${email}`);
-                alert(`Thank you for subscribing with: ${email}`);
-                document.querySelector('.newsletter input').value = '';
-            } else {
-                console.error('Invalid email address entered.');
-                alert('Please enter a valid email address.');
-            }
-        });
+  <section class="categories">
+    <h2>Popular Categories</h2>
+    <ul>
+      <li><a href="#">Frontend Development</a></li>
+      <li><a href="#">Backend Development</a></li>
+      <li><a href="#">Full-stack Projects</a></li>
+    </ul>
+  </section>
 
-        // Pagination navigation
-        document.querySelectorAll('.pagination a').forEach(link => {
-            link.addEventListener('click', (event) => {
-                event.preventDefault();
-                console.log(`Pagination link clicked: ${link.textContent}`);
-                alert(`Navigating to: ${link.textContent}`);
-            });
-        });
+  <section class="newsletter">
+    <h2>Subscribe to Our Newsletter</h2>
+    <p>Get the latest posts delivered to your inbox.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required />
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
 
+  <section class="testimonials">
+    <h2>What Our Readers Say</h2>
+    <div class="testimonial-card">
+      <blockquote>
+        “Edeveloper has transformed the way I learn web development. The tutorials are clear and practical.”
+        <cite>– Alex R.</cite>
+      </blockquote>
+    </div>
+    <div class="testimonial-card">
+      <blockquote>
+        “As a backend developer, I struggled with frontend. Now I feel confident building beautiful UIs!”
+        <cite>– Maria S.</cite>
+      </blockquote>
+    </div>
+    <div class="testimonial-card">
+      <blockquote>
+        “Great blog with real-world examples. Love the full-stack projects section!”
+        <cite>– Daniel T.</cite>
+      </blockquote>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Edeveloper. All rights reserved.</p>
+  </footer>
         // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-links a').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
