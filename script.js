@@ -154,6 +154,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const listItem = document.createElement('li');
         listItem.textContent = task;
 
+        const completeButton = document.createElement('button');
+        completeButton.textContent = 'Complete';
+        completeButton.style.marginLeft = '10px';
+        completeButton.addEventListener('click', () => {
+            listItem.style.textDecoration = 'line-through';
+            listItem.style.color = 'gray';
+            completeButton.disabled = true;
+            completedTasks++;
+            updateCompletedTasksCounter();
+        });
+
         const deleteButton = document.createElement('button');
         deleteButton.textContent = 'Delete';
         deleteButton.style.marginLeft = '10px';
@@ -162,6 +173,7 @@ document.addEventListener('DOMContentLoaded', () => {
             updateTaskCounter();
         });
 
+        listItem.appendChild(completeButton);
         listItem.appendChild(deleteButton);
         todoList.appendChild(listItem);
         updateTaskCounter();
@@ -174,4 +186,56 @@ document.addEventListener('DOMContentLoaded', () => {
             window.location.href = 'index.html'; // Redirects to the main homepage
         });
     }
+
+    // Real-Time Weather Updates
+    const weatherContainer = document.createElement('div');
+    weatherContainer.id = 'weatherContainer';
+    weatherContainer.style.marginTop = '20px';
+    weatherContainer.style.textAlign = 'center';
+    document.querySelector('header').appendChild(weatherContainer);
+
+    async function fetchWeather() {
+        try {
+            const response = await fetch('https://api.openweathermap.org/data/2.5/weather?q=London&units=metric&appid=YOUR_API_KEY');
+            const data = await response.json();
+            weatherContainer.textContent = `Current Weather in ${data.name}: ${data.weather[0].description}, ${data.main.temp}°C`;
+        } catch (error) {
+            weatherContainer.textContent = 'Unable to fetch weather data.';
+        }
+    }
+    fetchWeather();
+
+    // Daily Motivational Quote
+    const quoteContainer = document.createElement('div');
+    quoteContainer.id = 'quoteContainer';
+    quoteContainer.style.marginTop = '20px';
+    quoteContainer.style.textAlign = 'center';
+    quoteContainer.style.fontStyle = 'italic';
+    document.querySelector('header').appendChild(quoteContainer);
+
+    async function fetchQuote() {
+        try {
+            const response = await fetch('https://api.quotable.io/random');
+            const data = await response.json();
+            quoteContainer.textContent = `"${data.content}" - ${data.author}`;
+        } catch (error) {
+            quoteContainer.textContent = 'Unable to fetch quote.';
+        }
+    }
+    fetchQuote();
+
+    // Task Completion Tracker
+    const completedTasksCounter = document.createElement('p');
+    completedTasksCounter.id = 'completedTasksCounter';
+    completedTasksCounter.style.marginTop = '10px';
+    completedTasksCounter.style.fontWeight = 'bold';
+    document.querySelector('#todoForm').appendChild(completedTasksCounter);
+
+    let completedTasks = 0;
+
+    function updateCompletedTasksCounter() {
+        completedTasksCounter.textContent = `Completed Tasks: ${completedTasks}`;
+    }
+
+    updateCompletedTasksCounter();
 });
