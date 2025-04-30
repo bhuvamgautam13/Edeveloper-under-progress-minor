@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="styles.css">
     <style>
         /* Additional styles for enhancements */
+        body {
+            transition: background-color 0.3s, color 0.3s;
+        }
+
         .hero-section {
             background: linear-gradient(to right, #a8dadc, #457b9d); /* Calming blue-green gradient */
             color: #f1faee; /* Soft white text */
@@ -14,15 +18,20 @@
             padding: 4rem 2rem;
             border-radius: 10px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1.5s ease-in-out;
         }
+
         .hero-section h1 {
             font-size: 3rem;
             margin-bottom: 1rem;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
         }
+
         .hero-section p {
             font-size: 1.5rem;
             margin-bottom: 2rem;
         }
+
         .cta-button {
             background-color: #6c757d; /* Muted gray button */
             color: white;
@@ -30,18 +39,36 @@
             font-size: 1.2rem;
             border-radius: 5px;
             text-decoration: none;
-            transition: background-color 0.3s;
+            transition: background-color 0.3s, transform 0.2s;
         }
+
         .cta-button:hover {
             background-color: #495057; /* Slightly darker gray hover effect */
+            transform: scale(1.05);
         }
-        .features, .stories, .team-members {
+
+        section {
+            margin-bottom: 30px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .features, .stories, .team-members, .technologies, .paths {
             display: flex;
             justify-content: space-around;
             flex-wrap: wrap;
             gap: 2rem;
         }
-        .feature, .story, .member {
+
+        .feature, .story, .member, .technology, .path {
             background-color: #f8f9fa; /* Light gray background */
             padding: 2rem;
             border-radius: 10px;
@@ -49,25 +76,41 @@
             text-align: center;
             transition: transform 0.3s;
         }
-        .feature:hover, .story:hover {
+
+        .feature:hover, .story:hover, .technology:hover, .path:hover {
             transform: scale(1.05);
         }
-        .feature h3, .story h4, .member h3 {
+
+        .feature h3, .story h4, .member h3, .technology h3, .path h3 {
             color: #457b9d; /* Muted blue for headings */
         }
+
         footer {
             background-color: #2c3e50; /* Muted navy footer */
             color: #ecf0f1; /* Light gray text */
             text-align: center;
             padding: 2rem 1rem;
         }
+
         footer .social-media a {
             color: #a8dadc; /* Soft blue-green links */
             margin: 0 0.5rem;
             transition: color 0.3s;
         }
+
         footer .social-media a:hover {
             color: #457b9d; /* Slightly darker blue-green hover effect */
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
         }
     </style>
 </head>
@@ -256,8 +299,10 @@
         </div>
     </footer>
 
+    <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #457b9d; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;">Toggle Dark Mode</button>
+
     <script>
-        /* Smooth scrolling for navigation links */
+        // Smooth scrolling for navigation links
         document.querySelectorAll('.nav-options a').forEach(anchor => {
             const targetId = anchor.getAttribute('href');
             if (targetId.startsWith('#') && document.querySelector(targetId)) {
@@ -270,12 +315,12 @@
             }
         });
 
-        /* Back to Top Button */
+        // Back to Top Button
         const backToTopButton = document.createElement('button');
         backToTopButton.id = 'backToTop';
         backToTopButton.textContent = '↑';
         backToTopButton.style.position = 'fixed';
-        backToTopButton.style.bottom = '20px';
+        backToTopButton.style.bottom = '80px';
         backToTopButton.style.right = '20px';
         backToTopButton.style.display = 'none';
         backToTopButton.style.backgroundColor = '#007bff';
@@ -300,6 +345,23 @@
                 top: 0,
                 behavior: 'smooth'
             });
+        });
+
+        // Dark Mode Toggle
+        const darkModeToggle = document.getElementById('darkModeToggle');
+        darkModeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('dark-mode');
+            if (document.body.classList.contains('dark-mode')) {
+                document.body.style.backgroundColor = '#1d1d1d';
+                document.body.style.color = '#f5f5f5';
+                darkModeToggle.style.backgroundColor = '#f5f5f5';
+                darkModeToggle.style.color = '#1d1d1d';
+            } else {
+                document.body.style.backgroundColor = '';
+                document.body.style.color = '';
+                darkModeToggle.style.backgroundColor = '#457b9d';
+                darkModeToggle.style.color = 'white';
+            }
         });
     </script>
 </body>
