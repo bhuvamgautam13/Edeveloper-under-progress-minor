@@ -1,0 +1,62 @@
+/* General Body & Typography Enhancements */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+  }
+  
+  /* Card Styling */
+  .card {
+    background-color: #1f2937; /* Tailwind gray-800 */
+    border: 1px solid #374151; /* Tailwind gray-700 */
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 8px 16px rgba(255, 255, 255, 0.1);
+    border-color: #4f46e5; /* Tailwind indigo-600 */
+  }
+  
+  /* Card Title */
+  .card-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    color: #fbbf24; /* Tailwind yellow-400 */
+  }
+  
+  /* Card Text */
+  .card-text {
+    font-size: 1rem;
+    color: #d1d5db; /* Tailwind gray-300 */
+  }
+  
+  /* Section Headings */
+  section h2 {
+    color: #f9fafb; /* Tailwind gray-50 */
+  }
+  
+  /* Footer Links and Socials */
+  footer a {
+    font-weight: 500;
+    transition: color 0.3s ease;
+  }
+  
+  footer a:hover {
+    color: #fbbf24; /* Tailwind yellow-400 */
+    text-decoration: underline;
+  }
+  
+  /* Responsive Container Enhancements */
+  .container {
+    max-width: 1200px;
+  }
+  
+  /* Smooth Scroll Behavior */
+  html {
+    scroll-behavior: smooth;
+  }
+  

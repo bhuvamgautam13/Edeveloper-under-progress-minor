@@ -5,7 +5,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Contact - Edeveloper</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="contact.css" />
   <style>
     /* General Styles */
     html, body {
@@ -322,10 +322,8 @@
   </main>
 
   <footer>
-    <p>&copy; 2025 Edeveloper. All rights reserved. <a href="privacy.html">Privacy Policy</a></p>
+    <p>&copy; 2025 Edeveloper. All rights reserved. <a href="#">Privacy Policy</a></p>
   </footer>
-
-  <button id="darkModeToggle" style="position: fixed; bottom: 20px; right: 20px; padding: 10px 20px; background-color: #457b9d; color: white; border: none; border-radius: 5px; cursor: pointer; z-index: 1000;">Toggle Dark Mode</button>
 
   <script>
     // Live Character Counter
@@ -337,23 +335,6 @@
       const currentLength = messageField.value.length;
       charCounter.textContent = `${currentLength}/${maxChars}`;
       charCounter.style.color = currentLength > maxChars ? 'red' : '#555';
-    });
-
-    // Dark Mode Toggle
-    const darkModeToggle = document.getElementById('darkModeToggle');
-    darkModeToggle.addEventListener('click', () => {
-      document.body.classList.toggle('dark-mode');
-      if (document.body.classList.contains('dark-mode')) {
-        document.body.style.backgroundColor = '#1d1d1d';
-        document.body.style.color = '#f5f5f5';
-        darkModeToggle.style.backgroundColor = '#f5f5f5';
-        darkModeToggle.style.color = '#1d1d1d';
-      } else {
-        document.body.style.backgroundColor = '';
-        document.body.style.color = '';
-        darkModeToggle.style.backgroundColor = '#457b9d';
-        darkModeToggle.style.color = 'white';
-      }
     });
   </script>
 </body>

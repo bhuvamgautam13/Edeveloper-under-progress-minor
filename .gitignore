@@ -1,0 +1,24 @@
+# Node modules (if you later add backend)
+node_modules/
+
+# Logs
+*.log
+
+# System files
+.DS_Store
+Thumbs.db
+
+# VS Code settings
+.vscode/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Build or deploy folders (optional)
+dist/
+build/
+
+# GitHub Pages cache
+.cache/
